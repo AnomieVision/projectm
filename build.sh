@@ -16,6 +16,7 @@ BUILD="${ROOT}/build"
 BUILD_TYPE="RELEASE"
 EMSDK_TOOLCHAIN_FILE="$HOME/install/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
 INSTALL_PREFIX="$HOME/install/projectm"
+PREFIX_PATH="$INSTALL_PREFIX"
 
 # Clean generated project files
 cleanProject() {
@@ -29,6 +30,7 @@ buildProject() {
     -G "Unix Makefiles" \
     -DCMAKE_TOOLCHAIN_FILE=${EMSDK_TOOLCHAIN_FILE} \
     -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
+    -DCMAKE_PREFIX_PATH=${PREFIX_PATH} \
     -B ${BUILD} \
     -S .
 
