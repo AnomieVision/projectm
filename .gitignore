@@ -58,3 +58,7 @@ src/libprojectM/build/
 # CLion
 cmake-build-*
 .idea
+
+CMakeFiles
+CMakeCache.txt
+release
