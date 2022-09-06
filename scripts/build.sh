@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 #-------------------------------------------------------------------------------------------------------------
 # ProjectM | https://github.com/projectM-visualizer/projectm
 #   -- Download repository source
@@ -13,30 +14,109 @@ REPO="https://github.com/projectM-visualizer/projectm.git"
 ROOT=$(pwd)
 SRC="${ROOT}/src"
 BUILD="${ROOT}/build"
-BUILD_TYPE="RELEASE"
-EMSDK_TOOLCHAIN_FILE="$HOME/install/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
-INSTALL_PREFIX="$HOME/install/projectm"
-PREFIX_PATH="$INSTALL_PREFIX"
+BUILD_TYPE="Release"
+RELEASE="${ROOT}/release"
 
-# Clean generated project files
-cleanProject() {
-    rm -rf ${BUILD}
+# ---------------------------------------------
+
+# Clean release files
+cleanRelease() {
+    rm -rf ${RELEASE}
+    mkdir -p ${RELEASE}
 }
 
-# Build
-buildProject() {
+# Clean build files
+cleanBuild() {
+    rm -rf ${BUILD}
+    mkdir -p ${BUILD}
+}
+
+checkBuildDetails() {
+    echo
+    echo "-----------------------------------------"
+    echo "Build Results"
+    echo "-----------------------------------------"
+    cd ${RELEASE}/linux-x32-multithreaded/lib
+
+    echo
+    echo "Build: linux-x32-multithreaded"
+    echo
+    file libprojectM.a
+    file libprojectM.so
+    file libprojectM.so.4
+    file libprojectM.so.4.0.0
+
+    cd ${RELEASE}/linux-x64-multithreaded/lib
+
+    echo
+    echo "Build: linux-x64-multithreaded"
+    echo
+    file libprojectM.a
+    file libprojectM.so
+    file libprojectM.so.4
+    file libprojectM.so.4.0.0
+
+    cd ${RELEASE}/emscripten-x32/lib
+
+    echo
+    echo "Build: emscripten-x32"
+    echo
+    file libprojectM.a
+}
+
+# ---------------------------------------------
+
+# Build: linux-x32-multithreaded
+linux-x32-multithreaded() {
+    cd ${BUILD}
+
+    cmake \
+    -DCMAKE_BUILD_TYPE=${BUILD_TYPE} \
+    -G "Unix Makefiles" \
+    -DCMAKE_TOOLCHAIN_FILE="./toolchains/linux-x32.cmake" \
+    -DCMAKE_INSTALL_PREFIX="${RELEASE}/linux-x32-multithreaded" \
+    ..
+
+    make install
+}
+
+# Build: linux-x64-multithreaded
+linux-x64-multithreaded() {
+    cd ${BUILD}
+
+    cmake \
+    -DCMAKE_BUILD_TYPE=${BUILD_TYPE} \
+    -G "Unix Makefiles" \
+    -DCMAKE_INSTALL_PREFIX="${RELEASE}/linux-x64-multithreaded" \
+    ..
+
+    make install
+}
+
+# Build: emscripten-x32
+emscripten-x32() {
+    cd ${BUILD}
+
     emcmake cmake \
     -DCMAKE_BUILD_TYPE=${BUILD_TYPE} \
     -G "Unix Makefiles" \
-    -DCMAKE_TOOLCHAIN_FILE=${EMSDK_TOOLCHAIN_FILE} \
-    -DCMAKE_INSTALL_PREFIX=${INSTALL_PREFIX} \
-    -DCMAKE_PREFIX_PATH=${PREFIX_PATH} \
-    -B ${BUILD} \
-    -S .
+    -DCMAKE_INSTALL_PREFIX="${RELEASE}/emscripten-x32" \
+    ..
 
-    cd $BUILD
     emmake make install
 }
 
-cleanProject
-buildProject
+# ---------------------------------------------
+
+main() {
+    cleanRelease
+    cleanBuild
+    linux-x32-multithreaded
+    cleanBuild
+    linux-x64-multithreaded
+    cleanBuild
+    emscripten-x32
+    checkBuildDetails
+}
+
+main
