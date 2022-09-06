@@ -46,7 +46,7 @@ jobs:
           intervalSeconds: 30
           timeoutSeconds: 3600
 
-      - name: Download artifacts
+      - name: Download artifacts from build
         id: download-artifacts
         uses: dawidd6/action-download-artifact@v2
         with:
