@@ -1,0 +1,71 @@
+name: <Build> - ProjectM
+
+on:
+  push:
+      branches: "*"
+    
+  pull_request:
+      branches: "*"
+
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install Prerequisites
+        run: cmake -P ${{ github.workspace }}/.github/workflows/install_prerequisites.cmake
+
+      - name: Configure CMake
+        run: cmake -P ${{ github.workspace }}/.github/workflows/configure.cmake
+
+      - name: Build
+        run: cmake -P ${{ github.workspace }}/.github/workflows/build.cmake
+
+      - name: Package
+        run: cmake -P ${{ github.workspace }}/.github/workflows/package.cmake
+
+  emscripten:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup emsdk
+        uses: mymindstorm/setup-emsdk@v11
+        with:
+          # Make sure to set a version number!
+          version: 3.1.20
+          # This is the name of the cache folder.
+          # The cache folder will be placed in the build directory,
+          #  so make sure it doesn't conflict with anything!
+          actions-cache-folder: 'emsdk-cache'
+
+      - name: Verify
+        run: emcc -v
+
+      - name: Install Prerequisites
+        run: emcmake cmake -P ${{ github.workspace }}/.github/workflows/install_prerequisites.cmake
+
+      - name: Configure CMake
+        run: emcmake cmake -P ${{ github.workspace }}/.github/workflows/configure.cmake
+
+      - name: Build
+        run: emcmake cmake -P ${{ github.workspace }}/.github/workflows/build.cmake
+
+      - name: Package
+        run: emcmake cmake -P ${{ github.workspace }}/.github/workflows/package.cmake
+
+      - name: Rename package
+        run: rename 's/Linux/Emscripten/g' package/projectM-*
