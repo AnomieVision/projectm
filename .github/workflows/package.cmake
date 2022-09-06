@@ -22,6 +22,14 @@ elseif("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Linux")
 
             RESULT_VARIABLE result
             )
+elseif("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Darwin")
+    execute_process(COMMAND "${CMAKE_CPACK_COMMAND}"
+            -G TGZ
+            --config "$ENV{GITHUB_WORKSPACE}/cmake-build/CPackConfig.cmake"
+            -B "$ENV{GITHUB_WORKSPACE}/package"
+
+            RESULT_VARIABLE result
+            )
 endif()
 
 if(NOT result EQUAL 0)
