@@ -33,7 +33,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-            name: projectm-windows-latest.zip
+            name: projectm-windows-latest
             path: package/projectM-*
 
   linux:
@@ -58,7 +58,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-            name: projectm-linux-latest.tar.gz
+            name: projectm-linux-latest
             path: package/projectM-*
 
   macos:
@@ -83,7 +83,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-            name: projectm-macos-latest.tar.gz
+            name: projectm-macos-latest
             path: package/projectM-*
 
   emscripten:
@@ -124,5 +124,5 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
-            name: projectm-emscripten-latest.tar.gz
+            name: projectm-emscripten-latest
             path: package/projectM-*
