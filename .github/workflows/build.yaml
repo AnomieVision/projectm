@@ -9,7 +9,6 @@ on:
 
 
 env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
   BUILD_TYPE: Release
 
 jobs:
@@ -35,6 +34,12 @@ jobs:
 
       - name: Package
         run: cmake -P ${{ github.workspace }}/.github/workflows/package.cmake
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+            name: projectm-${{ matrix.os }}
+            path: package/projectM-*
 
   emscripten:
     runs-on: ubuntu-latest
@@ -69,3 +74,9 @@ jobs:
 
       - name: Rename package
         run: rename 's/Linux/Emscripten/g' package/projectM-*
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+            name: projectm-Emscripten
+            path: package/projectM-*
