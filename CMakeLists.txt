@@ -250,4 +250,5 @@ endif()
 # Create CPack configuration
 set(CPACK_PACKAGE_NAME "projectM")
 set(CPACK_VERBATIM_VARIABLES YES)
+set(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}" )
 include(CPack)
