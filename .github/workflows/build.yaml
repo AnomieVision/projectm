@@ -30,11 +30,14 @@ jobs:
       - name: Package
         run: cmake -P ${{ github.workspace }}/.github/workflows/package.cmake
 
+      - name: Rename package
+        run: mv package/projectM-* package/projectm-windows-x64.zip
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
             name: projectm-windows-latest
-            path: package/projectM-*
+            path: package/projectm-windows-x64.zip
 
   linux:
     name: build-projectm-linux
@@ -55,11 +58,14 @@ jobs:
       - name: Package
         run: cmake -P ${{ github.workspace }}/.github/workflows/package.cmake
 
+      - name: Rename package
+        run: mv package/projectM-* package/projectm-linux-x64.tar.gz
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
             name: projectm-linux-latest
-            path: package/projectM-*
+            path: package/projectm-linux-x64.tar.gz
 
   macos:
     name: build-projectm-macos
@@ -80,11 +86,14 @@ jobs:
       - name: Package
         run: cmake -P ${{ github.workspace }}/.github/workflows/package.cmake
 
+      - name: Rename package
+        run: mv package/projectM-* package/projectm-macos-x64.tar.gz
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
             name: projectm-macos-latest
-            path: package/projectM-*
+            path: package/projectm-macos-x64.tar.gz
 
   emscripten:
     name: build-projectm-emscripten
@@ -119,10 +128,10 @@ jobs:
         run: emcmake cmake -P ${{ github.workspace }}/.github/workflows/package.cmake
 
       - name: Rename package
-        run: rename 's/Linux/Emscripten/g' package/projectM-*
+        run: mv package/projectM-* package/projectm-emscripten-x32.tar.gz
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
             name: projectm-emscripten-latest
-            path: package/projectM-*
+            path: package/projectm-emscripten-x32.tar.gz
