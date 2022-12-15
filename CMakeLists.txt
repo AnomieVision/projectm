@@ -47,7 +47,6 @@ cmake_dependent_option(ENABLE_SHARED_LIB "Build and install libprojectM as a sha
 cmake_dependent_option(ENABLE_SHARED_LINKING "Link the SDL test UI against the shared library." ON "ENABLE_SHARED_LIB" OFF)
 option(ENABLE_DOXYGEN "Build and install Doxygen source code documentation in PROJECTM_DATADIR_PATH/docs." OFF)
 option(ENABLE_CXX_INTERFACE "Enable exporting all C++ symbols, not only the C API, in the shared library. Warning: This is not very portable." OFF)
-option(ENABLE_PRESETS "Build and install bundled presets" ON)
 option(BUILD_TESTING "Build the libprojectM test suite" OFF)
 cmake_dependent_option(ENABLE_SDL_UI "Build the SDL2-based developer test UI" OFF "NOT ENABLE_EMSCRIPTEN" OFF)
 cmake_dependent_option(ENABLE_GLES "Enable OpenGL ES support" OFF "NOT ENABLE_EMSCRIPTEN" ON)
@@ -185,7 +184,6 @@ endif()
 
 include(features.cmake)
 
-add_subdirectory(presets)
 add_subdirectory(src)
 
 if(BUILD_TESTING)
@@ -210,7 +208,6 @@ message(STATUS "")
 message(STATUS "Features:")
 message(STATUS "==============================================")
 message(STATUS "")
-message(STATUS "    Presets:                 ${ENABLE_PRESETS}")
 message(STATUS "    Threading:               ${ENABLE_THREADING}")
 message(STATUS "    SDL2:                    ${ENABLE_SDL_UI}")
 if(ENABLE_SDL_UI)
