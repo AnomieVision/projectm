@@ -93,6 +93,7 @@ add_library(projectM
         $<TARGET_OBJECTS:hlslparser>
         $<TARGET_OBJECTS:SOIL2>
         $<TARGET_OBJECTS:projectM_main>
+        $<TARGET_OBJECTS:projectM::Eval>
         )
 
 target_include_directories(projectM
@@ -101,8 +102,6 @@ target_include_directories(projectM
         )
 
 target_link_libraries(projectM
-        PRIVATE
-        projectM::Eval
         PUBLIC
         ${PROJECTM_OPENGL_LIBRARIES}
         libprojectM::API
