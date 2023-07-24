@@ -5,7 +5,6 @@ param ([string]$BuildType = "Debug")
 $Root = Get-Location
 $Build = "$Root\build"
 $BuildType="Release"
-$Release="${ROOT}/release"
 $Toolchain = "$Env:EMSDK\upstream\emscripten\cmake\Modules\Platform\Emscripten.cmake"
 
 # Clean up previous build files
@@ -20,7 +19,7 @@ if ( $BuildType -eq "--release" -Or $BuildType -eq "--Release") {
 
     # Configure build
     emcmake cmake `
-        -G "MinGW Makefiles" `
+        -G "Ninja" `
         -S "$Root" `
         -B "$Build" `
         -DCMAKE_BUILD_TYPE="Debug" `
@@ -29,9 +28,7 @@ if ( $BuildType -eq "--release" -Or $BuildType -eq "--Release") {
         -DENABLE_PLAYLIST=OFF
 
     # Build & install
-    Set-Location $Build
-    emmake make install -j 4
-    Set-Location $Root
+    cmake --build $Build --target install -j 4
 
     # ---------------------------------
 
@@ -41,7 +38,7 @@ if ( $BuildType -eq "--release" -Or $BuildType -eq "--Release") {
 
     # Configure build
     emcmake cmake `
-        -G "MinGW Makefiles" `
+        -G "Ninja" `
         -S "$Root" `
         -B "$Build" `
         -DCMAKE_BUILD_TYPE="Release" `
@@ -50,9 +47,7 @@ if ( $BuildType -eq "--release" -Or $BuildType -eq "--Release") {
         -DENABLE_PLAYLIST=OFF
 
     # Build & install
-    Set-Location $Build
-    emmake make install -j 4
-    Set-Location $Root
+    cmake --build $Build --target install -j 4
 }
 else {
     # Clean up previous build files
@@ -61,7 +56,7 @@ else {
 
     # Configure build
     emcmake cmake `
-        -G "MinGW Makefiles" `
+        -G "Ninja" `
         -S "$Root" `
         -B "$Build" `
         -DCMAKE_BUILD_TYPE="Debug" `
@@ -70,9 +65,7 @@ else {
         -DCMAKE_VERBOSE_MAKEFILE=YES
 
     # Build & install
-    Set-Location $Build
-    emmake make install -j 4
-    Set-Location $Root
+    cmake --build $Build --target install -j 4
 
     # ---------------------------------
 
@@ -82,7 +75,7 @@ else {
 
     # Configure build
     emcmake cmake `
-        -G "MinGW Makefiles" `
+        -G "Ninja" `
         -S "$Root" `
         -B "$Build" `
         -DCMAKE_BUILD_TYPE="Release" `
@@ -91,7 +84,5 @@ else {
         -DCMAKE_VERBOSE_MAKEFILE=YES
 
     # Build & install
-    Set-Location $Build
-    emmake make install -j 4
-    Set-Location $Root
+    cmake --build $Build --target install -j 4
 }
