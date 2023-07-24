@@ -1,72 +1,105 @@
-#include "Texture.hpp"
+#include "Renderer/Texture.hpp"
 
-Sampler::Sampler(const GLint _wrap_mode, const GLint _filter_mode) :
-    wrap_mode(_wrap_mode),
-    filter_mode(_filter_mode)
+#include <utility>
+
+Texture::Texture(std::string name, const int width, const int height, const bool isUserTexture)
+    : m_target(GL_TEXTURE_2D)
+    , m_name(std::move(name))
+    , m_width(width)
+    , m_height(height)
+    , m_isUserTexture(isUserTexture)
+    , m_internalFormat(GL_RGB)
+    , m_format(GL_RGB)
+    , m_type(GL_UNSIGNED_BYTE)
 {
-    glGenSamplers(1, &samplerID);
-    glSamplerParameteri(samplerID, GL_TEXTURE_MIN_FILTER, _filter_mode);
-    glSamplerParameteri(samplerID, GL_TEXTURE_MAG_FILTER, _filter_mode);
-    glSamplerParameteri(samplerID, GL_TEXTURE_WRAP_S, _wrap_mode);
-    glSamplerParameteri(samplerID, GL_TEXTURE_WRAP_T, _wrap_mode);
+    CreateEmptyTexture();
 }
 
-
-Sampler::~Sampler()
+Texture::Texture(std::string name, int width, int height,
+                 GLint internalFormat, GLenum format, GLenum type, bool isUserTexture)
+    : m_target(GL_TEXTURE_2D)
+    , m_name(std::move(name))
+    , m_width(width)
+    , m_height(height)
+    , m_isUserTexture(isUserTexture)
+    , m_internalFormat(internalFormat)
+    , m_format(format)
+    , m_type(type)
 {
-    glDeleteSamplers(1, &samplerID);
+    CreateEmptyTexture();
 }
 
-
-
-Texture::Texture(const std::string &_name, const int _width, const int _height, const bool _userTexture) :
-    type(GL_TEXTURE_2D),
-    name(_name),
-    width(_width),
-    height(_height),
-    userTexture(_userTexture)
-{
-    glGenTextures(1, &texID);
-    glBindTexture(GL_TEXTURE_2D, texID);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, _width, _height, 0, GL_RGB, GL_UNSIGNED_BYTE, NULL);
-    glBindTexture(GL_TEXTURE_2D, 0);
-}
-
-Texture::Texture(const std::string &_name, const GLuint _texID, const GLenum _type, const int _width, const int _height, const bool _userTexture) :
-    texID(_texID),
-    type(_type),
-    name(_name),
-    width(_width),
-    height(_height),
-    userTexture(_userTexture)
+Texture::Texture(std::string name, const GLuint texID, const GLenum target,
+                 const int width, const int height, const bool isUserTexture)
+    : m_textureId(texID)
+    , m_target(target)
+    , m_name(std::move(name))
+    , m_width(width)
+    , m_height(height)
+    , m_isUserTexture(isUserTexture)
 {
 }
-
 
 Texture::~Texture()
 {
-    glDeleteTextures(1, &texID);
-
-    for(std::vector<Sampler*>::const_iterator iter = samplers.begin(); iter != samplers.end(); iter++)
+    if (m_textureId > 0)
     {
-        delete (*iter);
+        glDeleteTextures(1, &m_textureId);
+        m_textureId = 0;
     }
 }
 
-
-Sampler* Texture::getSampler(const GLint _wrap_mode, const GLint _filter_mode)
+void Texture::Bind(GLint slot, const Sampler::Ptr& sampler) const
 {
-    for(std::vector<Sampler*>::const_iterator iter = samplers.begin(); iter != samplers.end(); iter++)
+    glActiveTexture(GL_TEXTURE0 + slot);
+    glBindTexture(m_target, m_textureId);
+
+    if (sampler)
     {
-        if ((*iter)->wrap_mode == _wrap_mode && (*iter)->filter_mode == _filter_mode)
-        {
-            return *iter;
-        }
+        sampler->Bind(slot);
     }
+}
 
-    // Sampler not found -> adding it
-    Sampler * sampler = new Sampler(_wrap_mode, _filter_mode);
-    samplers.push_back(sampler);
+void Texture::Unbind(GLint slot) const
+{
+    glActiveTexture(GL_TEXTURE0 + slot);
+    glBindTexture(m_target, 0);
+}
 
-    return sampler;
+auto Texture::TextureID() const -> GLuint
+{
+    return m_textureId;
+}
+
+auto Texture::Name() const -> const std::string&
+{
+    return m_name;
+}
+
+auto Texture::Type() const -> GLenum
+{
+    return m_target;
+}
+
+auto Texture::Width() const -> int
+{
+    return m_width;
+}
+
+auto Texture::Height() const -> int
+{
+    return m_height;
+}
+
+auto Texture::IsUserTexture() const -> bool
+{
+    return m_isUserTexture;
+}
+
+void Texture::CreateEmptyTexture()
+{
+    glGenTextures(1, &m_textureId);
+    glBindTexture(m_target, m_textureId);
+    glTexImage2D(m_target, 0, m_internalFormat, m_width, m_height, 0, m_format, m_type, nullptr);
+    glBindTexture(m_target, 0);
 }

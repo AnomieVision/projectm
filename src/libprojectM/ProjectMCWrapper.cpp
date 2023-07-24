@@ -148,7 +148,7 @@ char* projectm_get_version_string()
 {
     auto versionLength = strlen(PROJECTM_VERSION_STRING);
     auto buffer = projectm_alloc_string(versionLength + 1);
-    strncpy(buffer, PROJECTM_VERSION_STRING, versionLength);
+    strncpy(buffer, PROJECTM_VERSION_STRING, versionLength + 1);
     return buffer;
 }
 
@@ -156,7 +156,7 @@ char* projectm_get_vcs_version_string()
 {
     auto versionLength = strlen(PROJECTM_VERSION_VCS);
     auto buffer = projectm_alloc_string(versionLength + 1);
-    strncpy(buffer, PROJECTM_VERSION_VCS, versionLength);
+    strncpy(buffer, PROJECTM_VERSION_VCS, versionLength + 1);
     return buffer;
 }
 
@@ -337,7 +337,7 @@ void projectm_set_window_size(projectm_handle instance, size_t width, size_t hei
 
 unsigned int projectm_pcm_get_max_samples()
 {
-    return Pcm::maxSamples;
+    return libprojectM::Audio::PCM::maxSamples;
 }
 
 template<class BufferType>
@@ -347,11 +347,11 @@ static auto PcmAdd(projectm_handle instance, const BufferType* samples, unsigned
 
     if (channels == PROJECTM_MONO)
     {
-        projectMInstance->Pcm().AddMono(samples, count);
+        projectMInstance->PCM().AddMono(samples, count);
     }
     else
     {
-        projectMInstance->Pcm().AddStereo(samples, count);
+        projectMInstance->PCM().AddStereo(samples, count);
     }
 }
 

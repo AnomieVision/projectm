@@ -1,47 +1,26 @@
 add_library(Renderer OBJECT
-        BeatDetect.cpp
-        BeatDetect.hpp
-        Border.cpp
-        Border.hpp
-        DarkenCenter.cpp
-        DarkenCenter.hpp
         FileScanner.cpp
         FileScanner.hpp
-        Filters.cpp
-        Filters.hpp
-        MilkdropNoise.cpp
-        MilkdropNoise.hpp
-        MilkdropWaveform.cpp
-        MilkdropWaveform.hpp
-        MotionVectors.cpp
-        MotionVectors.hpp
-        PerPixelMesh.cpp
-        PerPixelMesh.hpp
-        Pipeline.cpp
-        Pipeline.hpp
-        PipelineContext.cpp
-        PipelineContext.hpp
+        Framebuffer.cpp
+        Framebuffer.hpp
+        IdleTextures.hpp
         RenderContext.hpp
         RenderItem.cpp
         RenderItem.hpp
         Renderer.cpp
         Renderer.hpp
+        Sampler.cpp
+        Sampler.hpp
         Shader.cpp
         Shader.hpp
-        ShaderEngine.cpp
-        ShaderEngine.hpp
-        Shape.cpp
-        Shape.hpp
-        StaticGlShaders.cpp
         Texture.cpp
         Texture.hpp
+        TextureAttachment.cpp
+        TextureAttachment.hpp
         TextureManager.cpp
         TextureManager.hpp
-        Transformation.hpp
-        VideoEcho.cpp
-        VideoEcho.hpp
-        Waveform.cpp
-        Waveform.hpp
+        TextureSamplerDescriptor.cpp
+        TextureSamplerDescriptor.hpp
         )
 
 target_include_directories(Renderer
@@ -53,6 +32,7 @@ target_include_directories(Renderer
 
 target_link_libraries(Renderer
         PRIVATE
+        omptl
         libprojectM::API # For export header
         PUBLIC
         GLM::GLM

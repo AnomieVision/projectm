@@ -20,10 +20,11 @@
  */
 #pragma once
 
+#include <Renderer/RenderContext.hpp>
+
 #include "projectM-4/projectM_export.h"
 
-#include "libprojectM/Common.hpp"
-#include "libprojectM/PCM.hpp"
+#include "libprojectM/Audio/PCM.hpp"
 
 #ifdef _WIN32
 
@@ -48,25 +49,23 @@
 
 class BackgroundWorkerSync;
 
+namespace libprojectM {
+namespace Audio {
 class BeatDetect;
-
-class Pcm;
-
-class Func;
+}
+} // namespace libprojectM
 
 class Renderer;
+
+class TextureManager;
 
 class Preset;
 
 class TimeKeeper;
 
-class Pipeline;
-
-class PipelineContext;
-
 class PresetFactoryManager;
 
-PROJECTM_EXPORT class ProjectM
+class PROJECTM_EXPORT ProjectM
 {
 public:
     ProjectM();
@@ -191,7 +190,7 @@ public:
     /// Returns true if the active preset is locked
     auto PresetLocked() const -> bool;
 
-    auto Pcm() -> class Pcm&;
+    auto PCM() -> libprojectM::Audio::PCM&;
 
     auto WindowWidth() -> int;
 
@@ -205,34 +204,15 @@ public:
     void DumpDebugImageOnNextFrame(const std::string& outputFile);
 
 private:
-    void EvaluateSecondPreset();
-
-    /**
-     * @brief Renders the first pass of a frame.
-     * @param pipeline A pointer to a Pipeline for use in pass 2.
-     * @return Returns the pointer passed in pipeline if in a transition, else returns nullptr.
-     */
-    auto RenderFrameOnlyPass1(Pipeline* pipeline) -> Pipeline*;
-
-    void RenderFrameOnlyPass2(Pipeline* pipeline);
-
-    void RenderFrameEndOnSeparatePasses(Pipeline* pipeline);
-
-    auto PipelineContext() -> class PipelineContext&;
-
-    auto PipelineContext2() -> class PipelineContext&;
-
     void Initialize();
-
-    void Reset();
 
     void ResetEngine();
 
     void StartPresetTransition(std::unique_ptr<Preset>&& preset, bool hardCut);
 
-    void RecreateRenderer();
-
     void LoadIdlePreset();
+
+    auto GetRenderContext() -> RenderContext;
 
 #if PROJECTM_USE_THREADS
 
@@ -240,13 +220,13 @@ private:
 
 #endif
 
-    class Pcm m_pcm; //!< Audio data buffer and analyzer instance.
+    class libprojectM::Audio::PCM m_pcm; //!< Audio data buffer and analyzer instance.
 
     size_t m_meshX{32};              //!< Per-point mesh horizontal resolution.
     size_t m_meshY{24};              //!< Per-point mesh vertical resolution.
     size_t m_targetFps{35};          //!< Target frames per second.
-    size_t m_windowWidth{0};         //!< Render window width. If 0, nothing is rendered.
-    size_t m_windowHeight{0};        //!< Render window height. If 0, nothing is rendered.
+    int m_windowWidth{0};         //!< EvaluateFrameData window width. If 0, nothing is rendered.
+    int m_windowHeight{0};        //!< EvaluateFrameData window height. If 0, nothing is rendered.
     double m_presetDuration{30.0};   //!< Preset duration in seconds.
     double m_softCutDuration{3.0};   //!< Soft cut transition time.
     double m_hardCutDuration{20.0};  //!< Time after which a hard cut can happen at the earliest.
@@ -259,21 +239,19 @@ private:
     std::vector<std::string> m_textureSearchPaths; ///!< List of paths to search for texture files
 
     /** Timing information */
-    int m_count{0}; //!< Rendered frame count since start
+    int m_frameCount{0}; //!< Rendered frame count since start
 
     bool m_presetLocked{false};         //!< If true, the preset change event will not be sent.
     bool m_presetChangeNotified{false}; //!< Stores whether the user has been notified that projectM wants to switch the preset.
 
     std::unique_ptr<PresetFactoryManager> m_presetFactoryManager; //!< Provides access to all available preset factories.
 
-    std::unique_ptr<class PipelineContext> m_pipelineContext;  //!< Pipeline context for the first/current preset.
-    std::unique_ptr<class PipelineContext> m_pipelineContext2; //!< Pipeline context for the next/transitioning preset.
-
-    std::unique_ptr<Renderer> m_renderer;          //!< The Preset renderer.
-    std::unique_ptr<BeatDetect> m_beatDetect;      //!< The beat detection class.
-    std::unique_ptr<Preset> m_activePreset;        //!< Currently loaded preset.
-    std::unique_ptr<Preset> m_transitioningPreset; //!< Destination preset when smooth preset switching.
-    std::unique_ptr<TimeKeeper> m_timeKeeper;      //!< Keeps the different timers used to render and switch presets.
+    std::unique_ptr<Renderer> m_renderer;                         //!< The Preset renderer.
+    std::unique_ptr<TextureManager> m_textureManager;             //!< The texture manager.
+    std::unique_ptr<libprojectM::Audio::BeatDetect> m_beatDetect; //!< The beat detection class.
+    std::unique_ptr<Preset> m_activePreset;                       //!< Currently loaded preset.
+    std::unique_ptr<Preset> m_transitioningPreset;                //!< Destination preset when smooth preset switching.
+    std::unique_ptr<TimeKeeper> m_timeKeeper;                     //!< Keeps the different timers used to render and switch presets.
 
 #if PROJECTM_USE_THREADS
     mutable std::recursive_mutex m_presetSwitchMutex;   //!< Mutex for locking preset switching while rendering and vice versa.
