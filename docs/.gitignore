@@ -1,1 +1,12 @@
-doxygen/xml
+# Doxygen
+.doxygen/xml
+
+# Doxybook
+doxybook
+
+#  - [Classes](/Classes/README)
+#  - [Namespaces](/Namespaces/README)
+#  - [Modules](/Modules/README)
+#  - [Files](/Files/README)
+#  - [Pages](/Pages/README)
+#  - [Examples](/Examples/README)
