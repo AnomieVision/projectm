@@ -1,0 +1,44 @@
+name: Build & Deploy Documentation
+
+on:
+  push:
+      branches: 
+        - "*"
+      tags:
+        - "*"
+    
+  pull_request:
+      branches: 
+        - "*"
+
+jobs:
+  build-shared:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run Doxygen
+        uses: mattnotmitt/doxygen-action@v1.9.5
+        with:
+          # Path to Doxyfile
+          doxyfile-path: "./docs/.doxygen/Doxyfile" # default is ./Doxyfile
+          # Working directory
+          working-directory: "." # default is .
+
+      # Install doxybook2 from github via this link
+      # Then extract the zipe file and make executable the doxybook2 file
+      - name: Install Doxybook
+        run: |
+          wget https://github.com/matusnovak/doxybook2/releases/download/v1.5.0/doxybook2-linux-amd64-v1.5.0.zip
+          unzip doxybook2-linux-amd64-v1.5.0.zip
+          chmod +x doxybook2
+          sudo mv doxybook2 /usr/local/bin
+          doxybook2 --version
+          
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./docs
