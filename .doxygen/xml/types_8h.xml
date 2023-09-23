@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="types_8h" kind="file" language="C++">
+    <compoundname>types.h</compoundname>
+    <includes refid="projectM__export_8h" local="yes">projectM-4/projectM_export.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes local="no">stdint.h</includes>
+    <includedby refid="audio_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/audio.h</includedby>
+    <includedby refid="callbacks_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/callbacks.h</includedby>
+    <includedby refid="core_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/core.h</includedby>
+    <includedby refid="debug_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/debug.h</includedby>
+    <includedby refid="memory_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/memory.h</includedby>
+    <includedby refid="parameters_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/parameters.h</includedby>
+    <includedby refid="playlist__core_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_core.h</includedby>
+    <includedby refid="render__opengl_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/render_opengl.h</includedby>
+    <includedby refid="touch_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/touch.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>projectM-4/projectM_export.h</label>
+        <link refid="projectM__export_8h_source"/>
+      </node>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/types.h</label>
+        <link refid="types_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/audio.h</label>
+        <link refid="audio_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/callbacks.h</label>
+        <link refid="callbacks_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/core.h</label>
+        <link refid="core_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/debug.h</label>
+        <link refid="debug_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/memory.h</label>
+        <link refid="memory_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/parameters.h</label>
+        <link refid="parameters_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist.h</label>
+        <link refid="playlist_8h"/>
+      </node>
+      <node id="9">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_core.h</label>
+        <link refid="playlist__core_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/projectM.h</label>
+        <link refid="projectM_8h"/>
+      </node>
+      <node id="11">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/render_opengl.h</label>
+        <link refid="render__opengl_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/touch.h</label>
+        <link refid="touch_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/types.h</label>
+        <link refid="types_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="types_8h_1a1eadab536ce5f16c9458e43023f052d1" prot="public" static="no" strong="no">
+        <type></type>
+        <name>projectm_channels</name>
+        <enumvalue id="types_8h_1a1eadab536ce5f16c9458e43023f052d1a5c590a77ff44e28d5d8569f156040779" prot="public">
+          <name>PROJECTM_MONO</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1a1eadab536ce5f16c9458e43023f052d1acc6c175a79d78e85158256420fdff304" prot="public">
+          <name>PROJECTM_STEREO</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For specifying audio data format. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/types.h" line="44" column="1" bodyfile="artifacts/projectm-linux-shared-latest/include/projectM-4/types.h" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="enum" id="types_8h_1adc1581625758af7d004e5a82293d8782" prot="public" static="no" strong="no">
+        <type></type>
+        <name>projectm_pcm_channel</name>
+        <enumvalue id="types_8h_1adc1581625758af7d004e5a82293d8782af69418c225fbad84fec58c641926bfb1" prot="public">
+          <name>PROJECTM_CHANNEL_L</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Left audio channel. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1adc1581625758af7d004e5a82293d8782a677c3db25de6217cfb62d237d048ed48" prot="public">
+          <name>PROJECTM_CHANNEL_0</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Left audio channel. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1adc1581625758af7d004e5a82293d8782a20918c70c04461697f8b1851da09e13b" prot="public">
+          <name>PROJECTM_CHANNEL_R</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Right audio channel. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1adc1581625758af7d004e5a82293d8782aa1167819e13f8a71bc86afd37ea96d2d" prot="public">
+          <name>PROJECTM_CHANNEL_1</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>Right audio channel. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Placeholder values that can be used to address channel indices in PCM data arrays. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/types.h" line="53" column="1" bodyfile="artifacts/projectm-linux-shared-latest/include/projectM-4/types.h" bodystart="54" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="enum" id="types_8h_1aecae513b8814c02f68cee59091badc3c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>projectm_touch_type</name>
+        <enumvalue id="types_8h_1aecae513b8814c02f68cee59091badc3ca63cca68975e32531bd2764d5f568575d" prot="public">
+          <name>PROJECTM_TOUCH_TYPE_RANDOM</name>
+          <briefdescription>
+<para>Random waveform type. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1aecae513b8814c02f68cee59091badc3caae122199c1944d4aaecfe0e4e4827d23" prot="public">
+          <name>PROJECTM_TOUCH_TYPE_CIRCLE</name>
+          <briefdescription>
+<para>Draws a circular waveform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1aecae513b8814c02f68cee59091badc3caf79d4104bf9a07b299c427bbf0bd54a7" prot="public">
+          <name>PROJECTM_TOUCH_TYPE_RADIAL_BLOB</name>
+          <briefdescription>
+<para>Draws a radial blob waveform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1aecae513b8814c02f68cee59091badc3ca5d3ff362cc48c0353c0997744d1a8ccb" prot="public">
+          <name>PROJECTM_TOUCH_TYPE_BLOB2</name>
+          <briefdescription>
+<para>Draws a blob-style waveform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1aecae513b8814c02f68cee59091badc3caaa544d68c76971d785ea593fceb6d198" prot="public">
+          <name>PROJECTM_TOUCH_TYPE_BLOB3</name>
+          <briefdescription>
+<para>Draws another blob-style waveform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1aecae513b8814c02f68cee59091badc3caf029ba3dcc24438da09116a79953a5d5" prot="public">
+          <name>PROJECTM_TOUCH_TYPE_DERIVATIVE_LINE</name>
+          <briefdescription>
+<para>Draws a derivative-line waveform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1aecae513b8814c02f68cee59091badc3ca90a9e0f7d1661d33ab6d07ae6b65af07" prot="public">
+          <name>PROJECTM_TOUCH_TYPE_BLOB5</name>
+          <briefdescription>
+<para>Draws a five-blob waveform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1aecae513b8814c02f68cee59091badc3caf1f26a084cfe1300144ca81e174b6b04" prot="public">
+          <name>PROJECTM_TOUCH_TYPE_LINE</name>
+          <briefdescription>
+<para>Draws a single-line waveform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="types_8h_1aecae513b8814c02f68cee59091badc3ca12838e17ff29034b86a93d9267261524" prot="public">
+          <name>PROJECTM_TOUCH_TYPE_DOUBLE_LINE</name>
+          <briefdescription>
+<para>Draws a double-line waveform. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Waveform render types used in the touch start method. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/types.h" line="64" column="1" bodyfile="artifacts/projectm-linux-shared-latest/include/projectM-4/types.h" bodystart="65" bodyend="75"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="types_8h_1a04d3124183c4f0d9df05100f11d5ea1b" prot="public" static="no">
+        <type>struct projectm *</type>
+        <definition>typedef struct projectm* projectm_handle</definition>
+        <argsstring></argsstring>
+        <name>projectm_handle</name>
+        <briefdescription>
+<para>Opaque projectM instance type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>A pointer to the opaque projectM instance. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/types.h" line="39" column="24" bodyfile="artifacts/projectm-linux-shared-latest/include/projectM-4/types.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Types and enumerations used in the other API headers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2003-2023 projectM Team </para>
+</simplesect>
+projectM <ndash/> Milkdrop-esque visualisation SDK Copyright (C)2003-2023 projectM Team</para>
+<para>This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.</para>
+<para>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</para>
+<para>You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA See &apos;LICENSE.txt&apos; included within this release </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;projectM-4/projectM_export.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">projectm;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="39" refid="types_8h_1a04d3124183c4f0d9df05100f11d5ea1b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">projectm*<sp/><ref refid="types_8h_1a04d3124183c4f0d9df05100f11d5ea1b" kindref="member">projectm_handle</ref>;<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="types_8h_1a1eadab536ce5f16c9458e43023f052d1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>PROJECTM_MONO<sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>PROJECTM_STEREO<sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}<sp/><ref refid="types_8h_1a1eadab536ce5f16c9458e43023f052d1" kindref="member">projectm_channels</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="types_8h_1adc1581625758af7d004e5a82293d8782" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55" refid="types_8h_1adc1581625758af7d004e5a82293d8782af69418c225fbad84fec58c641926bfb1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1adc1581625758af7d004e5a82293d8782af69418c225fbad84fec58c641926bfb1" kindref="member">PROJECTM_CHANNEL_L</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="56" refid="types_8h_1adc1581625758af7d004e5a82293d8782a677c3db25de6217cfb62d237d048ed48" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1adc1581625758af7d004e5a82293d8782a677c3db25de6217cfb62d237d048ed48" kindref="member">PROJECTM_CHANNEL_0</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="57" refid="types_8h_1adc1581625758af7d004e5a82293d8782a20918c70c04461697f8b1851da09e13b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1adc1581625758af7d004e5a82293d8782a20918c70c04461697f8b1851da09e13b" kindref="member">PROJECTM_CHANNEL_R</ref><sp/>=<sp/>1,<sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1adc1581625758af7d004e5a82293d8782aa1167819e13f8a71bc86afd37ea96d2d" kindref="member">PROJECTM_CHANNEL_1</ref><sp/>=<sp/>1<sp/><sp/></highlight></codeline>
+<codeline lineno="59" refid="types_8h_1adc1581625758af7d004e5a82293d8782aa1167819e13f8a71bc86afd37ea96d2d" refkind="member"><highlight class="normal">}<sp/><ref refid="types_8h_1adc1581625758af7d004e5a82293d8782" kindref="member">projectm_pcm_channel</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="types_8h_1aecae513b8814c02f68cee59091badc3c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66" refid="types_8h_1aecae513b8814c02f68cee59091badc3ca63cca68975e32531bd2764d5f568575d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1aecae513b8814c02f68cee59091badc3ca63cca68975e32531bd2764d5f568575d" kindref="member">PROJECTM_TOUCH_TYPE_RANDOM</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="67" refid="types_8h_1aecae513b8814c02f68cee59091badc3caae122199c1944d4aaecfe0e4e4827d23" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1aecae513b8814c02f68cee59091badc3caae122199c1944d4aaecfe0e4e4827d23" kindref="member">PROJECTM_TOUCH_TYPE_CIRCLE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="68" refid="types_8h_1aecae513b8814c02f68cee59091badc3caf79d4104bf9a07b299c427bbf0bd54a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1aecae513b8814c02f68cee59091badc3caf79d4104bf9a07b299c427bbf0bd54a7" kindref="member">PROJECTM_TOUCH_TYPE_RADIAL_BLOB</ref>,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="69" refid="types_8h_1aecae513b8814c02f68cee59091badc3ca5d3ff362cc48c0353c0997744d1a8ccb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1aecae513b8814c02f68cee59091badc3ca5d3ff362cc48c0353c0997744d1a8ccb" kindref="member">PROJECTM_TOUCH_TYPE_BLOB2</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="70" refid="types_8h_1aecae513b8814c02f68cee59091badc3caaa544d68c76971d785ea593fceb6d198" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1aecae513b8814c02f68cee59091badc3caaa544d68c76971d785ea593fceb6d198" kindref="member">PROJECTM_TOUCH_TYPE_BLOB3</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="71" refid="types_8h_1aecae513b8814c02f68cee59091badc3caf029ba3dcc24438da09116a79953a5d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1aecae513b8814c02f68cee59091badc3caf029ba3dcc24438da09116a79953a5d5" kindref="member">PROJECTM_TOUCH_TYPE_DERIVATIVE_LINE</ref>,<sp/></highlight></codeline>
+<codeline lineno="72" refid="types_8h_1aecae513b8814c02f68cee59091badc3ca90a9e0f7d1661d33ab6d07ae6b65af07" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1aecae513b8814c02f68cee59091badc3ca90a9e0f7d1661d33ab6d07ae6b65af07" kindref="member">PROJECTM_TOUCH_TYPE_BLOB5</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="73" refid="types_8h_1aecae513b8814c02f68cee59091badc3caf1f26a084cfe1300144ca81e174b6b04" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1aecae513b8814c02f68cee59091badc3caf1f26a084cfe1300144ca81e174b6b04" kindref="member">PROJECTM_TOUCH_TYPE_LINE</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="types_8h_1aecae513b8814c02f68cee59091badc3ca12838e17ff29034b86a93d9267261524" kindref="member">PROJECTM_TOUCH_TYPE_DOUBLE_LINE</ref><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="75" refid="types_8h_1aecae513b8814c02f68cee59091badc3ca12838e17ff29034b86a93d9267261524" refkind="member"><highlight class="normal">}<sp/><ref refid="types_8h_1aecae513b8814c02f68cee59091badc3c" kindref="member">projectm_touch_type</ref>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/types.h"/>
+  </compounddef>
+</doxygen>

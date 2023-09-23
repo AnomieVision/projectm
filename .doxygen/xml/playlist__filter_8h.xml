@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="playlist__filter_8h" kind="file" language="C++">
+    <compoundname>playlist_filter.h</compoundname>
+    <includes refid="playlist__types_8h" local="yes">projectM-4/playlist_types.h</includes>
+    <includedby refid="playlist_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/playlist.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_filter.h</label>
+        <link refid="playlist__filter_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>projectM-4/playlist_types.h</label>
+        <link refid="playlist__types_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>projectM-4/projectM_playlist_export.h</label>
+        <link refid="projectM__playlist__export_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist.h</label>
+        <link refid="playlist_8h"/>
+      </node>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_filter.h</label>
+        <link refid="playlist__filter_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="playlist__filter_8h_1af4e6056f7945be24622fddf0cc8298db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT void</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT void projectm_playlist_set_filter</definition>
+        <argsstring>(projectm_playlist_handle instance, const char **filter_list, size_t count)</argsstring>
+        <name>projectm_playlist_set_filter</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>const char **</type>
+          <declname>filter_list</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Sets a new filter list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Does not immediately apply the new list to an existing playlist, only newly added files will be affected. If you need to filter the existing playlist after calling this method, additionally call <ref refid="playlist__filter_8h_1a897aa335e04ba1cae1683d464c4f3ba3" kindref="member">projectm_playlist_apply_filter()</ref> afterwards.</para>
+<para>The filter list consists of simple globbing expressions similar to the .gitignore syntax:</para>
+<para><itemizedlist>
+<listitem>
+<para><bold>?</bold>: Matches any single character except /. </para>
+</listitem>
+<listitem>
+<para><bold>*</bold>: Matches 0 or more characters except /. </para>
+</listitem>
+<listitem>
+<para><bold>/</bold>: When used at the begin of a glob, matches if pathname has no path separator. </para>
+</listitem>
+<listitem>
+<para><bold>**<zwj/>/</bold>: Matches 0 or more directories. </para>
+</listitem>
+<listitem>
+<para><bold>/<zwj/>**</bold>: When at the end of the glob, matches everything after the /. </para>
+</listitem>
+</itemizedlist>
+</para>
+<para>In globbing expressions, \ can be used as path separator instead of /. The backslash can&apos;t be used to escape globbing patterns, so matching literal * and ? in filenames is not possible. This is not a huge issue as Windows doesn&apos;t allow those characters in filenames and Milkdrop files originate from the Windows world. Character classes like &quot;[0-9]&quot; are also not supported to keep the syntax simple.</para>
+<para>Each line can be prefixed with either + or - to either include files matching the pattern or excluding them. Any other character is not interpreted as a prefix and the filter line is matching as an exclude filter. To match a literal + or - at the beginning, add the appropriate prefix in front. Empty filters never match anything, even if the filename is empty.</para>
+<para>The filter list is checked in order. The first pattern that matches the filename determines the filter result (include or exclude). If no pattern matches, the file is included. In the case that a default exclude action is required, add a &quot;-/&amp;zwj;**&quot; filter at the end of the list.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filter_list</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array with filter strings. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the filter array. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_filter.h" line="71" column="31" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_filter.h" declline="71" declcolumn="31"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__filter_8h_1a7e82963b6c97d20aacf4b1b709628f74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT char **</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT char ** projectm_playlist_get_filter</definition>
+        <argsstring>(projectm_playlist_handle instance, size_t *count)</argsstring>
+        <name>projectm_playlist_get_filter</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Returns the current filter list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Always call <ref refid="playlist__memory_8h_1ac4075eead087c00a9d96d1659727661b" kindref="member">projectm_playlist_free_string_array()</ref> on the returned pointer if the data is no longer needed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the filter array. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An array with filter strings. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_filter.h" line="84" column="31" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_filter.h" declline="84" declcolumn="31"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__filter_8h_1a897aa335e04ba1cae1683d464c4f3ba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT size_t</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT size_t projectm_playlist_apply_filter</definition>
+        <argsstring>(projectm_playlist_handle instance)</argsstring>
+        <name>projectm_playlist_apply_filter</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <briefdescription>
+<para>Applies the current filter list to the existing playlist. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Note this function only removes items. Previously filtered items are not added again. If items were removed, the playback history is cleared.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of removed items. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_filter.h" line="95" column="33" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_filter.h" declline="95" declcolumn="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Playlist filter functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2003-2023 projectM Team </para>
+</simplesect>
+projectM <ndash/> Milkdrop-esque visualisation SDK Copyright (C)2003-2023 projectM Team</para>
+<para>This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.</para>
+<para>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</para>
+<para>You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA See &apos;LICENSE.txt&apos; included within this release </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="playlist__types_8h" kindref="compound">projectM-4/playlist_types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="playlist__filter_8h_1af4e6056f7945be24622fddf0cc8298db" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="playlist__filter_8h_1af4e6056f7945be24622fddf0cc8298db" kindref="member">projectm_playlist_set_filter</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>filter_list,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>count);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="playlist__filter_8h_1a7e82963b6c97d20aacf4b1b709628f74" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/><ref refid="playlist__filter_8h_1a7e82963b6c97d20aacf4b1b709628f74" kindref="member">projectm_playlist_get_filter</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/>count);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="playlist__filter_8h_1a897aa335e04ba1cae1683d464c4f3ba3" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="playlist__filter_8h_1a897aa335e04ba1cae1683d464c4f3ba3" kindref="member">projectm_playlist_apply_filter</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_filter.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="dir_baa3462235adcd20f3075ad01252fc08" kind="dir">
+    <compoundname>artifacts/projectm-linux-shared-latest/include</compoundname>
+    <innerdir refid="dir_b31496a15a05b9c358d02a5f6c1c378f">artifacts/projectm-linux-shared-latest/include/projectM-4</innerdir>
+    <innerdir refid="dir_036e02007a1ea184870b9340c0f33d18">artifacts/projectm-linux-shared-latest/include/projectm-eval</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="artifacts/projectm-linux-shared-latest/include/"/>
+  </compounddef>
+</doxygen>

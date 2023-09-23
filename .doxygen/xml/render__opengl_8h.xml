@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="render__opengl_8h" kind="file" language="C++">
+    <compoundname>render_opengl.h</compoundname>
+    <includes refid="types_8h" local="yes">projectM-4/types.h</includes>
+    <includedby refid="projectM_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/projectM.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>projectM-4/projectM_export.h</label>
+        <link refid="projectM__export_8h_source"/>
+      </node>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/render_opengl.h</label>
+        <link refid="render__opengl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>projectM-4/types.h</label>
+        <link refid="types_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5">
+        <label>stddef.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/projectM.h</label>
+        <link refid="projectM_8h"/>
+      </node>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/render_opengl.h</label>
+        <link refid="render__opengl_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="render__opengl_8h_1a0fd050f7bdae7ceed1e91a84595850d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_EXPORT void</type>
+        <definition>PROJECTM_EXPORT void projectm_opengl_render_frame</definition>
+        <argsstring>(projectm_handle instance)</argsstring>
+        <name>projectm_opengl_render_frame</name>
+        <param>
+          <type><ref refid="types_8h_1a04d3124183c4f0d9df05100f11d5ea1b" kindref="member">projectm_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <briefdescription>
+<para>Renders a single frame. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Separate two-pass frame rendering is currently not supported by the C API as it is rarely used and also depends on the loaded preset.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The projectM instance handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/render_opengl.h" line="42" column="22" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/render_opengl.h" declline="42" declcolumn="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Functions to configure and render projectM visuals using OpenGL. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2003-2023 projectM Team </para>
+</simplesect>
+projectM <ndash/> Milkdrop-esque visualisation SDK Copyright (C)2003-2023 projectM Team</para>
+<para>This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.</para>
+<para>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</para>
+<para>You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA See &apos;LICENSE.txt&apos; included within this release </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="types_8h" kindref="compound">projectM-4/types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="render__opengl_8h_1a0fd050f7bdae7ceed1e91a84595850d4" refkind="member"><highlight class="normal">PROJECTM_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="render__opengl_8h_1a0fd050f7bdae7ceed1e91a84595850d4" kindref="member">projectm_opengl_render_frame</ref>(<ref refid="types_8h_1a04d3124183c4f0d9df05100f11d5ea1b" kindref="member">projectm_handle</ref><sp/>instance);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/render_opengl.h"/>
+  </compounddef>
+</doxygen>

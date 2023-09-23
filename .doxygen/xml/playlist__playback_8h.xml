@@ -1,0 +1,446 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="playlist__playback_8h" kind="file" language="C++">
+    <compoundname>playlist_playback.h</compoundname>
+    <includes refid="playlist__types_8h" local="yes">projectM-4/playlist_types.h</includes>
+    <includedby refid="playlist_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/playlist.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h</label>
+        <link refid="playlist__playback_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>projectM-4/playlist_types.h</label>
+        <link refid="playlist__types_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>projectM-4/projectM_playlist_export.h</label>
+        <link refid="projectM__playlist__export_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist.h</label>
+        <link refid="playlist_8h"/>
+      </node>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h</label>
+        <link refid="playlist__playback_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="playlist__playback_8h_1af516ae062044067b951c44d6c18ae99b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT void</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT void projectm_playlist_set_shuffle</definition>
+        <argsstring>(projectm_playlist_handle instance, bool shuffle)</argsstring>
+        <name>projectm_playlist_set_shuffle</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>shuffle</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable shuffle mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>shuffle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True to enable random shuffling, false to play presets in playlist order. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" line="39" column="31" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" declline="39" declcolumn="31"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__playback_8h_1a012bed7016327ff1e39dbba736dc0987" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT bool</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT bool projectm_playlist_get_shuffle</definition>
+        <argsstring>(projectm_playlist_handle instance)</argsstring>
+        <name>projectm_playlist_get_shuffle</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the current state of shuffle mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if shuffle mode is enabled, false otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" line="46" column="31" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" declline="46" declcolumn="31"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__playback_8h_1ab1fbd3b4af686a79523b88411a14a27d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT void</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT void projectm_playlist_set_retry_count</definition>
+        <argsstring>(projectm_playlist_handle instance, uint32_t retry_count)</argsstring>
+        <name>projectm_playlist_set_retry_count</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>retry_count</declname>
+        </param>
+        <briefdescription>
+<para>Sets the number of retries after failed preset switches. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Don&apos;t set this value too high, as each retry is done recursively. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>retry_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of retries after failed preset switches. Default is 5. Set to 0 to simply forward the failure event from projectM. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" line="55" column="31" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" declline="55" declcolumn="31"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__playback_8h_1aff412a94737dcd8cb5eecceef4947cf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT uint32_t</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT uint32_t projectm_playlist_get_retry_count</definition>
+        <argsstring>(projectm_playlist_handle instance)</argsstring>
+        <name>projectm_playlist_get_retry_count</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of retries after failed preset switches. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of retries after failed preset switches. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" line="62" column="35" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" declline="62" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__playback_8h_1a2cb367c2bdb02f41b51aed9bcb484345" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT uint32_t</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT uint32_t projectm_playlist_set_position</definition>
+        <argsstring>(projectm_playlist_handle instance, uint32_t new_position, bool hard_cut)</argsstring>
+        <name>projectm_playlist_set_position</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>new_position</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>hard_cut</declname>
+        </param>
+        <briefdescription>
+<para>Plays the preset at the requested playlist position and returns the actual playlist index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If the requested position is out of bounds, the returned position will wrap to 0, effectively repeating the playlist as if shuffle was disabled. It has no effect if the playlist is empty.</para>
+<para>This method ignores the shuffle setting and will always jump to the requested index, given it is withing playlist bounds.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>new_position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new position to jump to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hard_cut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, the preset transition is instant. If true, a smooth transition is played. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new playlist position. If the playlist is empty, 0 will be returned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" line="78" column="35" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" declline="78" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__playback_8h_1a47e7e3151a4f2cd4663b676e0b7d215b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT uint32_t</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT uint32_t projectm_playlist_get_position</definition>
+        <argsstring>(projectm_playlist_handle instance)</argsstring>
+        <name>projectm_playlist_get_position</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <briefdescription>
+<para>Returns the current playlist position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The current playlist position. If the playlist is empty, 0 will be returned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" line="86" column="35" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" declline="86" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__playback_8h_1a3453f4d084244c3defb595fc2e765a49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT uint32_t</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT uint32_t projectm_playlist_play_next</definition>
+        <argsstring>(projectm_playlist_handle instance, bool hard_cut)</argsstring>
+        <name>projectm_playlist_play_next</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>hard_cut</declname>
+        </param>
+        <briefdescription>
+<para>Plays the next playlist item and returns the index of the new preset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If shuffle is on, it will select a random preset, otherwise the next in the playlist. If the end of the playlist is reached in continuous mode, it will wrap back to 0.</para>
+<para>The old playlist item is added to the history.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hard_cut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, the preset transition is instant. If true, a smooth transition is played. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new playlist position. If the playlist is empty, 0 will be returned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" line="100" column="35" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" declline="100" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__playback_8h_1a64565a7ff0c3d470bc2651b999547502" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT uint32_t</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT uint32_t projectm_playlist_play_previous</definition>
+        <argsstring>(projectm_playlist_handle instance, bool hard_cut)</argsstring>
+        <name>projectm_playlist_play_previous</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>hard_cut</declname>
+        </param>
+        <briefdescription>
+<para>Plays the previous playlist item and returns the index of the new preset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If shuffle is on, it will select a random preset, otherwise the next in the playlist. If the end of the playlist is reached in continuous mode, it will wrap back to 0.</para>
+<para>The old playlist item is added to the history.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hard_cut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, the preset transition is instant. If true, a smooth transition is played. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new playlist position. If the playlist is empty, 0 will be returned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" line="114" column="35" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" declline="114" declcolumn="35"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__playback_8h_1a250109cf9b274ebcae455443f327e665" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT uint32_t</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT uint32_t projectm_playlist_play_last</definition>
+        <argsstring>(projectm_playlist_handle instance, bool hard_cut)</argsstring>
+        <name>projectm_playlist_play_last</name>
+        <param>
+          <type><ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>hard_cut</declname>
+        </param>
+        <briefdescription>
+<para>Plays the last preset played in the history and returns the index of the preset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The history keeps track of the last 1000 presets and will go back in the history. The playback history will be cleared whenever the playlist items are changed.</para>
+<para>If the history is empty, this call behaves identical to <ref refid="playlist__playback_8h_1a64565a7ff0c3d470bc2651b999547502" kindref="member">projectm_playlist_play_previous()</ref>, but the item is not added to the history.</para>
+<para>Presets which failed to load are not recorded in the history and thus will be skipped when calling this method.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The playlist manager instance. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hard_cut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, the preset transition is instant. If true, a smooth transition is played. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The new playlist position. If the playlist is empty, 0 will be returned. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" line="132" column="35" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h" declline="132" declcolumn="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Playback control functions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2003-2023 projectM Team </para>
+</simplesect>
+projectM <ndash/> Milkdrop-esque visualisation SDK Copyright (C)2003-2023 projectM Team</para>
+<para>This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.</para>
+<para>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</para>
+<para>You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA See &apos;LICENSE.txt&apos; included within this release </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="playlist__types_8h" kindref="compound">projectM-4/playlist_types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="playlist__playback_8h_1af516ae062044067b951c44d6c18ae99b" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="playlist__playback_8h_1af516ae062044067b951c44d6c18ae99b" kindref="member">projectm_playlist_set_shuffle</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>shuffle);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="playlist__playback_8h_1a012bed7016327ff1e39dbba736dc0987" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="playlist__playback_8h_1a012bed7016327ff1e39dbba736dc0987" kindref="member">projectm_playlist_get_shuffle</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="playlist__playback_8h_1ab1fbd3b4af686a79523b88411a14a27d" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="playlist__playback_8h_1ab1fbd3b4af686a79523b88411a14a27d" kindref="member">projectm_playlist_set_retry_count</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance,<sp/>uint32_t<sp/>retry_count);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="playlist__playback_8h_1aff412a94737dcd8cb5eecceef4947cf4" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/>uint32_t<sp/><ref refid="playlist__playback_8h_1aff412a94737dcd8cb5eecceef4947cf4" kindref="member">projectm_playlist_get_retry_count</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="playlist__playback_8h_1a2cb367c2bdb02f41b51aed9bcb484345" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/>uint32_t<sp/><ref refid="playlist__playback_8h_1a2cb367c2bdb02f41b51aed9bcb484345" kindref="member">projectm_playlist_set_position</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance,<sp/>uint32_t<sp/>new_position,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hard_cut);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="playlist__playback_8h_1a47e7e3151a4f2cd4663b676e0b7d215b" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/>uint32_t<sp/><ref refid="playlist__playback_8h_1a47e7e3151a4f2cd4663b676e0b7d215b" kindref="member">projectm_playlist_get_position</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="playlist__playback_8h_1a3453f4d084244c3defb595fc2e765a49" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/>uint32_t<sp/><ref refid="playlist__playback_8h_1a3453f4d084244c3defb595fc2e765a49" kindref="member">projectm_playlist_play_next</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hard_cut);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="playlist__playback_8h_1a64565a7ff0c3d470bc2651b999547502" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/>uint32_t<sp/><ref refid="playlist__playback_8h_1a64565a7ff0c3d470bc2651b999547502" kindref="member">projectm_playlist_play_previous</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hard_cut);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="playlist__playback_8h_1a250109cf9b274ebcae455443f327e665" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/>uint32_t<sp/><ref refid="playlist__playback_8h_1a250109cf9b274ebcae455443f327e665" kindref="member">projectm_playlist_play_last</ref>(<ref refid="playlist__types_8h_1aaf3149816ac5442a6dad59270ddfa49b" kindref="member">projectm_playlist_handle</ref><sp/>instance,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hard_cut);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_playback.h"/>
+  </compounddef>
+</doxygen>

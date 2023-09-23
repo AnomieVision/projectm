@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="playlist__memory_8h" kind="file" language="C++">
+    <compoundname>playlist_memory.h</compoundname>
+    <includes refid="playlist__types_8h" local="yes">projectM-4/playlist_types.h</includes>
+    <includedby refid="playlist_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/playlist.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_memory.h</label>
+        <link refid="playlist__memory_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>projectM-4/playlist_types.h</label>
+        <link refid="playlist__types_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>projectM-4/projectM_playlist_export.h</label>
+        <link refid="projectM__playlist__export_8h_source"/>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist.h</label>
+        <link refid="playlist_8h"/>
+      </node>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_memory.h</label>
+        <link refid="playlist__memory_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="playlist__memory_8h_1a7d456c04db9c78871a8cd2425736729b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT void</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT void projectm_playlist_free_string</definition>
+        <argsstring>(char *string)</argsstring>
+        <name>projectm_playlist_free_string</name>
+        <param>
+          <type>char *</type>
+          <declname>string</declname>
+        </param>
+        <briefdescription>
+<para>Frees a char pointer returned by any of the playlist API functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Please only use this function with char pointers returned by the playlist library, and don&apos;t use other projectM memory management functions with pointers returned by the playlist library.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>string</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a string that should be freed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_memory.h" line="42" column="31" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_memory.h" declline="42" declcolumn="31"/>
+      </memberdef>
+      <memberdef kind="function" id="playlist__memory_8h_1ac4075eead087c00a9d96d1659727661b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_PLAYLIST_EXPORT void</type>
+        <definition>PROJECTM_PLAYLIST_EXPORT void projectm_playlist_free_string_array</definition>
+        <argsstring>(char **array)</argsstring>
+        <name>projectm_playlist_free_string_array</name>
+        <param>
+          <type>char **</type>
+          <declname>array</declname>
+        </param>
+        <briefdescription>
+<para>Frees a string array returned by any of the playlist API functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Please only use this function with pointers returned by the playlist library, and don&apos;t use other projectM memory management functions with pointers returned by the playlist library.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to the array of strings that should be freed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_memory.h" line="52" column="31" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_memory.h" declline="52" declcolumn="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Memory allocation/deallocation helpers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2003-2023 projectM Team </para>
+</simplesect>
+projectM <ndash/> Milkdrop-esque visualisation SDK Copyright (C)2003-2023 projectM Team</para>
+<para>This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.</para>
+<para>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</para>
+<para>You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA See &apos;LICENSE.txt&apos; included within this release </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="playlist__types_8h" kindref="compound">projectM-4/playlist_types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="playlist__memory_8h_1a7d456c04db9c78871a8cd2425736729b" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="playlist__memory_8h_1a7d456c04db9c78871a8cd2425736729b" kindref="member">projectm_playlist_free_string</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="playlist__memory_8h_1ac4075eead087c00a9d96d1659727661b" refkind="member"><highlight class="normal">PROJECTM_PLAYLIST_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="playlist__memory_8h_1ac4075eead087c00a9d96d1659727661b" kindref="member">projectm_playlist_free_string_array</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/>array);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/playlist_memory.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.5" xml:lang="en-US">
+  <compounddef id="debug_8h" kind="file" language="C++">
+    <compoundname>debug.h</compoundname>
+    <includes refid="types_8h" local="yes">projectM-4/types.h</includes>
+    <includedby refid="projectM_8h" local="yes">artifacts/projectm-linux-shared-latest/include/projectM-4/projectM.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/debug.h</label>
+        <link refid="debug_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>projectM-4/projectM_export.h</label>
+        <link refid="projectM__export_8h_source"/>
+      </node>
+      <node id="2">
+        <label>projectM-4/types.h</label>
+        <link refid="types_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>stdbool.h</label>
+      </node>
+      <node id="5">
+        <label>stddef.h</label>
+      </node>
+      <node id="6">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/debug.h</label>
+        <link refid="debug_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>artifacts/projectm-linux-shared-latest/include/projectM-4/projectM.h</label>
+        <link refid="projectM_8h"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="debug_8h_1a9651f0f84679006423e3a44db31a0acd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>PROJECTM_EXPORT void</type>
+        <definition>PROJECTM_EXPORT void projectm_write_debug_image_on_next_frame</definition>
+        <argsstring>(projectm_handle instance, const char *output_file)</argsstring>
+        <name>projectm_write_debug_image_on_next_frame</name>
+        <param>
+          <type><ref refid="types_8h_1a04d3124183c4f0d9df05100f11d5ea1b" kindref="member">projectm_handle</ref></type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>output_file</declname>
+        </param>
+        <briefdescription>
+<para>Writes a .bmp main texture dump after rendering the next main texture, before shaders are applied. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If no file name is given, the image is written to the current working directory and will be named named &quot;frame_texture_contents-YYYY-mm-dd-HH:MM:SS-frame.bmp&quot;.</para>
+<para>Note this is the main texture contents, not the final rendering result. If the active preset uses a composite shader, the dumped image will not have it applied. The main texture is what is passed over to the next frame, the composite shader is only applied to the display framebuffer after updating the main texture.</para>
+<para>To capture the actual output, dump the contents of the main framebuffer after calling <emphasis>projectm_render_frame()</emphasis> on the application side.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The projectM instance handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filename to write the dump to or NULL. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/debug.h" line="51" column="22" declfile="artifacts/projectm-linux-shared-latest/include/projectM-4/debug.h" declline="51" declcolumn="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Debug functions for both libprojectM and preset developers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="copyright"><para>2003-2023 projectM Team </para>
+</simplesect>
+projectM <ndash/> Milkdrop-esque visualisation SDK Copyright (C)2003-2023 projectM Team</para>
+<para>This library is free software; you can redistribute it and/or modify it under the terms of the GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.</para>
+<para>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more details.</para>
+<para>You should have received a copy of the GNU Lesser General Public License along with this library; if not, write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA See &apos;LICENSE.txt&apos; included within this release </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="types_8h" kindref="compound">projectM-4/types.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="debug_8h_1a9651f0f84679006423e3a44db31a0acd" refkind="member"><highlight class="normal">PROJECTM_EXPORT<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="debug_8h_1a9651f0f84679006423e3a44db31a0acd" kindref="member">projectm_write_debug_image_on_next_frame</ref>(<ref refid="types_8h_1a04d3124183c4f0d9df05100f11d5ea1b" kindref="member">projectm_handle</ref><sp/>instance,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>output_file);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="artifacts/projectm-linux-shared-latest/include/projectM-4/debug.h"/>
+  </compounddef>
+</doxygen>
