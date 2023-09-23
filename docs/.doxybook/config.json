@@ -1,17 +1,14 @@
 {
-  "baseUrl": "/api/",
+  "baseUrl": "/projectm/doxybook",
   "indexInFolders": true,
   "linkSuffix": ".md",
   "linkLowercase": false,
-  "indexClassesName": "README",
-  "indexFilesName": "README",
-  "indexGroupsName": "README",
-  "indexNamespacesName": "README",
-  "indexRelatedPagesName": "README",
-  "indexExamplesName": "README",
+  "indexClassesName": "index",
+  "indexFilesName": "index",
+  "indexGroupsName": "index",
+  "indexNamespacesName": "index",
+  "indexRelatedPagesName": "index",
+  "indexExamplesName": "index",
   "mainPageInRoot": true,
-  "mainPageName": "README",
-  "foldersToGenerate": [
-    "files"
-  ]
+  "mainPageName": "index"
 }
