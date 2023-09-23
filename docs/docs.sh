@@ -49,18 +49,8 @@ function install_doxybook2 {
 
 # Recreate generated and api directories.
 function manage_directories {
-    # Remove directories.
-    if [ -d "./docs/.doxybook/generated" ]; then
-        rm -rf ./docs/.doxybook/generated
-    fi
-
-    if [ -d "./docs/api" ]; then
-        rm -rf ./docs/api
-    fi
-
-    # Create directories.
-    mkdir -p ./docs/.doxybook/generated
-    mkdir -p ./docs/api
+    rm -rf ./docs/doxybook/*
+    touch ./docs/doxybook/.keep
 }
 
 # Generate docs using doxygen and doxybook2.
@@ -69,13 +59,7 @@ function generate_docs {
     doxygen ./docs/.doxygen/Doxyfile
 
     # Generate docs using doxybook2.
-    doxybook2 --input ./docs/.doxygen/xml --output ./docs/.doxybook/generated --config ./docs/.doxybook/config.json
-}
-
-# Move generated docs to api directory.
-function move_docs {
-    # Move docs.
-    mv ./docs/.doxybook/generated/Files/* ./docs/api
+    doxybook2 --input ./docs/.doxygen/xml --output ./docs/doxybook --templates ./docs/.doxybook/templates --config ./docs/.doxybook/config.json
 }
 
 # -------------------
@@ -85,7 +69,6 @@ function main {
     install_doxybook2
     manage_directories
     generate_docs
-    move_docs
 
     echo "Docs generated successfully."
 }

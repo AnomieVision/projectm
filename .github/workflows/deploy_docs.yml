@@ -35,6 +35,7 @@ jobs:
         with:
           workflow: 'build_linux.yml'
           workflow_conclusion: success
+          name: projectm-linux-shared-latest
           path: ./artifacts
 
       - name: Run Doxygen
