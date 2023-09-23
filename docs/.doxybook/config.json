@@ -1,5 +1,5 @@
 {
-  "baseUrl": "/doxybook/",
+  "baseUrl": "/api/",
   "indexInFolders": true,
   "linkSuffix": ".md",
   "linkLowercase": false,
@@ -10,5 +10,8 @@
   "indexRelatedPagesName": "README",
   "indexExamplesName": "README",
   "mainPageInRoot": true,
-  "mainPageName": "README"
+  "mainPageName": "README",
+  "foldersToGenerate": [
+    "files"
+  ]
 }
