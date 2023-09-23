@@ -1,0 +1,3 @@
+.doxygen/xml
+doxybook/**
+!doxybook/.keep
