@@ -1,8 +1,8 @@
-## [General](/projectm)
+## General
 
 * [Home](/projectm)
 
-## [API](projectm/api/index.md)
+## API
 
 * [projectm-eval](projectm/api/projectm-eval.md)
 * [playlist](projectm/api/playlist/index.md)

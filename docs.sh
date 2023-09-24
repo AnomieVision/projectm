@@ -154,11 +154,11 @@ function createSidebar() {
     rm -rf ./docs/.docsify/_sidebar.md
 
     # Create new sidebar
-    echo "## [General](/projectm)" >> ./docs/.docsify/_sidebar.md
+    echo "## General" >> ./docs/.docsify/_sidebar.md
     echo "" >> ./docs/.docsify/_sidebar.md
     echo "* [Home](/projectm)" >> ./docs/.docsify/_sidebar.md
     echo "" >> ./docs/.docsify/_sidebar.md
-    echo "## [API](projectm/api/index.md)" >> ./docs/.docsify/_sidebar.md
+    echo "## API" >> ./docs/.docsify/_sidebar.md
     echo "" >> ./docs/.docsify/_sidebar.md
 
     # Find files in ./docs/api (excluding subdirectories) that match *.md
