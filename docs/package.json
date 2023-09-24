@@ -4,7 +4,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "npm run api:generate && nuxt generate",
     "preview": "nuxt preview",
     "deploy": "gh-pages --dotfiles -d .output/public",
     "api:generate": "ts-node --esm ./scripts/generate-api.ts"

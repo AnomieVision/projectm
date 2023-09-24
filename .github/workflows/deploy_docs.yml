@@ -1,0 +1,62 @@
+name: Build & Deploy Documentation
+
+on:
+  push:
+      branches: 
+        - "*"
+      tags:
+        - "*"
+    
+  pull_request:
+      branches: 
+        - "*"
+
+jobs:
+  build-shared:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      # Setup Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.x'
+
+      # Wait for build to finish
+      - name: Wait On Build
+        uses: tomchv/wait-my-workflow@v1.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: 'Static Library'
+          ref: ${{ github.sha }}
+          intervalSeconds: 30
+          timeoutSeconds: 3600
+
+      # Download & extract artifacts
+      - name: Download Artifacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: 'build_linux.yml'
+          workflow_conclusion: success
+          name: projectm-linux-shared-latest
+          path: ./docs/artifacts
+
+      # Generate
+      - name: Generate
+        run: |
+          cd ./docs
+          npm install
+          ls -R
+          npm run generate
+
+      # Deploy to GitHub Pages
+      - name: Deploy with gh-pages
+        run: |
+          cd ./docs
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -118,6 +118,43 @@ async function doSomeMagic() {
   }
 }
 
+// Fix urls
+async function fixUrls() {
+  // Iterate through all files in api directory, and remove _8h and /files from all strings in side the files.
+  const apiDir = join(process.cwd(), 'content', 'api');
+  const files = await fs.readdir(apiDir);
+
+  for (const file of files) {
+    const filePath = join(apiDir, file);
+    const stats = await fs.stat(filePath);
+
+    if (stats.isFile() && filePath.endsWith('.md')) {
+      let content = await fs.readFile(filePath, 'utf-8');
+      content = content.replace(/_8h/g, '').replace(/Files\//g, '');
+
+      await fs.writeFile(filePath, content, 'utf-8');
+    }
+
+    if (stats.isDirectory()) {
+      const subdirFiles = await fs.readdir(filePath);
+
+      for (const subdirFile of subdirFiles) {
+        const subdirFilePath = join(filePath, subdirFile);
+        const subdirStats = await fs.stat(subdirFilePath);
+
+        if (subdirStats.isFile() && subdirFilePath.endsWith('.md')) {
+          let content = await fs.readFile(subdirFilePath, 'utf-8');
+          content = content.replace(/_8h/g, '').replace(/\/files/g, '');
+
+          await fs.writeFile(subdirFilePath, content, 'utf-8');
+        }
+      }
+    }
+  }
+}
+
+
+
 // Remove temp files.
 async function cleanup() {
   const generatedDir = join(process.cwd(), '.doxybook', 'generated');
@@ -137,6 +174,7 @@ async function main() {
   await manageDirectories();
   await generateDocs();
   await doSomeMagic();
+  await fixUrls();
   await cleanup();
 
   console.log('Docs generated successfully.');
