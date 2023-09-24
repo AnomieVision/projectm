@@ -1,3 +1,0 @@
-# Support
-
-[Back home](/)

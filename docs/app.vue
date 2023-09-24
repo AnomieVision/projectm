@@ -1,5 +1,9 @@
 <template>
-  <div>
-    <ContentDoc />
-  </div>
+  <Html>
+    <Body>
+      <NuxtLayout>
+        <NuxtPage/>
+      </NuxtLayout>
+    </Body>
+  </Html>
 </template>

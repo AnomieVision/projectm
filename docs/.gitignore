@@ -8,6 +8,7 @@ package-lock.json
 .data
 .env
 dist
+TODO.md
 artifacts
 .doxybook/generated
 .doxygen/xml

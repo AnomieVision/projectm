@@ -14,6 +14,7 @@ export default defineNuxtConfig({
       strict: false,
     },
   },
+  ssr: true,
   sourcemap: false,
 
   // Modules
