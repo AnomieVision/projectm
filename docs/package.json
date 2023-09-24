@@ -6,6 +6,7 @@
     "dev": "nuxt dev",
     "generate": "npm run api:generate && nuxt generate",
     "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
     "deploy": "gh-pages --dotfiles -d .output/public",
     "api:generate": "ts-node --esm ./scripts/generate-api.ts"
   },

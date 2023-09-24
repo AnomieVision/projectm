@@ -49,7 +49,6 @@ jobs:
         run: |
           cd ./docs
           npm install
-          ls -R
           npm run generate
 
       # Deploy to GitHub Pages
