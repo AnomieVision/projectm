@@ -1,6 +1,6 @@
-## [General](/)
+## [General](/index.md)
 
-* [Home](/)
+* [Home](/index.md)
 
 ## [API](api/index.md)
 
