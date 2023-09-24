@@ -40,3 +40,9 @@ npm run preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+
+## Production
+
+1. npm install
+2. npm run generate
+3. npm run deploy
