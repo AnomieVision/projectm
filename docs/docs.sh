@@ -154,11 +154,11 @@ function createSidebar() {
     rm -rf ./docs/.docsify/_sidebar.md
 
     # Create new sidebar
-    echo "## [General](/)" >> ./docs/.docsify/_sidebar.md
+    echo "## [General](/projectm)" >> ./docs/.docsify/_sidebar.md
     echo "" >> ./docs/.docsify/_sidebar.md
-    echo "* [Home](/)" >> ./docs/.docsify/_sidebar.md
+    echo "* [Home](/projectm)" >> ./docs/.docsify/_sidebar.md
     echo "" >> ./docs/.docsify/_sidebar.md
-    echo "## [API](api/index.md)" >> ./docs/.docsify/_sidebar.md
+    echo "## [API](projectm/api/index.md)" >> ./docs/.docsify/_sidebar.md
     echo "" >> ./docs/.docsify/_sidebar.md
 
     # Find files in ./docs/api (excluding subdirectories) that match *.md
@@ -182,7 +182,7 @@ function createSidebar() {
         filenameNoExtension="${filename%.*}"
 
         # Create sidebar entry
-        echo "* [$filenameNoExtension](api/$relativePath)" >> ./docs/.docsify/_sidebar.md
+        echo "* [$filenameNoExtension](projectm/api/$relativePath)" >> ./docs/.docsify/_sidebar.md
     done
 
     # Find subdirectories in ./docs/api
@@ -195,7 +195,7 @@ function createSidebar() {
         relativePath=${subdir#./docs/api/}
 
         # Create sidebar entry for subdirectory
-        echo "* [${relativePath%/}](api/${relativePath}/index.md)" >> ./docs/.docsify/_sidebar.md
+        echo "* [${relativePath%/}](projectm/api/${relativePath}/index.md)" >> ./docs/.docsify/_sidebar.md
 
         # Find files in subdirectory that match *.md and sort them alphabetically
         FILES=$(find $subdir -type f -name "*.md" | sort)
@@ -223,7 +223,7 @@ function createSidebar() {
             filenameNoExtension="${filename%.*}"
 
             # Create sidebar entry (indented)
-            echo "  * [$filenameNoExtension](api/$relativeFilePath)" >> ./docs/.docsify/_sidebar.md
+            echo "  * [$filenameNoExtension](projectm/api/$relativeFilePath)" >> ./docs/.docsify/_sidebar.md
         done
     done
 
