@@ -4,14 +4,14 @@ Core functions to instantiate, destroy and control projectM.  [More...](#detaile
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT [projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) | **[projectm_create](/projectm/apiapi/projectm/core.md#function-projectm-create)**()<br>Creates a new projectM instance.  |
-| PROJECTM_EXPORT void | **[projectm_destroy](/projectm/apiapi/projectm/core.md#function-projectm-destroy)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance)<br>Destroys the given instance and frees the resources.  |
-| PROJECTM_EXPORT void | **[projectm_load_preset_file](/projectm/apiapi/projectm/core.md#function-projectm-load-preset-file)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance, const char * filename, bool smooth_transition)<br>Loads a preset from the given filename/URL.  |
-| PROJECTM_EXPORT void | **[projectm_load_preset_data](/projectm/apiapi/projectm/core.md#function-projectm-load-preset-data)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance, const char * data, bool smooth_transition)<br>Loads a preset from the data pointer.  |
-| PROJECTM_EXPORT void | **[projectm_reset_textures](/projectm/apiapi/projectm/core.md#function-projectm-reset-textures)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance)<br>Reloads all textures.  |
-| PROJECTM_EXPORT void | **[projectm_get_version_components](/projectm/apiapi/projectm/core.md#function-projectm-get-version-components)**(int * major, int * minor, int * patch)<br>Returns the runtime library version components as individual integers.  |
-| PROJECTM_EXPORT char * | **[projectm_get_version_string](/projectm/apiapi/projectm/core.md#function-projectm-get-version-string)**()<br>Returns the runtime library version as a string.  |
-| PROJECTM_EXPORT char * | **[projectm_get_vcs_version_string](/projectm/apiapi/projectm/core.md#function-projectm-get-vcs-version-string)**()<br>Returns the VCS revision from which the projectM library was built.  |
+| PROJECTM_EXPORT [projectm_handle](/projectmapi/projectm/types.md#typedef-projectm-handle) | **[projectm_create](/projectmapi/projectm/core.md#function-projectm-create)**()<br>Creates a new projectM instance.  |
+| PROJECTM_EXPORT void | **[projectm_destroy](/projectmapi/projectm/core.md#function-projectm-destroy)**([projectm_handle](/projectmapi/projectm/types.md#typedef-projectm-handle) instance)<br>Destroys the given instance and frees the resources.  |
+| PROJECTM_EXPORT void | **[projectm_load_preset_file](/projectmapi/projectm/core.md#function-projectm-load-preset-file)**([projectm_handle](/projectmapi/projectm/types.md#typedef-projectm-handle) instance, const char * filename, bool smooth_transition)<br>Loads a preset from the given filename/URL.  |
+| PROJECTM_EXPORT void | **[projectm_load_preset_data](/projectmapi/projectm/core.md#function-projectm-load-preset-data)**([projectm_handle](/projectmapi/projectm/types.md#typedef-projectm-handle) instance, const char * data, bool smooth_transition)<br>Loads a preset from the data pointer.  |
+| PROJECTM_EXPORT void | **[projectm_reset_textures](/projectmapi/projectm/core.md#function-projectm-reset-textures)**([projectm_handle](/projectmapi/projectm/types.md#typedef-projectm-handle) instance)<br>Reloads all textures.  |
+| PROJECTM_EXPORT void | **[projectm_get_version_components](/projectmapi/projectm/core.md#function-projectm-get-version-components)**(int * major, int * minor, int * patch)<br>Returns the runtime library version components as individual integers.  |
+| PROJECTM_EXPORT char * | **[projectm_get_version_string](/projectmapi/projectm/core.md#function-projectm-get-version-string)**()<br>Returns the runtime library version as a string.  |
+| PROJECTM_EXPORT char * | **[projectm_get_vcs_version_string](/projectmapi/projectm/core.md#function-projectm-get-vcs-version-string)**()<br>Returns the VCS revision from which the projectM library was built.  |
 
 ## Detailed Description
 
@@ -56,7 +56,7 @@ Destroys the given instance and frees the resources.
 
 **Parameters**: 
 
-  * **instance** A handle returned by [projectm_create()](/projectm/apiapi/projectm/core.md#function-projectm-create) or projectm_create_settings(). 
+  * **instance** A handle returned by [projectm_create()](/projectmapi/projectm/core.md#function-projectm-create) or projectm_create_settings(). 
 
 
 After destroying the handle, it must not be used for any other calls to the API.
@@ -162,7 +162,7 @@ Returns the runtime library version as a string.
 
 **Return**: The library version in the format major.minor.patch. 
 
-Remember to call _[projectm_free_string()](/projectm/apiapi/projectm/memory.md#function-projectm-free-string)_ on the returned pointer if the data is no longer needed.
+Remember to call _[projectm_free_string()](/projectmapi/projectm/memory.md#function-projectm-free-string)_ on the returned pointer if the data is no longer needed.
 
 
 ### function projectm_get_vcs_version_string
@@ -177,7 +177,7 @@ Returns the VCS revision from which the projectM library was built.
 
 Can be any text, will mostly contain a Git commit hash. Useful to report bugs.
 
-Remember to call _[projectm_free_string()](/projectm/apiapi/projectm/memory.md#function-projectm-free-string)_ on the returned pointer if the data is no longer needed.
+Remember to call _[projectm_free_string()](/projectmapi/projectm/memory.md#function-projectm-free-string)_ on the returned pointer if the data is no longer needed.
 
 
 
@@ -220,4 +220,4 @@ PROJECTM_EXPORT char* projectm_get_vcs_version_string();
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:54:20 +0000
+Updated on 2023-09-24 at 00:59:14 +0000

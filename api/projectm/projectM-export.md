@@ -4,11 +4,11 @@
 
 |                | Name           |
 | -------------- | -------------- |
-|  | **[PROJECTM_EXPORT](/projectm/apiapi/projectm/projectM__export.md#define-projectm-export)**  |
-|  | **[PROJECTM_NO_EXPORT](/projectm/apiapi/projectm/projectM__export.md#define-projectm-no-export)**  |
-|  | **[PROJECTM_DEPRECATED](/projectm/apiapi/projectm/projectM__export.md#define-projectm-deprecated)**  |
-|  | **[PROJECTM_DEPRECATED_EXPORT](/projectm/apiapi/projectm/projectM__export.md#define-projectm-deprecated-export)**  |
-|  | **[PROJECTM_DEPRECATED_NO_EXPORT](/projectm/apiapi/projectm/projectM__export.md#define-projectm-deprecated-no-export)**  |
+|  | **[PROJECTM_EXPORT](/projectmapi/projectm/projectM__export.md#define-projectm-export)**  |
+|  | **[PROJECTM_NO_EXPORT](/projectmapi/projectm/projectM__export.md#define-projectm-no-export)**  |
+|  | **[PROJECTM_DEPRECATED](/projectmapi/projectm/projectM__export.md#define-projectm-deprecated)**  |
+|  | **[PROJECTM_DEPRECATED_EXPORT](/projectmapi/projectm/projectM__export.md#define-projectm-deprecated-export)**  |
+|  | **[PROJECTM_DEPRECATED_NO_EXPORT](/projectmapi/projectm/projectM__export.md#define-projectm-deprecated-no-export)**  |
 
 
 
@@ -100,4 +100,4 @@
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:54:20 +0000
+Updated on 2023-09-24 at 00:59:14 +0000

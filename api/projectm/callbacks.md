@@ -4,15 +4,15 @@ Functions and prototypes for projectM callbacks.  [More...](#detailed-descriptio
 
 |                | Name           |
 | -------------- | -------------- |
-| typedef void(*)(bool is_hard_cut, void *user_data) | **[projectm_preset_switch_requested_event](/projectm/apiapi/projectm/callbacks.md#typedef-projectm-preset-switch-requested-event)** <br>Callback function that is executed whenever projectM wants to switch to a new preset.  |
-| typedef void(*)(const char *preset_filename, const char *message, void *user_data) | **[projectm_preset_switch_failed_event](/projectm/apiapi/projectm/callbacks.md#typedef-projectm-preset-switch-failed-event)** <br>Callback function that is executed if a preset change failed.  |
+| typedef void(*)(bool is_hard_cut, void *user_data) | **[projectm_preset_switch_requested_event](/projectmapi/projectm/callbacks.md#typedef-projectm-preset-switch-requested-event)** <br>Callback function that is executed whenever projectM wants to switch to a new preset.  |
+| typedef void(*)(const char *preset_filename, const char *message, void *user_data) | **[projectm_preset_switch_failed_event](/projectmapi/projectm/callbacks.md#typedef-projectm-preset-switch-failed-event)** <br>Callback function that is executed if a preset change failed.  |
 
 ## Functions
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT void | **[projectm_set_preset_switch_requested_event_callback](/projectm/apiapi/projectm/callbacks.md#function-projectm-set-preset-switch-requested-event-callback)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance, [projectm_preset_switch_requested_event](/projectm/apiapi/projectm/callbacks.md#typedef-projectm-preset-switch-requested-event) callback, void * user_data)<br>Sets a callback function that will be called when a preset change is requested.  |
-| PROJECTM_EXPORT void | **[projectm_set_preset_switch_failed_event_callback](/projectm/apiapi/projectm/callbacks.md#function-projectm-set-preset-switch-failed-event-callback)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance, [projectm_preset_switch_failed_event](/projectm/apiapi/projectm/callbacks.md#typedef-projectm-preset-switch-failed-event) callback, void * user_data)<br>Sets a callback function that will be called when a preset change failed.  |
+| PROJECTM_EXPORT void | **[projectm_set_preset_switch_requested_event_callback](/projectmapi/projectm/callbacks.md#function-projectm-set-preset-switch-requested-event-callback)**([projectm_handle](/projectmapi/projectm/types.md#typedef-projectm-handle) instance, [projectm_preset_switch_requested_event](/projectmapi/projectm/callbacks.md#typedef-projectm-preset-switch-requested-event) callback, void * user_data)<br>Sets a callback function that will be called when a preset change is requested.  |
+| PROJECTM_EXPORT void | **[projectm_set_preset_switch_failed_event_callback](/projectmapi/projectm/callbacks.md#function-projectm-set-preset-switch-failed-event-callback)**([projectm_handle](/projectmapi/projectm/types.md#typedef-projectm-handle) instance, [projectm_preset_switch_failed_event](/projectmapi/projectm/callbacks.md#typedef-projectm-preset-switch-failed-event) callback, void * user_data)<br>Sets a callback function that will be called when a preset change failed.  |
 
 ## Detailed Description
 
@@ -146,4 +146,4 @@ PROJECTM_EXPORT void projectm_set_preset_switch_failed_event_callback(projectm_h
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:54:20 +0000
+Updated on 2023-09-24 at 00:59:14 +0000
