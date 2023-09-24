@@ -1,11 +1,11 @@
 # TODO
 
 - [x] Setup docsify
-- [ ] Configure docsify
+- [x] Configure docsify
 - [x] Setup Doxygen and output as xml
-- [ ] Setup doxybook2: doxygen output to markdown
-- [ ] Setup GitHub Actions
-- [ ] Setup GitHub Pages for docs
+- [x] Setup doxybook2: doxygen output to markdown
+- [x] Setup GitHub Actions
+- [x] Setup GitHub Pages for docs
 
 ## Github Action
 
@@ -23,4 +23,6 @@
   - Run doxybook2
   - Move files from doxybook2 output to docs/api
 
-doxybook2.exe --input .\docs\.doxygen\xml --output .\docs\doxybook --config .\docs\.doxybook\config.json
+## MagicSauce
+
+# Move and rename wanted files
