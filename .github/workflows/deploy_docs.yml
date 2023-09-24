@@ -38,33 +38,40 @@ jobs:
           name: projectm-linux-shared-latest
           path: ./artifacts
 
-      - name: Run Doxygen
-        uses: mattnotmitt/doxygen-action@v1.9.5
-        with:
-          # Path to Doxyfile
-          doxyfile-path: "./docs/.doxygen/Doxyfile" # default is ./Doxyfile
-          # Working directory
-          working-directory: "." # default is .
+      # # Download and run doxygen
+      # - name: Run Doxygen
+      #   uses: mattnotmitt/doxygen-action@v1.9.5
+      #   with:
+      #     # Path to Doxyfile
+      #     doxyfile-path: "./docs/.doxygen/Doxyfile" # default is ./Doxyfile
+      #     # Working directory
+      #     working-directory: "." # default is .
 
-      # Install doxybook2 from github via this link
-      # Then extract the zipe file and make executable the doxybook2 file
-      - name: Install Doxybook
+      # # Install doxybook2 from github via this link
+      # # Then extract the zipe file and make executable the doxybook2 file
+      # - name: Install Doxybook
+      #   run: |
+      #     wget https://github.com/matusnovak/doxybook2/releases/download/v1.5.0/doxybook2-linux-amd64-v1.5.0.zip
+      #     unzip doxybook2-linux-amd64-v1.5.0.zip
+      #     chmod +x bin/doxybook2
+      #     sudo mv bin/doxybook2 /usr/local/bin
+      #     doxybook2 --version
+
+      # # Run doxybook2
+      # - name: Run Doxybook2
+      #   run: |
+      #     doxybook2 --input ./docs/.doxygen/xml --output ./docs/doxybook --templates ./docs/.doxybook/templates --config ./docs/.doxybook/config.json
+      #     ls -R
+
+      # # Deploy to gh-pages
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./docs
+
+      # Run docs.sh
+      - name: Run docs.sh
         run: |
-          wget https://github.com/matusnovak/doxybook2/releases/download/v1.5.0/doxybook2-linux-amd64-v1.5.0.zip
-          unzip doxybook2-linux-amd64-v1.5.0.zip
-          chmod +x bin/doxybook2
-          sudo mv bin/doxybook2 /usr/local/bin
-          doxybook2 --version
-
-      # Run doxybook2
-      - name: Run Doxybook2
-        run: |
-          doxybook2 --input ./docs/.doxygen/xml --output ./docs/doxybook --templates ./docs/.doxybook/templates --config ./docs/.doxybook/config.json
-          ls -R
-
-      # Deploy to gh-pages
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          chmod +x ./docs/docs.sh
+          ./docs/docs.sh

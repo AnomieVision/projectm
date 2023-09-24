@@ -1,4 +1,26 @@
-<!-- docs/_sidebar.md -->
+## [General](/)
 
 * [Home](/)
-<!-- * [Audio](audio_8h.md) -->
+
+## [API](api/index.md)
+
+* [projectm-eval](api/projectm-eval.md)
+* [projectm](api/projectm/index.md)
+  * [audio](api/projectm/audio.md)
+  * [callbacks](api/projectm/callbacks.md)
+  * [core](api/projectm/core.md)
+  * [debug](api/projectm/debug.md)
+  * [memory](api/projectm/memory.md)
+  * [parameters](api/projectm/parameters.md)
+  * [render-opengl](api/projectm/render-opengl.md)
+  * [touch](api/projectm/touch.md)
+  * [types](api/projectm/types.md)
+  * [version](api/projectm/version.md)
+* [playlist](api/playlist/index.md)
+  * [callbacks](api/playlist/callbacks.md)
+  * [core](api/playlist/core.md)
+  * [filter](api/playlist/filter.md)
+  * [items](api/playlist/items.md)
+  * [memory](api/playlist/memory.md)
+  * [playback](api/playlist/playback.md)
+  * [types](api/playlist/types.md)
