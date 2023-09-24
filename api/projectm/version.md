@@ -46,7 +46,7 @@
 ### define PROJECTM_VERSION_VCS
 
 ```cpp
-#define PROJECTM_VERSION_VCS "488e2b798b6c6f1f57dfd9fe0db594f846d1525b"
+#define PROJECTM_VERSION_VCS "c8c60f380e4e5830e3974659ace28105b3c47484"
 ```
 
 
@@ -63,10 +63,10 @@
 #define PROJECTM_VERSION_STRING "4.0.0"
 
 /* VCS version number, e.g. Git commit hash */
-#define PROJECTM_VERSION_VCS "488e2b798b6c6f1f57dfd9fe0db594f846d1525b"
+#define PROJECTM_VERSION_VCS "c8c60f380e4e5830e3974659ace28105b3c47484"
 ```
 
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:59:14 +0000
+Updated on 2023-09-24 at 01:04:14 +0000
