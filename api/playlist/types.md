@@ -4,9 +4,9 @@ Types and enumerations used in the playlist API headers.  [More...](#detailed-de
 
 |                | Name           |
 | -------------- | -------------- |
-| enum| **[projectm_playlist_sort_predicate](/projectmFiles/playlist__types_8h.md#enum-projectm-playlist-sort-predicate)** { SORT_PREDICATE_FULL_PATH, SORT_PREDICATE_FILENAME_ONLY} |
-| enum| **[projectm_playlist_sort_order](/projectmFiles/playlist__types_8h.md#enum-projectm-playlist-sort-order)** { SORT_ORDER_ASCENDING, SORT_ORDER_DESCENDING} |
-| typedef struct projectm_playlist * | **[projectm_playlist_handle](/projectmFiles/playlist__types_8h.md#typedef-projectm-playlist-handle)** <br>Opaque projectM playlist instance type.  |
+| enum| **[projectm_playlist_sort_predicate](/projectm/apiapi/playlist/playlist__types.md#enum-projectm-playlist-sort-predicate)** { SORT_PREDICATE_FULL_PATH, SORT_PREDICATE_FILENAME_ONLY} |
+| enum| **[projectm_playlist_sort_order](/projectm/apiapi/playlist/playlist__types.md#enum-projectm-playlist-sort-order)** { SORT_ORDER_ASCENDING, SORT_ORDER_DESCENDING} |
+| typedef struct projectm_playlist * | **[projectm_playlist_handle](/projectm/apiapi/playlist/playlist__types.md#typedef-projectm-playlist-handle)** <br>Opaque projectM playlist instance type.  |
 
 ## Detailed Description
 
@@ -101,4 +101,4 @@ typedef enum
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:42:48 +0000
+Updated on 2023-09-24 at 00:54:20 +0000

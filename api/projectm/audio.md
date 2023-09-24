@@ -4,10 +4,10 @@ Functions to pass in audio data to libprojectM.  [More...](#detailed-description
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT unsigned int | **[projectm_pcm_get_max_samples](/projectmFiles/audio_8h.md#function-projectm-pcm-get-max-samples)**()<br>Returns the maximum number of audio samples that can be stored.  |
-| PROJECTM_EXPORT void | **[projectm_pcm_add_float](/projectmFiles/audio_8h.md#function-projectm-pcm-add-float)**([projectm_handle](/projectmFiles/types_8h.md#typedef-projectm-handle) instance, const float * samples, unsigned int count, [projectm_channels](/projectmFiles/types_8h.md#enum-projectm-channels) channels)<br>Adds 32-bit floating-point audio samples.  |
-| PROJECTM_EXPORT void | **[projectm_pcm_add_int16](/projectmFiles/audio_8h.md#function-projectm-pcm-add-int16)**([projectm_handle](/projectmFiles/types_8h.md#typedef-projectm-handle) instance, const int16_t * samples, unsigned int count, [projectm_channels](/projectmFiles/types_8h.md#enum-projectm-channels) channels)<br>Adds 16-bit integer audio samples.  |
-| PROJECTM_EXPORT void | **[projectm_pcm_add_uint8](/projectmFiles/audio_8h.md#function-projectm-pcm-add-uint8)**([projectm_handle](/projectmFiles/types_8h.md#typedef-projectm-handle) instance, const uint8_t * samples, unsigned int count, [projectm_channels](/projectmFiles/types_8h.md#enum-projectm-channels) channels)<br>Adds 8-bit unsigned integer audio samples.  |
+| PROJECTM_EXPORT unsigned int | **[projectm_pcm_get_max_samples](/projectm/apiapi/projectm/audio.md#function-projectm-pcm-get-max-samples)**()<br>Returns the maximum number of audio samples that can be stored.  |
+| PROJECTM_EXPORT void | **[projectm_pcm_add_float](/projectm/apiapi/projectm/audio.md#function-projectm-pcm-add-float)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance, const float * samples, unsigned int count, [projectm_channels](/projectm/apiapi/projectm/types.md#enum-projectm-channels) channels)<br>Adds 32-bit floating-point audio samples.  |
+| PROJECTM_EXPORT void | **[projectm_pcm_add_int16](/projectm/apiapi/projectm/audio.md#function-projectm-pcm-add-int16)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance, const int16_t * samples, unsigned int count, [projectm_channels](/projectm/apiapi/projectm/types.md#enum-projectm-channels) channels)<br>Adds 16-bit integer audio samples.  |
+| PROJECTM_EXPORT void | **[projectm_pcm_add_uint8](/projectm/apiapi/projectm/audio.md#function-projectm-pcm-add-uint8)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance, const uint8_t * samples, unsigned int count, [projectm_channels](/projectm/apiapi/projectm/types.md#enum-projectm-channels) channels)<br>Adds 8-bit unsigned integer audio samples.  |
 
 ## Detailed Description
 
@@ -151,4 +151,4 @@ PROJECTM_EXPORT void projectm_pcm_add_uint8(projectm_handle instance, const uint
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:42:48 +0000
+Updated on 2023-09-24 at 00:54:20 +0000

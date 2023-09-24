@@ -4,9 +4,9 @@ Playlist filter functions.  [More...](#detailed-description)
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_set_filter](/projectmFiles/playlist__filter_8h.md#function-projectm-playlist-set-filter)**([projectm_playlist_handle](/projectmFiles/playlist__types_8h.md#typedef-projectm-playlist-handle) instance, const char ** filter_list, size_t count)<br>Sets a new filter list.  |
-| PROJECTM_PLAYLIST_EXPORT char ** | **[projectm_playlist_get_filter](/projectmFiles/playlist__filter_8h.md#function-projectm-playlist-get-filter)**([projectm_playlist_handle](/projectmFiles/playlist__types_8h.md#typedef-projectm-playlist-handle) instance, size_t * count)<br>Returns the current filter list.  |
-| PROJECTM_PLAYLIST_EXPORT size_t | **[projectm_playlist_apply_filter](/projectmFiles/playlist__filter_8h.md#function-projectm-playlist-apply-filter)**([projectm_playlist_handle](/projectmFiles/playlist__types_8h.md#typedef-projectm-playlist-handle) instance)<br>Applies the current filter list to the existing playlist.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_set_filter](/projectm/apiapi/playlist/playlist__filter.md#function-projectm-playlist-set-filter)**([projectm_playlist_handle](/projectm/apiapi/playlist/playlist__types.md#typedef-projectm-playlist-handle) instance, const char ** filter_list, size_t count)<br>Sets a new filter list.  |
+| PROJECTM_PLAYLIST_EXPORT char ** | **[projectm_playlist_get_filter](/projectm/apiapi/playlist/playlist__filter.md#function-projectm-playlist-get-filter)**([projectm_playlist_handle](/projectm/apiapi/playlist/playlist__types.md#typedef-projectm-playlist-handle) instance, size_t * count)<br>Returns the current filter list.  |
+| PROJECTM_PLAYLIST_EXPORT size_t | **[projectm_playlist_apply_filter](/projectm/apiapi/playlist/playlist__filter.md#function-projectm-playlist-apply-filter)**([projectm_playlist_handle](/projectm/apiapi/playlist/playlist__types.md#typedef-projectm-playlist-handle) instance)<br>Applies the current filter list to the existing playlist.  |
 
 ## Detailed Description
 
@@ -45,7 +45,7 @@ Sets a new filter list.
   * **count** The size of the filter array. 
 
 
-Does not immediately apply the new list to an existing playlist, only newly added files will be affected. If you need to filter the existing playlist after calling this method, additionally call [projectm_playlist_apply_filter()](/projectmFiles/playlist__filter_8h.md#function-projectm-playlist-apply-filter) afterwards.
+Does not immediately apply the new list to an existing playlist, only newly added files will be affected. If you need to filter the existing playlist after calling this method, additionally call [projectm_playlist_apply_filter()](/projectm/apiapi/playlist/playlist__filter.md#function-projectm-playlist-apply-filter) afterwards.
 
 The filter list consists of simple globbing expressions similar to the .gitignore syntax:
 
@@ -83,7 +83,7 @@ Returns the current filter list.
 
 **Return**: An array with filter strings. 
 
-Always call [projectm_playlist_free_string_array()](/projectmFiles/playlist__memory_8h.md#function-projectm-playlist-free-string-array) on the returned pointer if the data is no longer needed.
+Always call [projectm_playlist_free_string_array()](/projectm/apiapi/playlist/playlist__memory.md#function-projectm-playlist-free-string-array) on the returned pointer if the data is no longer needed.
 
 
 ### function projectm_playlist_apply_filter
@@ -135,4 +135,4 @@ PROJECTM_PLAYLIST_EXPORT size_t projectm_playlist_apply_filter(projectm_playlist
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:42:48 +0000
+Updated on 2023-09-24 at 00:54:20 +0000

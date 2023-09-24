@@ -4,10 +4,10 @@ Types and enumerations used in the other API headers.  [More...](#detailed-descr
 
 |                | Name           |
 | -------------- | -------------- |
-| enum| **[projectm_channels](/projectmFiles/types_8h.md#enum-projectm-channels)** { PROJECTM_MONO = 1, PROJECTM_STEREO = 2} |
-| enum| **[projectm_pcm_channel](/projectmFiles/types_8h.md#enum-projectm-pcm-channel)** { PROJECTM_CHANNEL_L = 0, PROJECTM_CHANNEL_0 = 0, PROJECTM_CHANNEL_R = 1, PROJECTM_CHANNEL_1 = 1} |
-| enum| **[projectm_touch_type](/projectmFiles/types_8h.md#enum-projectm-touch-type)** { PROJECTM_TOUCH_TYPE_RANDOM, PROJECTM_TOUCH_TYPE_CIRCLE, PROJECTM_TOUCH_TYPE_RADIAL_BLOB, PROJECTM_TOUCH_TYPE_BLOB2, PROJECTM_TOUCH_TYPE_BLOB3, PROJECTM_TOUCH_TYPE_DERIVATIVE_LINE, PROJECTM_TOUCH_TYPE_BLOB5, PROJECTM_TOUCH_TYPE_LINE, PROJECTM_TOUCH_TYPE_DOUBLE_LINE} |
-| typedef struct projectm * | **[projectm_handle](/projectmFiles/types_8h.md#typedef-projectm-handle)** <br>Opaque projectM instance type.  |
+| enum| **[projectm_channels](/projectm/apiapi/projectm/types.md#enum-projectm-channels)** { PROJECTM_MONO = 1, PROJECTM_STEREO = 2} |
+| enum| **[projectm_pcm_channel](/projectm/apiapi/projectm/types.md#enum-projectm-pcm-channel)** { PROJECTM_CHANNEL_L = 0, PROJECTM_CHANNEL_0 = 0, PROJECTM_CHANNEL_R = 1, PROJECTM_CHANNEL_1 = 1} |
+| enum| **[projectm_touch_type](/projectm/apiapi/projectm/types.md#enum-projectm-touch-type)** { PROJECTM_TOUCH_TYPE_RANDOM, PROJECTM_TOUCH_TYPE_CIRCLE, PROJECTM_TOUCH_TYPE_RADIAL_BLOB, PROJECTM_TOUCH_TYPE_BLOB2, PROJECTM_TOUCH_TYPE_BLOB3, PROJECTM_TOUCH_TYPE_DERIVATIVE_LINE, PROJECTM_TOUCH_TYPE_BLOB5, PROJECTM_TOUCH_TYPE_LINE, PROJECTM_TOUCH_TYPE_DOUBLE_LINE} |
+| typedef struct projectm * | **[projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle)** <br>Opaque projectM instance type.  |
 
 ## Detailed Description
 
@@ -142,4 +142,4 @@ typedef enum
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:42:48 +0000
+Updated on 2023-09-24 at 00:54:20 +0000

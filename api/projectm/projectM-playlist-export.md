@@ -4,11 +4,11 @@
 
 |                | Name           |
 | -------------- | -------------- |
-|  | **[PROJECTM_PLAYLIST_EXPORT](/projectmFiles/projectM__playlist__export_8h.md#define-projectm-playlist-export)**  |
-|  | **[PROJECTM_PLAYLIST_NO_EXPORT](/projectmFiles/projectM__playlist__export_8h.md#define-projectm-playlist-no-export)**  |
-|  | **[PROJECTM_PLAYLIST_DEPRECATED](/projectmFiles/projectM__playlist__export_8h.md#define-projectm-playlist-deprecated)**  |
-|  | **[PROJECTM_PLAYLIST_DEPRECATED_EXPORT](/projectmFiles/projectM__playlist__export_8h.md#define-projectm-playlist-deprecated-export)**  |
-|  | **[PROJECTM_PLAYLIST_DEPRECATED_NO_EXPORT](/projectmFiles/projectM__playlist__export_8h.md#define-projectm-playlist-deprecated-no-export)**  |
+|  | **[PROJECTM_PLAYLIST_EXPORT](/projectm/apiapi/projectm/projectM__playlist__export.md#define-projectm-playlist-export)**  |
+|  | **[PROJECTM_PLAYLIST_NO_EXPORT](/projectm/apiapi/projectm/projectM__playlist__export.md#define-projectm-playlist-no-export)**  |
+|  | **[PROJECTM_PLAYLIST_DEPRECATED](/projectm/apiapi/projectm/projectM__playlist__export.md#define-projectm-playlist-deprecated)**  |
+|  | **[PROJECTM_PLAYLIST_DEPRECATED_EXPORT](/projectm/apiapi/projectm/projectM__playlist__export.md#define-projectm-playlist-deprecated-export)**  |
+|  | **[PROJECTM_PLAYLIST_DEPRECATED_NO_EXPORT](/projectm/apiapi/projectm/projectM__playlist__export.md#define-projectm-playlist-deprecated-no-export)**  |
 
 
 
@@ -100,4 +100,4 @@
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:42:48 +0000
+Updated on 2023-09-24 at 00:54:20 +0000

@@ -4,33 +4,33 @@
 
 |                | Name           |
 | -------------- | -------------- |
-| typedef double | **[PRJM_EVAL_F](/projectmFiles/projectm-eval_8h.md#typedef-prjm-eval-f)**  |
-| typedef PRJM_EVAL_F ** | **[projectm_eval_mem_buffer](/projectmFiles/projectm-eval_8h.md#typedef-projectm-eval-mem-buffer)** <br>Buffer pointer for megabuf/gmegabuf memory.  |
+| typedef double | **[PRJM_EVAL_F](/projectm/apiapi/projectm-eval.md#typedef-prjm-eval-f)**  |
+| typedef PRJM_EVAL_F ** | **[projectm_eval_mem_buffer](/projectm/apiapi/projectm-eval.md#typedef-projectm-eval-mem-buffer)** <br>Buffer pointer for megabuf/gmegabuf memory.  |
 
 ## Functions
 
 |                | Name           |
 | -------------- | -------------- |
-| void | **[projectm_eval_memory_host_lock_mutex](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-memory-host-lock-mutex)**()<br>Host-defined lock function. Used to prevent race conditions with memory access. Only required if multiple expressions using the same global/local memory blocks will run in separate threads at the same time. Can be an empty function otherwise. The function is not required to use a recursive mutex.  |
-| void | **[projectm_eval_memory_host_unlock_mutex](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-memory-host-unlock-mutex)**()<br>Host-defined unlock function. Used to prevent race conditions with memory access. Only required if multiple expressions using the same global/local memory blocks will run in separate threads at the same time. Can be an empty function otherwise.  |
-| projectm_eval_mem_buffer | **[projectm_eval_memory_buffer_create](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-memory-buffer-create)**()<br>Allocates an empty memory buffer to hold gmegabuf data.  |
-| void | **[projectm_eval_memory_buffer_destroy](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-memory-buffer-destroy)**(projectm_eval_mem_buffer buffer)<br>Destroys a memory buffer and frees any allocated blocks. Only destroy a buffer if no context is using it anymore.  |
-| void | **[projectm_eval_memory_global_destroy](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-memory-global-destroy)**()<br>Frees the built-in global memory buffer. Only destroy the global buffer if no context is using it anymore.  |
-| struct projectm_eval_context * | **[projectm_eval_context_create](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-context-create)**(projectm_eval_mem_buffer global_mem, PRJM_EVAL_F(*) global_variables[100])<br>Creates a new execution context.  |
-| void | **[projectm_eval_context_destroy](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-context-destroy)**(struct projectm_eval_context * ctx)<br>Destroys an execution context and frees all associated resources. Any code and variable references associated with the destroyed context will become invalid and must not be used after calling this function.  |
-| void | **[projectm_eval_context_free_memory](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-context-free-memory)**(struct projectm_eval_context * ctx)<br>Frees the allocated memory of the context-local buffer, effectively resetting it. This will not clear the global memory buffer associated with the context.  |
-| void | **[projectm_eval_context_reset_variables](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-context-reset-variables)**(struct projectm_eval_context * ctx)<br>Sets all context variables to 0.0. Registered variables will be kept intact, as the pointers will not change. Global variables reg00 to reg99 will also stay unchanged.  |
-| PRJM_EVAL_F * | **[projectm_eval_context_register_variable](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-context-register-variable)**(struct projectm_eval_context * ctx, const char * var_name)<br>Registers a variable and returns the value pointer. Variables can be registered at any time. If the variable doesn't exist yet, it is created, otherwise the existing variable is being returned. Any code compiled before or after will use the same variable, referenced by its case-insensitive name.  |
-| struct projectm_eval_code * | **[projectm_eval_code_compile](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-code-compile)**(struct projectm_eval_context * ctx, const char * code)<br>Compiled the given code into an executable program. Call _projectm_eval_get_error()_ to retrieve the compiler error and location on compilation failure.  |
-| void | **[projectm_eval_code_destroy](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-code-destroy)**(struct projectm_eval_code * code_handle)<br>Destroys a previously compiled code handle. Frees only the compiled code, but no associated resources like variables and megabuf contents. This makes it possible to recompile code and execute it in the same context without changing the state. Do not use the code handle after destroying it.  |
-| PRJM_EVAL_F | **[projectm_eval_code_execute](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-code-execute)**(struct projectm_eval_code * code_handle)<br>Executes the code in the given handle.  |
-| const char * | **[projectm_eval_get_error](/projectmFiles/projectm-eval_8h.md#function-projectm-eval-get-error)**(struct projectm_eval_context * ctx, int * line, int * column)<br>Returns the error message of the last failed compile operation in the given context. The error message is cleared every time new code is compiled.  |
+| void | **[projectm_eval_memory_host_lock_mutex](/projectm/apiapi/projectm-eval.md#function-projectm-eval-memory-host-lock-mutex)**()<br>Host-defined lock function. Used to prevent race conditions with memory access. Only required if multiple expressions using the same global/local memory blocks will run in separate threads at the same time. Can be an empty function otherwise. The function is not required to use a recursive mutex.  |
+| void | **[projectm_eval_memory_host_unlock_mutex](/projectm/apiapi/projectm-eval.md#function-projectm-eval-memory-host-unlock-mutex)**()<br>Host-defined unlock function. Used to prevent race conditions with memory access. Only required if multiple expressions using the same global/local memory blocks will run in separate threads at the same time. Can be an empty function otherwise.  |
+| projectm_eval_mem_buffer | **[projectm_eval_memory_buffer_create](/projectm/apiapi/projectm-eval.md#function-projectm-eval-memory-buffer-create)**()<br>Allocates an empty memory buffer to hold gmegabuf data.  |
+| void | **[projectm_eval_memory_buffer_destroy](/projectm/apiapi/projectm-eval.md#function-projectm-eval-memory-buffer-destroy)**(projectm_eval_mem_buffer buffer)<br>Destroys a memory buffer and frees any allocated blocks. Only destroy a buffer if no context is using it anymore.  |
+| void | **[projectm_eval_memory_global_destroy](/projectm/apiapi/projectm-eval.md#function-projectm-eval-memory-global-destroy)**()<br>Frees the built-in global memory buffer. Only destroy the global buffer if no context is using it anymore.  |
+| struct projectm_eval_context * | **[projectm_eval_context_create](/projectm/apiapi/projectm-eval.md#function-projectm-eval-context-create)**(projectm_eval_mem_buffer global_mem, PRJM_EVAL_F(*) global_variables[100])<br>Creates a new execution context.  |
+| void | **[projectm_eval_context_destroy](/projectm/apiapi/projectm-eval.md#function-projectm-eval-context-destroy)**(struct projectm_eval_context * ctx)<br>Destroys an execution context and frees all associated resources. Any code and variable references associated with the destroyed context will become invalid and must not be used after calling this function.  |
+| void | **[projectm_eval_context_free_memory](/projectm/apiapi/projectm-eval.md#function-projectm-eval-context-free-memory)**(struct projectm_eval_context * ctx)<br>Frees the allocated memory of the context-local buffer, effectively resetting it. This will not clear the global memory buffer associated with the context.  |
+| void | **[projectm_eval_context_reset_variables](/projectm/apiapi/projectm-eval.md#function-projectm-eval-context-reset-variables)**(struct projectm_eval_context * ctx)<br>Sets all context variables to 0.0. Registered variables will be kept intact, as the pointers will not change. Global variables reg00 to reg99 will also stay unchanged.  |
+| PRJM_EVAL_F * | **[projectm_eval_context_register_variable](/projectm/apiapi/projectm-eval.md#function-projectm-eval-context-register-variable)**(struct projectm_eval_context * ctx, const char * var_name)<br>Registers a variable and returns the value pointer. Variables can be registered at any time. If the variable doesn't exist yet, it is created, otherwise the existing variable is being returned. Any code compiled before or after will use the same variable, referenced by its case-insensitive name.  |
+| struct projectm_eval_code * | **[projectm_eval_code_compile](/projectm/apiapi/projectm-eval.md#function-projectm-eval-code-compile)**(struct projectm_eval_context * ctx, const char * code)<br>Compiled the given code into an executable program. Call _projectm_eval_get_error()_ to retrieve the compiler error and location on compilation failure.  |
+| void | **[projectm_eval_code_destroy](/projectm/apiapi/projectm-eval.md#function-projectm-eval-code-destroy)**(struct projectm_eval_code * code_handle)<br>Destroys a previously compiled code handle. Frees only the compiled code, but no associated resources like variables and megabuf contents. This makes it possible to recompile code and execute it in the same context without changing the state. Do not use the code handle after destroying it.  |
+| PRJM_EVAL_F | **[projectm_eval_code_execute](/projectm/apiapi/projectm-eval.md#function-projectm-eval-code-execute)**(struct projectm_eval_code * code_handle)<br>Executes the code in the given handle.  |
+| const char * | **[projectm_eval_get_error](/projectm/apiapi/projectm-eval.md#function-projectm-eval-get-error)**(struct projectm_eval_context * ctx, int * line, int * column)<br>Returns the error message of the last failed compile operation in the given context. The error message is cleared every time new code is compiled.  |
 
 ## Defines
 
 |                | Name           |
 | -------------- | -------------- |
-|  | **[PRJM_F_SIZE](/projectmFiles/projectm-eval_8h.md#define-prjm-f-size)**  |
+|  | **[PRJM_F_SIZE](/projectm/apiapi/projectm-eval.md#define-prjm-f-size)**  |
 
 ## Types Documentation
 
@@ -335,4 +335,4 @@ const char* projectm_eval_get_error(struct projectm_eval_context* ctx, int* line
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:42:48 +0000
+Updated on 2023-09-24 at 00:54:20 +0000

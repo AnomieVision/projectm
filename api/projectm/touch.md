@@ -4,10 +4,10 @@ Touch-related functions to add random waveforms.  [More...](#detailed-descriptio
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT void | **[projectm_touch](/projectmFiles/touch_8h.md#function-projectm-touch)**([projectm_handle](/projectmFiles/types_8h.md#typedef-projectm-handle) instance, float x, float y, int pressure, [projectm_touch_type](/projectmFiles/types_8h.md#enum-projectm-touch-type) touch_type)<br>Starts a touch event or moves an existing waveform.  |
-| PROJECTM_EXPORT void | **[projectm_touch_drag](/projectmFiles/touch_8h.md#function-projectm-touch-drag)**([projectm_handle](/projectmFiles/types_8h.md#typedef-projectm-handle) instance, float x, float y, int pressure)<br>Centers any waveforms under the coordinates to simulate dragging.  |
-| PROJECTM_EXPORT void | **[projectm_touch_destroy](/projectmFiles/touch_8h.md#function-projectm-touch-destroy)**([projectm_handle](/projectmFiles/types_8h.md#typedef-projectm-handle) instance, float x, float y)<br>Removes any additional touch waveforms under the given coordinates.  |
-| PROJECTM_EXPORT void | **[projectm_touch_destroy_all](/projectmFiles/touch_8h.md#function-projectm-touch-destroy-all)**([projectm_handle](/projectmFiles/types_8h.md#typedef-projectm-handle) instance)<br>Removes all touch waveforms from the screen.  |
+| PROJECTM_EXPORT void | **[projectm_touch](/projectm/apiapi/projectm/touch.md#function-projectm-touch)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance, float x, float y, int pressure, [projectm_touch_type](/projectm/apiapi/projectm/types.md#enum-projectm-touch-type) touch_type)<br>Starts a touch event or moves an existing waveform.  |
+| PROJECTM_EXPORT void | **[projectm_touch_drag](/projectm/apiapi/projectm/touch.md#function-projectm-touch-drag)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance, float x, float y, int pressure)<br>Centers any waveforms under the coordinates to simulate dragging.  |
+| PROJECTM_EXPORT void | **[projectm_touch_destroy](/projectm/apiapi/projectm/touch.md#function-projectm-touch-destroy)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance, float x, float y)<br>Removes any additional touch waveforms under the given coordinates.  |
+| PROJECTM_EXPORT void | **[projectm_touch_destroy_all](/projectm/apiapi/projectm/touch.md#function-projectm-touch-destroy-all)**([projectm_handle](/projectm/apiapi/projectm/types.md#typedef-projectm-handle) instance)<br>Removes all touch waveforms from the screen.  |
 
 ## Detailed Description
 
@@ -142,4 +142,4 @@ PROJECTM_EXPORT void projectm_touch_destroy_all(projectm_handle instance);
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:42:48 +0000
+Updated on 2023-09-24 at 00:54:20 +0000

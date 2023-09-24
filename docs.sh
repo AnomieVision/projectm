@@ -283,6 +283,7 @@ function cleanup() {
     # Remove temp files
     rm -rf ./docs/.doxybook/generated
     rm -rf ./docs/.doxygen/xml
+    rm -rf ./docs/.doxybook/.temp
 }
 
 # -------------------
@@ -294,6 +295,7 @@ function main {
     generate_docs
     doSomeMagic
     createSidebar
+    fixUrls
     cleanup
 
     echo "Docs generated successfully."

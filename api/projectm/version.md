@@ -4,11 +4,11 @@
 
 |                | Name           |
 | -------------- | -------------- |
-|  | **[PROJECTM_VERSION_MAJOR](/projectmFiles/version_8h.md#define-projectm-version-major)**  |
-|  | **[PROJECTM_VERSION_MINOR](/projectmFiles/version_8h.md#define-projectm-version-minor)**  |
-|  | **[PROJECTM_VERSION_PATCH](/projectmFiles/version_8h.md#define-projectm-version-patch)**  |
-|  | **[PROJECTM_VERSION_STRING](/projectmFiles/version_8h.md#define-projectm-version-string)**  |
-|  | **[PROJECTM_VERSION_VCS](/projectmFiles/version_8h.md#define-projectm-version-vcs)**  |
+|  | **[PROJECTM_VERSION_MAJOR](/projectm/apiapi/projectm/version.md#define-projectm-version-major)**  |
+|  | **[PROJECTM_VERSION_MINOR](/projectm/apiapi/projectm/version.md#define-projectm-version-minor)**  |
+|  | **[PROJECTM_VERSION_PATCH](/projectm/apiapi/projectm/version.md#define-projectm-version-patch)**  |
+|  | **[PROJECTM_VERSION_STRING](/projectm/apiapi/projectm/version.md#define-projectm-version-string)**  |
+|  | **[PROJECTM_VERSION_VCS](/projectm/apiapi/projectm/version.md#define-projectm-version-vcs)**  |
 
 
 
@@ -69,4 +69,4 @@
 
 -------------------------------
 
-Updated on 2023-09-24 at 00:42:48 +0000
+Updated on 2023-09-24 at 00:54:20 +0000
