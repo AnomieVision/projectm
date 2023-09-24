@@ -1,5 +1,5 @@
 {
-  "baseUrl": "",
+  "baseUrl": "/projectm",
   "indexInFolders": true,
   "linkSuffix": ".md",
   "linkLowercase": false,
