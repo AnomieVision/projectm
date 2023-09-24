@@ -69,12 +69,14 @@ async function generateDocs() {
 // Move and rename wanted files.
 async function doSomeMagic() {
   const apiDir = join(process.cwd(), 'content', 'api');
+  const projectmDir = join(apiDir, 'projectm');
   const playlistDir = join(apiDir, 'playlist');
   const generatedFilesDir = join(process.cwd(), '.doxybook', 'generated', 'Files');
 
   try {
     await fs.rm(apiDir, { recursive: true });
     await fs.mkdir(apiDir, { recursive: true });
+    await fs.mkdir(projectmDir, { recursive: true });
     await fs.mkdir(playlistDir, { recursive: true });
   } catch (error) {}
 
@@ -87,26 +89,31 @@ async function doSomeMagic() {
       let filename = file.split('.')[0];
       if (filename.endsWith('_8h')) {
         filename = filename.slice(0, -3);
+      } else if (filename.includes('dir_')) {
+        continue;
       }
 
-      if (filename.startsWith('playlist__')) {
+      console.log('filename', filename);
+
+      if (filename.startsWith('index')) {
+        continue;
+      } else if (filename.startsWith('projectm-eval')) {
+        await fs.rename(filePath, join(apiDir, `${filename}.md`));
+      } else if (filename.includes('export')) {
+        continue;
+      } else if (filename.startsWith('playlist__')) {
         const subdirectory = filename.split('__')[0];
         const newFilename = filename.split('__')[1];
         await fs.mkdir(join(apiDir, subdirectory), { recursive: true });
         await fs.rename(filePath, join(apiDir, subdirectory, `${newFilename}.md`));
+      } else if (filename === 'playlist') {
+        await fs.rename(filePath, join(apiDir, 'playlist', 'index.md'));
+      } else if (filename === 'projectM') {
+        await fs.rename(filePath, join(apiDir, 'projectm', 'index.md'));
       } else {
         filename = filename.replace(/__/g, '-').replace(/_/g, '-').toLowerCase();
         await fs.rename(filePath, join(apiDir, 'projectm', `${filename}.md`));
       }
-    }
-  }
-
-  const specialCases = ['playlist', 'projectM', 'projectm-eval'];
-
-  for (const caseName of specialCases) {
-    const casePath = join(apiDir, caseName === 'playlist' ? 'playlist' : 'projectm', 'index.md');
-    if ((await fs.stat(casePath)).isFile()) {
-      await fs.rename(casePath, join(apiDir, 'projectm', `${caseName}.md`));
     }
   }
 }

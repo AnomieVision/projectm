@@ -1,3 +1,3 @@
-# About
+# Support
 
 [Back home](/)
