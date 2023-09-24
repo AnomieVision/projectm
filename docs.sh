@@ -151,15 +151,15 @@ function doSomeMagic() {
 # Create sidebar at ./docs/.docsify/_sidebar.md
 function createSidebar() {
     # Remove old sidebar
-    rm -rf ./docs/.docsify/_sidebar.md
+    rm -rf ./docs/_sidebar.md
 
     # Create new sidebar
-    echo "## [General](/projectm)" >> ./docs/.docsify/_sidebar.md
-    echo "" >> ./docs/.docsify/_sidebar.md
-    echo "* [Home](/projectm)" >> ./docs/.docsify/_sidebar.md
-    echo "" >> ./docs/.docsify/_sidebar.md
-    echo "## [API](projectm/api/index.md)" >> ./docs/.docsify/_sidebar.md
-    echo "" >> ./docs/.docsify/_sidebar.md
+    echo "## [General](/projectm)" >> ./docs/_sidebar.md
+    echo "" >> ./docs/_sidebar.md
+    echo "* [Home](/projectm)" >> ./docs/_sidebar.md
+    echo "" >> ./docs/_sidebar.md
+    echo "## [API](projectm/api/index.md)" >> ./docs/_sidebar.md
+    echo "" >> ./docs/_sidebar.md
 
     # Find files in ./docs/api (excluding subdirectories) that match *.md
     FILES=$(find ./docs/api -maxdepth 1 -type f -name "*.md" | sort)
@@ -182,7 +182,7 @@ function createSidebar() {
         filenameNoExtension="${filename%.*}"
 
         # Create sidebar entry
-        echo "* [$filenameNoExtension](projectm/api/$relativePath)" >> ./docs/.docsify/_sidebar.md
+        echo "* [$filenameNoExtension](projectm/api/$relativePath)" >> ./docs/_sidebar.md
     done
 
     # Find subdirectories in ./docs/api
@@ -195,7 +195,7 @@ function createSidebar() {
         relativePath=${subdir#./docs/api/}
 
         # Create sidebar entry for subdirectory
-        echo "* [${relativePath%/}](projectm/api/${relativePath}/index.md)" >> ./docs/.docsify/_sidebar.md
+        echo "* [${relativePath%/}](projectm/api/${relativePath}/index.md)" >> ./docs/_sidebar.md
 
         # Find files in subdirectory that match *.md and sort them alphabetically
         FILES=$(find $subdir -type f -name "*.md" | sort)
@@ -223,7 +223,7 @@ function createSidebar() {
             filenameNoExtension="${filename%.*}"
 
             # Create sidebar entry (indented)
-            echo "  * [$filenameNoExtension](projectm/api/$relativeFilePath)" >> ./docs/.docsify/_sidebar.md
+            echo "  * [$filenameNoExtension](projectm/api/$relativeFilePath)" >> ./docs/_sidebar.md
         done
     done
 
