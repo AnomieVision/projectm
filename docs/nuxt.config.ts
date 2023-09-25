@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   experimental: {
     payloadExtraction: false,
   },
-  modules: ["@nuxt/content"],
+  modules: ["@nuxt/content", "@nuxt/ui"],
   router: {
     options: {
       strict: false,
@@ -19,6 +19,9 @@ export default defineNuxtConfig({
 
   // Modules
   content: {
+    experimental: {
+      clientDb: true
+    },
     // Configuring code highlighting
     // https://content.nuxtjs.org/api/configuration
     highlight: {
