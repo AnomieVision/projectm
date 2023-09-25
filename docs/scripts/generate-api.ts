@@ -137,7 +137,10 @@ async function fixUrls() {
 
     if (stats.isFile() && filePath.endsWith('.md')) {
       let content = await fs.readFile(filePath, 'utf-8');
-      content = content.replace(/_8h/g, '').replace(/Files\//g, '');
+      content = content.replace(/_8h/g, '');
+      content = content.replace(/Files\//g, '');
+      content = content.replace(/playlist__/g, '');
+      content = content.replace(/__/g, '-');
 
       // Console.log all matches for Files/ in content
       const matches = content.match(/Files\//g);
@@ -158,7 +161,10 @@ async function fixUrls() {
 
         if (subdirStats.isFile() && subdirFilePath.endsWith('.md')) {
           let content = await fs.readFile(subdirFilePath, 'utf-8');
-          content = content.replace(/_8h/g, '').replace(/Files\//g, '');
+          content = content.replace(/_8h/g, '');
+          content = content.replace(/Files\//g, '');
+          content = content.replace(/playlist__/g, '');
+          content = content.replace(/__/g, '-');
 
           await fs.writeFile(subdirFilePath, content, {encoding:'utf8',flag:'w'});
         }
@@ -181,15 +187,33 @@ async function generateSidebarMenuLinks() {
       const filename = file.split('.')[0];
       const title = filename.split('__')[1] || filename;
       const url = `/api/${filename}`;
-      sidebarMenuLinks.push({ title, url });
+      sidebarMenuLinks.push({
+        label: '',
+        icon: '',
+        iconClass: '',
+        to: '',
+        divider: true,
+        links: [
+          {
+            label: title,
+            icon: 'i-heroicons-chevron-right-20-solid',
+            iconClass: '',
+            to: url
+          }
+        ]
+      });
     }
+
 
     if (stats.isDirectory()) {
       const subdirFiles = await fs.readdir(filePath);
       const header = file; // Use subdirectory name as header
 
       const section = {
-        header,
+        label: header,
+        icon: 'i-heroicons-chevron-right-20-solid',
+        iconClass: '',
+        to: `/api/${file}`,
         divider: true,
         links: [] as any[]
       };
@@ -200,6 +224,11 @@ async function generateSidebarMenuLinks() {
 
         if (subdirStats.isFile() && subdirFilePath.endsWith('.md')) {
           const filename = subdirFile.split('.')[0];
+
+          if (filename === 'index') {
+            continue;
+          }
+
           const title = filename.split('__')[1] || filename;
           const url = `/api/${file}/${filename}`;
           section.links.push({
