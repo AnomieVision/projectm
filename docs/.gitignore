@@ -13,3 +13,4 @@ artifacts
 .doxybook/generated
 .doxygen/xml
 content/api
+constants/sidebar-menu-links.json

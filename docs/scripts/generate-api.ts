@@ -2,6 +2,13 @@ import { execSync } from 'child_process';
 import { promises as fs } from 'fs';
 import { join } from 'path';
 
+// Create directory if doesnt exist.
+async function createDirectory(path: string) {
+  try {
+    await fs.mkdir(path, { recursive: true });
+    console.log(`Directory created at: ${path}`);
+  } catch (error) {}
+}
 // Install doxygen, if not installed.
 async function installDoxygen() {
   try {
@@ -132,7 +139,14 @@ async function fixUrls() {
       let content = await fs.readFile(filePath, 'utf-8');
       content = content.replace(/_8h/g, '').replace(/Files\//g, '');
 
-      await fs.writeFile(filePath, content, 'utf-8');
+      // Console.log all matches for Files/ in content
+      const matches = content.match(/Files\//g);
+      
+      if (matches) {
+        console.log('matches', matches);
+      }
+
+      await fs.writeFile(filePath, content, {encoding:'utf8',flag:'w'});
     }
 
     if (stats.isDirectory()) {
@@ -144,16 +158,56 @@ async function fixUrls() {
 
         if (subdirStats.isFile() && subdirFilePath.endsWith('.md')) {
           let content = await fs.readFile(subdirFilePath, 'utf-8');
-          content = content.replace(/_8h/g, '').replace(/\/files/g, '');
+          content = content.replace(/_8h/g, '').replace(/Files\//g, '');
 
-          await fs.writeFile(subdirFilePath, content, 'utf-8');
+          await fs.writeFile(subdirFilePath, content, {encoding:'utf8',flag:'w'});
         }
       }
     }
   }
 }
 
+// Generate sidebar-menu-links.json based on the files in content/api directory.
+async function generateSidebarMenuLinks() {
+  const apiDir = join(process.cwd(), 'content', 'api');
+  const files = await fs.readdir(apiDir);
+  const sidebarMenuLinks = [];
 
+  for (const file of files) {
+    const filePath = join(apiDir, file);
+    const stats = await fs.stat(filePath);
+
+    if (stats.isFile() && filePath.endsWith('.md')) {
+      const filename = file.split('.')[0];
+      const title = filename.split('__')[1] || filename;
+      const url = `/api/${filename}`;
+      sidebarMenuLinks.push({ title, url });
+    }
+
+    if (stats.isDirectory()) {
+      const subdirFiles = await fs.readdir(filePath);
+
+      for (const subdirFile of subdirFiles) {
+        const subdirFilePath = join(filePath, subdirFile);
+        const subdirStats = await fs.stat(subdirFilePath);
+
+        if (subdirStats.isFile() && subdirFilePath.endsWith('.md')) {
+          const filename = subdirFile.split('.')[0];
+          const title = filename.split('__')[1] || filename;
+          const url = `/api/${file}/${filename}`;
+          sidebarMenuLinks.push({ title, url });
+        }
+      }
+    }
+  }
+
+  await createDirectory(join(process.cwd(), './constants'));
+
+  await fs.writeFile(
+    join(process.cwd(), './constants/sidebar-menu-links.json'),
+    JSON.stringify(sidebarMenuLinks, null, 2)
+  );
+}
 
 // Remove temp files.
 async function cleanup() {
@@ -175,6 +229,7 @@ async function main() {
   await generateDocs();
   await doSomeMagic();
   await fixUrls();
+  await generateSidebarMenuLinks();
   await cleanup();
 
   console.log('Docs generated successfully.');
