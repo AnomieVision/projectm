@@ -186,6 +186,13 @@ async function generateSidebarMenuLinks() {
 
     if (stats.isDirectory()) {
       const subdirFiles = await fs.readdir(filePath);
+      const header = file; // Use subdirectory name as header
+
+      const section = {
+        header,
+        divider: true,
+        links: [] as any[]
+      };
 
       for (const subdirFile of subdirFiles) {
         const subdirFilePath = join(filePath, subdirFile);
@@ -195,9 +202,16 @@ async function generateSidebarMenuLinks() {
           const filename = subdirFile.split('.')[0];
           const title = filename.split('__')[1] || filename;
           const url = `/api/${file}/${filename}`;
-          sidebarMenuLinks.push({ title, url });
+          section.links.push({
+            label: title,
+            icon: 'i-heroicons-chevron-right-20-solid',
+            iconClass: '',
+            to: url
+          });
         }
       }
+
+      sidebarMenuLinks.push(section);
     }
   }
 

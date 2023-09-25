@@ -26,4 +26,8 @@ const { data } = await useAsyncData(routePathWithoutPrefix.value, () =>
 useHead({
   title,
 });
+
+definePageMeta({
+  layout: "doc",
+});
 </script>
