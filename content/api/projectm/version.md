@@ -4,11 +4,11 @@
 
 |                | Name           |
 | -------------- | -------------- |
-|  | **[PROJECTM_VERSION_MAJOR](/projectm/version.md#define-projectm-version-major)**  |
-|  | **[PROJECTM_VERSION_MINOR](/projectm/version.md#define-projectm-version-minor)**  |
-|  | **[PROJECTM_VERSION_PATCH](/projectm/version.md#define-projectm-version-patch)**  |
-|  | **[PROJECTM_VERSION_STRING](/projectm/version.md#define-projectm-version-string)**  |
-|  | **[PROJECTM_VERSION_VCS](/projectm/version.md#define-projectm-version-vcs)**  |
+|  | **[PROJECTM_VERSION_MAJOR](/projectm/api/version.md#define-projectm-version-major)**  |
+|  | **[PROJECTM_VERSION_MINOR](/projectm/api/version.md#define-projectm-version-minor)**  |
+|  | **[PROJECTM_VERSION_PATCH](/projectm/api/version.md#define-projectm-version-patch)**  |
+|  | **[PROJECTM_VERSION_STRING](/projectm/api/version.md#define-projectm-version-string)**  |
+|  | **[PROJECTM_VERSION_VCS](/projectm/api/version.md#define-projectm-version-vcs)**  |
 
 
 
@@ -46,7 +46,7 @@
 ### define PROJECTM_VERSION_VCS
 
 ```cpp
-#define PROJECTM_VERSION_VCS "d77cadd1994ed834f8ffb48eed8ae97c2aa705fa"
+#define PROJECTM_VERSION_VCS "29593e90113623c691652c290b56808fcc634b04"
 ```
 
 
@@ -63,10 +63,10 @@
 #define PROJECTM_VERSION_STRING "4.0.0"
 
 /* VCS version number, e.g. Git commit hash */
-#define PROJECTM_VERSION_VCS "d77cadd1994ed834f8ffb48eed8ae97c2aa705fa"
+#define PROJECTM_VERSION_VCS "29593e90113623c691652c290b56808fcc634b04"
 ```
 
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:26:43 +0000
+Updated on 2023-09-26 at 05:44:38 +0000

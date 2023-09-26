@@ -4,8 +4,8 @@ Memory allocation/deallocation helpers.  [More...](#detailed-description)
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_free_string](/projectm/memory.md#function-projectm-playlist-free-string)**(char * string)<br>Frees a char pointer returned by any of the playlist API functions.  |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_free_string_array](/projectm/memory.md#function-projectm-playlist-free-string-array)**(char ** array)<br>Frees a string array returned by any of the playlist API functions.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_free_string](/projectm/api/memory.md#function-projectm-playlist-free-string)**(char * string)<br>Frees a char pointer returned by any of the playlist API functions.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_free_string_array](/projectm/api/memory.md#function-projectm-playlist-free-string-array)**(char ** array)<br>Frees a string array returned by any of the playlist API functions.  |
 
 ## Detailed Description
 
@@ -87,4 +87,4 @@ PROJECTM_PLAYLIST_EXPORT void projectm_playlist_free_string_array(char** array);
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:26:43 +0000
+Updated on 2023-09-26 at 05:44:38 +0000

@@ -4,19 +4,19 @@ Playlist item management functions.  [More...](#detailed-description)
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_size](/projectm/items.md#function-projectm-playlist-size)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance)<br>Returns the number of presets in the current playlist.  |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_clear](/projectm/items.md#function-projectm-playlist-clear)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance)<br>Clears the playlist.  |
-| PROJECTM_PLAYLIST_EXPORT char ** | **[projectm_playlist_items](/projectm/items.md#function-projectm-playlist-items)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, uint32_t start, uint32_t count)<br>Returns a list of preset files inside the given range of the current playlist, in order.  |
-| PROJECTM_PLAYLIST_EXPORT char * | **[projectm_playlist_item](/projectm/items.md#function-projectm-playlist-item)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, uint32_t index)<br>Returns the name of a preset at the given index in the current playlist.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_add_path](/projectm/items.md#function-projectm-playlist-add-path)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, const char * path, bool recurse_subdirs, bool allow_duplicates)<br>Appends presets from the given path to the end of the current playlist.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_insert_path](/projectm/items.md#function-projectm-playlist-insert-path)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, const char * path, uint32_t index, bool recurse_subdirs, bool allow_duplicates)<br>Inserts presets from the given path to the end of the current playlist.  |
-| PROJECTM_PLAYLIST_EXPORT bool | **[projectm_playlist_add_preset](/projectm/items.md#function-projectm-playlist-add-preset)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, const char * filename, bool allow_duplicates)<br>Adds a single preset to the end of the playlist.  |
-| PROJECTM_PLAYLIST_EXPORT bool | **[projectm_playlist_insert_preset](/projectm/items.md#function-projectm-playlist-insert-preset)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, const char * filename, uint32_t index, bool allow_duplicates)<br>Adds a single preset to the playlist at the specified position.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_add_presets](/projectm/items.md#function-projectm-playlist-add-presets)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, const char ** filenames, uint32_t count, bool allow_duplicates)<br>Adds a list of presets to the end of the playlist.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_insert_presets](/projectm/items.md#function-projectm-playlist-insert-presets)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, const char ** filenames, uint32_t count, unsigned int index, bool allow_duplicates)<br>Adds a single preset to the playlist at the specified position.  |
-| PROJECTM_PLAYLIST_EXPORT bool | **[projectm_playlist_remove_preset](/projectm/items.md#function-projectm-playlist-remove-preset)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, uint32_t index)<br>Removes a single preset from the playlist at the specified position.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_remove_presets](/projectm/items.md#function-projectm-playlist-remove-presets)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, uint32_t index, uint32_t count)<br>Removes a number of presets from the playlist from the specified position.  |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_sort](/projectm/items.md#function-projectm-playlist-sort)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, uint32_t start_index, uint32_t count, [projectm_playlist_sort_predicate](/projectm/types.md#enum-projectm-playlist-sort-predicate) predicate, [projectm_playlist_sort_order](/projectm/types.md#enum-projectm-playlist-sort-order) order)<br>Sorts part or the whole playlist according to the given predicate and order.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_size](/projectm/api/items.md#function-projectm-playlist-size)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance)<br>Returns the number of presets in the current playlist.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_clear](/projectm/api/items.md#function-projectm-playlist-clear)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance)<br>Clears the playlist.  |
+| PROJECTM_PLAYLIST_EXPORT char ** | **[projectm_playlist_items](/projectm/api/items.md#function-projectm-playlist-items)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, uint32_t start, uint32_t count)<br>Returns a list of preset files inside the given range of the current playlist, in order.  |
+| PROJECTM_PLAYLIST_EXPORT char * | **[projectm_playlist_item](/projectm/api/items.md#function-projectm-playlist-item)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, uint32_t index)<br>Returns the name of a preset at the given index in the current playlist.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_add_path](/projectm/api/items.md#function-projectm-playlist-add-path)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, const char * path, bool recurse_subdirs, bool allow_duplicates)<br>Appends presets from the given path to the end of the current playlist.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_insert_path](/projectm/api/items.md#function-projectm-playlist-insert-path)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, const char * path, uint32_t index, bool recurse_subdirs, bool allow_duplicates)<br>Inserts presets from the given path to the end of the current playlist.  |
+| PROJECTM_PLAYLIST_EXPORT bool | **[projectm_playlist_add_preset](/projectm/api/items.md#function-projectm-playlist-add-preset)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, const char * filename, bool allow_duplicates)<br>Adds a single preset to the end of the playlist.  |
+| PROJECTM_PLAYLIST_EXPORT bool | **[projectm_playlist_insert_preset](/projectm/api/items.md#function-projectm-playlist-insert-preset)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, const char * filename, uint32_t index, bool allow_duplicates)<br>Adds a single preset to the playlist at the specified position.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_add_presets](/projectm/api/items.md#function-projectm-playlist-add-presets)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, const char ** filenames, uint32_t count, bool allow_duplicates)<br>Adds a list of presets to the end of the playlist.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_insert_presets](/projectm/api/items.md#function-projectm-playlist-insert-presets)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, const char ** filenames, uint32_t count, unsigned int index, bool allow_duplicates)<br>Adds a single preset to the playlist at the specified position.  |
+| PROJECTM_PLAYLIST_EXPORT bool | **[projectm_playlist_remove_preset](/projectm/api/items.md#function-projectm-playlist-remove-preset)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, uint32_t index)<br>Removes a single preset from the playlist at the specified position.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_remove_presets](/projectm/api/items.md#function-projectm-playlist-remove-presets)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, uint32_t index, uint32_t count)<br>Removes a number of presets from the playlist from the specified position.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_sort](/projectm/api/items.md#function-projectm-playlist-sort)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, uint32_t start_index, uint32_t count, [projectm_playlist_sort_predicate](/projectm/api/types.md#enum-projectm-playlist-sort-predicate) predicate, [projectm_playlist_sort_order](/projectm/api/types.md#enum-projectm-playlist-sort-order) order)<br>Sorts part or the whole playlist according to the given predicate and order.  |
 
 ## Detailed Description
 
@@ -91,7 +91,7 @@ Returns a list of preset files inside the given range of the current playlist, i
 
 **Note**: 
 
-  * Call [projectm_playlist_free_string_array()](/projectm/memory.md#function-projectm-playlist-free-string-array) when you're done using the list. 
+  * Call [projectm_playlist_free_string_array()](/projectm/api/memory.md#function-projectm-playlist-free-string-array) when you're done using the list. 
   * Ideally, don't rely on the value provided as count to iterate over the filenames. Instead, look for the terminating null pointer to abort the loop. 
 
 
@@ -119,8 +119,8 @@ Returns the name of a preset at the given index in the current playlist.
 
 **Note**: 
 
-  * Call [projectm_playlist_free_string()](/projectm/memory.md#function-projectm-playlist-free-string) when you're done using the return value. 
-  * If you need to retrieve a major part of playlist filenames, use [projectm_playlist_items()](/projectm/items.md#function-projectm-playlist-items) instead. 
+  * Call [projectm_playlist_free_string()](/projectm/api/memory.md#function-projectm-playlist-free-string) when you're done using the return value. 
+  * If you need to retrieve a major part of playlist filenames, use [projectm_playlist_items()](/projectm/api/items.md#function-projectm-playlist-items) instead. 
 
 
 ### function projectm_playlist_add_path
@@ -229,7 +229,7 @@ Adds a single preset to the playlist at the specified position.
 
 **Note**: The file is not checked for existence or for being readable.
 
-To always add a file at the end of the playlist, use [projectm_playlist_add_preset()](/projectm/items.md#function-projectm-playlist-add-preset) as it is performs better.
+To always add a file at the end of the playlist, use [projectm_playlist_add_preset()](/projectm/api/items.md#function-projectm-playlist-add-preset) as it is performs better.
 
 
 ### function projectm_playlist_add_presets
@@ -284,7 +284,7 @@ Adds a single preset to the playlist at the specified position.
 
 **Note**: The files are not checked for existence or for being readable.
 
-To always add a file at the end of the playlist, use [projectm_playlist_add_preset()](/projectm/items.md#function-projectm-playlist-add-preset) as it is performs better.
+To always add a file at the end of the playlist, use [projectm_playlist_add_preset()](/projectm/api/items.md#function-projectm-playlist-add-preset) as it is performs better.
 
 
 ### function projectm_playlist_remove_preset
@@ -414,4 +414,4 @@ PROJECTM_PLAYLIST_EXPORT void projectm_playlist_sort(projectm_playlist_handle in
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:26:43 +0000
+Updated on 2023-09-26 at 05:44:38 +0000

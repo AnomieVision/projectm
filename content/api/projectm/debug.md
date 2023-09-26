@@ -4,7 +4,7 @@ Debug functions for both libprojectM and preset developers.  [More...](#detailed
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT void | **[projectm_write_debug_image_on_next_frame](/projectm/debug.md#function-projectm-write-debug-image-on-next-frame)**([projectm_handle](/projectm/types.md#typedef-projectm-handle) instance, const char * output_file)<br>Writes a .bmp main texture dump after rendering the next main texture, before shaders are applied.  |
+| PROJECTM_EXPORT void | **[projectm_write_debug_image_on_next_frame](/projectm/api/debug.md#function-projectm-write-debug-image-on-next-frame)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, const char * output_file)<br>Writes a .bmp main texture dump after rendering the next main texture, before shaders are applied.  |
 
 ## Detailed Description
 
@@ -72,4 +72,4 @@ PROJECTM_EXPORT void projectm_write_debug_image_on_next_frame(projectm_handle in
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:26:43 +0000
+Updated on 2023-09-26 at 05:44:38 +0000
