@@ -3,56 +3,56 @@
     "label": "playlist",
     "icon": "bx:folder",
     "iconClass": "",
-    "to": "projectm/api/playlist",
+    "to": "api/playlist",
     "divider": true,
     "links": [
       {
         "label": "callbacks.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/playlist/callbacks",
+        "to": "api/playlist/callbacks",
         "divider": false
       },
       {
         "label": "core.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/playlist/core",
+        "to": "api/playlist/core",
         "divider": false
       },
       {
         "label": "filter.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/playlist/filter",
+        "to": "api/playlist/filter",
         "divider": false
       },
       {
         "label": "items.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/playlist/items",
+        "to": "api/playlist/items",
         "divider": false
       },
       {
         "label": "memory.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/playlist/memory",
+        "to": "api/playlist/memory",
         "divider": false
       },
       {
         "label": "playback.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/playlist/playback",
+        "to": "api/playlist/playback",
         "divider": false
       },
       {
         "label": "types.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/playlist/types",
+        "to": "api/playlist/types",
         "divider": false
       }
     ]
@@ -61,77 +61,77 @@
     "label": "projectm",
     "icon": "bx:folder",
     "iconClass": "",
-    "to": "projectm/api/projectm",
+    "to": "api/projectm",
     "divider": true,
     "links": [
       {
         "label": "audio.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/projectm/audio",
+        "to": "api/projectm/audio",
         "divider": false
       },
       {
         "label": "callbacks.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/projectm/callbacks",
+        "to": "api/projectm/callbacks",
         "divider": false
       },
       {
         "label": "core.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/projectm/core",
+        "to": "api/projectm/core",
         "divider": false
       },
       {
         "label": "debug.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/projectm/debug",
+        "to": "api/projectm/debug",
         "divider": false
       },
       {
         "label": "memory.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/projectm/memory",
+        "to": "api/projectm/memory",
         "divider": false
       },
       {
         "label": "parameters.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/projectm/parameters",
+        "to": "api/projectm/parameters",
         "divider": false
       },
       {
         "label": "render-opengl.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/projectm/render-opengl",
+        "to": "api/projectm/render-opengl",
         "divider": false
       },
       {
         "label": "touch.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/projectm/touch",
+        "to": "api/projectm/touch",
         "divider": false
       },
       {
         "label": "types.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/projectm/types",
+        "to": "api/projectm/types",
         "divider": false
       },
       {
         "label": "version.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "projectm/api/projectm/version",
+        "to": "api/projectm/version",
         "divider": false
       }
     ]
@@ -140,7 +140,7 @@
     "label": "projectm-eval.h",
     "icon": "bx:file",
     "iconClass": "",
-    "to": "projectm/api/projectm-eval",
+    "to": "api/projectm-eval",
     "divider": true
   }
 ]
