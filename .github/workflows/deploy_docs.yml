@@ -1,0 +1,60 @@
+name: deploy-docs
+
+on:
+  push:
+      branches: 
+        - "*"
+      tags:
+        - "v*"
+    
+  pull_request:
+      branches: 
+        - "*"
+
+jobs:
+  build-static:
+    name: build-docs
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: install-node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      
+      - name: install-dependencies
+        run: |
+          cd ./docs
+          npm install
+
+      - name: wait-on-build
+        uses: tomchv/wait-my-workflow@v1.1.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: 'Static Library'
+          ref: ${{ github.sha }}
+          intervalSeconds: 30
+          timeoutSeconds: 3600
+
+      - name: download-artifacts
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: 'build_linux.yml'
+          workflow_conclusion: success
+          name: projectm-linux-shared-latest
+          path: ./docs/artifacts
+
+      - name: build-and-bundle-docs
+        run: |
+          cd ./docs
+          npm run docs:build
+          npm run docs:bundle
+          
+      - name: deploy-with-gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/.output/public
