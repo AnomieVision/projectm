@@ -4,8 +4,8 @@ Memory allocation/deallocation helpers.  [More...](#detailed-description)
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT char * | **[projectm_alloc_string](memory.md#function-projectm-alloc-string)**(unsigned int length)<br>Allocates memory for a string and returns the pointer.  |
-| PROJECTM_EXPORT void | **[projectm_free_string](memory.md#function-projectm-free-string)**(const char * str)<br>Frees the memory of an allocated string.  |
+| PROJECTM_EXPORT char * | **[projectm_alloc_string](/projectm/memory.md#function-projectm-alloc-string)**(unsigned int length)<br>Allocates memory for a string and returns the pointer.  |
+| PROJECTM_EXPORT void | **[projectm_free_string](/projectm/memory.md#function-projectm-free-string)**(const char * str)<br>Frees the memory of an allocated string.  |
 
 ## Detailed Description
 
@@ -37,7 +37,7 @@ Allocates memory for a string and returns the pointer.
 
 **Return**: A pointer to a zero-initialized memory area. 
 
-To free the allocated memory, call [projectm_free_string()](memory.md#function-projectm-free-string). Do not use free()!
+To free the allocated memory, call [projectm_free_string()](/projectm/memory.md#function-projectm-free-string). Do not use free()!
 
 
 ### function projectm_free_string
@@ -52,10 +52,10 @@ Frees the memory of an allocated string.
 
 **Parameters**: 
 
-  * **str** A pointer returned by [projectm_alloc_string()](memory.md#function-projectm-alloc-string). 
+  * **str** A pointer returned by [projectm_alloc_string()](/projectm/memory.md#function-projectm-alloc-string). 
 
 
-Frees the memory allocated by a call to [projectm_alloc_string()](memory.md#function-projectm-alloc-string) or any (const) char* pointers returned by a projectM API call.
+Frees the memory allocated by a call to [projectm_alloc_string()](/projectm/memory.md#function-projectm-alloc-string) or any (const) char* pointers returned by a projectM API call.
 
 Do not use free() to delete the pointer!
 
@@ -86,4 +86,4 @@ PROJECTM_EXPORT void projectm_free_string(const char* str);
 
 -------------------------------
 
-Updated on 2023-09-26 at 02:00:16 +0000
+Updated on 2023-09-26 at 05:12:10 +0000

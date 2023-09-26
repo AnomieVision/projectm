@@ -1,137 +1,146 @@
 [
   {
     "label": "playlist",
-    "icon": "i-heroicons-chevron-right-20-solid",
+    "icon": "bx:folder",
     "iconClass": "",
-    "to": "/api/playlist",
+    "to": "projectm/api/playlist",
     "divider": true,
     "links": [
       {
-        "label": "callbacks",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "callbacks.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/playlist/callbacks"
+        "to": "projectm/api/playlist/callbacks",
+        "divider": false
       },
       {
-        "label": "core",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "core.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/playlist/core"
+        "to": "projectm/api/playlist/core",
+        "divider": false
       },
       {
-        "label": "filter",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "filter.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/playlist/filter"
+        "to": "projectm/api/playlist/filter",
+        "divider": false
       },
       {
-        "label": "items",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "items.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/playlist/items"
+        "to": "projectm/api/playlist/items",
+        "divider": false
       },
       {
-        "label": "memory",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "memory.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/playlist/memory"
+        "to": "projectm/api/playlist/memory",
+        "divider": false
       },
       {
-        "label": "playback",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "playback.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/playlist/playback"
+        "to": "projectm/api/playlist/playback",
+        "divider": false
       },
       {
-        "label": "types",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "types.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/playlist/types"
+        "to": "projectm/api/playlist/types",
+        "divider": false
       }
     ]
   },
   {
     "label": "projectm",
-    "icon": "i-heroicons-chevron-right-20-solid",
+    "icon": "bx:folder",
     "iconClass": "",
-    "to": "/api/projectm",
+    "to": "projectm/api/projectm",
     "divider": true,
     "links": [
       {
-        "label": "audio",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "audio.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/projectm/audio"
+        "to": "projectm/api/projectm/audio",
+        "divider": false
       },
       {
-        "label": "callbacks",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "callbacks.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/projectm/callbacks"
+        "to": "projectm/api/projectm/callbacks",
+        "divider": false
       },
       {
-        "label": "core",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "core.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/projectm/core"
+        "to": "projectm/api/projectm/core",
+        "divider": false
       },
       {
-        "label": "debug",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "debug.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/projectm/debug"
+        "to": "projectm/api/projectm/debug",
+        "divider": false
       },
       {
-        "label": "memory",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "memory.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/projectm/memory"
+        "to": "projectm/api/projectm/memory",
+        "divider": false
       },
       {
-        "label": "parameters",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "parameters.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/projectm/parameters"
+        "to": "projectm/api/projectm/parameters",
+        "divider": false
       },
       {
-        "label": "render-opengl",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "render-opengl.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/projectm/render-opengl"
+        "to": "projectm/api/projectm/render-opengl",
+        "divider": false
       },
       {
-        "label": "touch",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "touch.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/projectm/touch"
+        "to": "projectm/api/projectm/touch",
+        "divider": false
       },
       {
-        "label": "types",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "types.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/projectm/types"
+        "to": "projectm/api/projectm/types",
+        "divider": false
       },
       {
-        "label": "version",
-        "icon": "i-heroicons-chevron-right-20-solid",
+        "label": "version.h",
+        "icon": "bx:file",
         "iconClass": "",
-        "to": "/api/projectm/version"
+        "to": "projectm/api/projectm/version",
+        "divider": false
       }
     ]
   },
   {
-    "label": "",
-    "icon": "",
+    "label": "projectm-eval.h",
+    "icon": "bx:file",
     "iconClass": "",
-    "to": "",
-    "divider": true,
-    "links": [
-      {
-        "label": "projectm-eval",
-        "icon": "i-heroicons-chevron-right-20-solid",
-        "iconClass": "",
-        "to": "/api/projectm-eval"
-      }
-    ]
+    "to": "projectm/api/projectm-eval",
+    "divider": true
   }
 ]

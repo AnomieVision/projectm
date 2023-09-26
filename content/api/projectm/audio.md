@@ -4,10 +4,10 @@ Functions to pass in audio data to libprojectM.  [More...](#detailed-description
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT unsigned int | **[projectm_pcm_get_max_samples](audio.md#function-projectm-pcm-get-max-samples)**()<br>Returns the maximum number of audio samples that can be stored.  |
-| PROJECTM_EXPORT void | **[projectm_pcm_add_float](audio.md#function-projectm-pcm-add-float)**([projectm_handle](types.md#typedef-projectm-handle) instance, const float * samples, unsigned int count, [projectm_channels](types.md#enum-projectm-channels) channels)<br>Adds 32-bit floating-point audio samples.  |
-| PROJECTM_EXPORT void | **[projectm_pcm_add_int16](audio.md#function-projectm-pcm-add-int16)**([projectm_handle](types.md#typedef-projectm-handle) instance, const int16_t * samples, unsigned int count, [projectm_channels](types.md#enum-projectm-channels) channels)<br>Adds 16-bit integer audio samples.  |
-| PROJECTM_EXPORT void | **[projectm_pcm_add_uint8](audio.md#function-projectm-pcm-add-uint8)**([projectm_handle](types.md#typedef-projectm-handle) instance, const uint8_t * samples, unsigned int count, [projectm_channels](types.md#enum-projectm-channels) channels)<br>Adds 8-bit unsigned integer audio samples.  |
+| PROJECTM_EXPORT unsigned int | **[projectm_pcm_get_max_samples](/projectm/audio.md#function-projectm-pcm-get-max-samples)**()<br>Returns the maximum number of audio samples that can be stored.  |
+| PROJECTM_EXPORT void | **[projectm_pcm_add_float](/projectm/audio.md#function-projectm-pcm-add-float)**([projectm_handle](/projectm/types.md#typedef-projectm-handle) instance, const float * samples, unsigned int count, [projectm_channels](/projectm/types.md#enum-projectm-channels) channels)<br>Adds 32-bit floating-point audio samples.  |
+| PROJECTM_EXPORT void | **[projectm_pcm_add_int16](/projectm/audio.md#function-projectm-pcm-add-int16)**([projectm_handle](/projectm/types.md#typedef-projectm-handle) instance, const int16_t * samples, unsigned int count, [projectm_channels](/projectm/types.md#enum-projectm-channels) channels)<br>Adds 16-bit integer audio samples.  |
+| PROJECTM_EXPORT void | **[projectm_pcm_add_uint8](/projectm/audio.md#function-projectm-pcm-add-uint8)**([projectm_handle](/projectm/types.md#typedef-projectm-handle) instance, const uint8_t * samples, unsigned int count, [projectm_channels](/projectm/types.md#enum-projectm-channels) channels)<br>Adds 8-bit unsigned integer audio samples.  |
 
 ## Detailed Description
 
@@ -151,4 +151,4 @@ PROJECTM_EXPORT void projectm_pcm_add_uint8(projectm_handle instance, const uint
 
 -------------------------------
 
-Updated on 2023-09-26 at 02:00:16 +0000
+Updated on 2023-09-26 at 05:12:10 +0000

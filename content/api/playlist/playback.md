@@ -4,15 +4,15 @@ Playback control functions.  [More...](#detailed-description)
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_set_shuffle](playback.md#function-projectm-playlist-set-shuffle)**([projectm_playlist_handle](types.md#typedef-projectm-playlist-handle) instance, bool shuffle)<br>Enable or disable shuffle mode.  |
-| PROJECTM_PLAYLIST_EXPORT bool | **[projectm_playlist_get_shuffle](playback.md#function-projectm-playlist-get-shuffle)**([projectm_playlist_handle](types.md#typedef-projectm-playlist-handle) instance)<br>Retrieves the current state of shuffle mode.  |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_set_retry_count](playback.md#function-projectm-playlist-set-retry-count)**([projectm_playlist_handle](types.md#typedef-projectm-playlist-handle) instance, uint32_t retry_count)<br>Sets the number of retries after failed preset switches.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_get_retry_count](playback.md#function-projectm-playlist-get-retry-count)**([projectm_playlist_handle](types.md#typedef-projectm-playlist-handle) instance)<br>Returns the number of retries after failed preset switches.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_set_position](playback.md#function-projectm-playlist-set-position)**([projectm_playlist_handle](types.md#typedef-projectm-playlist-handle) instance, uint32_t new_position, bool hard_cut)<br>Plays the preset at the requested playlist position and returns the actual playlist index.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_get_position](playback.md#function-projectm-playlist-get-position)**([projectm_playlist_handle](types.md#typedef-projectm-playlist-handle) instance)<br>Returns the current playlist position.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_play_next](playback.md#function-projectm-playlist-play-next)**([projectm_playlist_handle](types.md#typedef-projectm-playlist-handle) instance, bool hard_cut)<br>Plays the next playlist item and returns the index of the new preset.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_play_previous](playback.md#function-projectm-playlist-play-previous)**([projectm_playlist_handle](types.md#typedef-projectm-playlist-handle) instance, bool hard_cut)<br>Plays the previous playlist item and returns the index of the new preset.  |
-| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_play_last](playback.md#function-projectm-playlist-play-last)**([projectm_playlist_handle](types.md#typedef-projectm-playlist-handle) instance, bool hard_cut)<br>Plays the last preset played in the history and returns the index of the preset.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_set_shuffle](/projectm/playback.md#function-projectm-playlist-set-shuffle)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, bool shuffle)<br>Enable or disable shuffle mode.  |
+| PROJECTM_PLAYLIST_EXPORT bool | **[projectm_playlist_get_shuffle](/projectm/playback.md#function-projectm-playlist-get-shuffle)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance)<br>Retrieves the current state of shuffle mode.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_set_retry_count](/projectm/playback.md#function-projectm-playlist-set-retry-count)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, uint32_t retry_count)<br>Sets the number of retries after failed preset switches.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_get_retry_count](/projectm/playback.md#function-projectm-playlist-get-retry-count)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance)<br>Returns the number of retries after failed preset switches.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_set_position](/projectm/playback.md#function-projectm-playlist-set-position)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, uint32_t new_position, bool hard_cut)<br>Plays the preset at the requested playlist position and returns the actual playlist index.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_get_position](/projectm/playback.md#function-projectm-playlist-get-position)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance)<br>Returns the current playlist position.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_play_next](/projectm/playback.md#function-projectm-playlist-play-next)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, bool hard_cut)<br>Plays the next playlist item and returns the index of the new preset.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_play_previous](/projectm/playback.md#function-projectm-playlist-play-previous)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, bool hard_cut)<br>Plays the previous playlist item and returns the index of the new preset.  |
+| PROJECTM_PLAYLIST_EXPORT uint32_t | **[projectm_playlist_play_last](/projectm/playback.md#function-projectm-playlist-play-last)**([projectm_playlist_handle](/projectm/types.md#typedef-projectm-playlist-handle) instance, bool hard_cut)<br>Plays the last preset played in the history and returns the index of the preset.  |
 
 ## Detailed Description
 
@@ -214,7 +214,7 @@ Plays the last preset played in the history and returns the index of the preset.
 
 The history keeps track of the last 1000 presets and will go back in the history. The playback history will be cleared whenever the playlist items are changed.
 
-If the history is empty, this call behaves identical to [projectm_playlist_play_previous()](playback.md#function-projectm-playlist-play-previous), but the item is not added to the history.
+If the history is empty, this call behaves identical to [projectm_playlist_play_previous()](/projectm/playback.md#function-projectm-playlist-play-previous), but the item is not added to the history.
 
 Presets which failed to load are not recorded in the history and thus will be skipped when calling this method.
 
@@ -260,4 +260,4 @@ PROJECTM_PLAYLIST_EXPORT uint32_t projectm_playlist_play_last(projectm_playlist_
 
 -------------------------------
 
-Updated on 2023-09-26 at 02:00:16 +0000
+Updated on 2023-09-26 at 05:12:10 +0000
