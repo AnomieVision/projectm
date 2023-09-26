@@ -1,5 +1,5 @@
 <template>
-  <div class="prose max-w-full">
+  <div class="prose">
     <ContentRenderer v-if="data" :value="data">
       <ContentRendererMarkdown :value="data" />
 
