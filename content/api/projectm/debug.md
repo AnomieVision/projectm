@@ -4,7 +4,7 @@ Debug functions for both libprojectM and preset developers.  [More...](#detailed
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT void | **[projectm_write_debug_image_on_next_frame](/projectm/api/debug.md#function-projectm-write-debug-image-on-next-frame)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, const char * output_file)<br>Writes a .bmp main texture dump after rendering the next main texture, before shaders are applied.  |
+| PROJECTM_EXPORT void | **[projectm_write_debug_image_on_next_frame](http://localhost:3000/projects/projectm/api/debug#function-projectm-write-debug-image-on-next-frame)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, const char * output_file)<br>Writes a .bmp main texture dump after rendering the next main texture, before shaders are applied.  |
 
 ## Detailed Description
 
@@ -58,13 +58,13 @@ To capture the actual output, dump the contents of the main framebuffer after ca
 
 #include "projectM-4/types.h"
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
 PROJECTM_EXPORT void projectm_write_debug_image_on_next_frame(projectm_handle instance, const char* output_file);
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 } // extern "C"
 #endif
 ```
@@ -72,4 +72,4 @@ PROJECTM_EXPORT void projectm_write_debug_image_on_next_frame(projectm_handle in
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:44:38 +0000
+Updated on 2023-09-26 at 15:44:26 +0000

@@ -49,6 +49,13 @@
         "divider": false
       },
       {
+        "label": "projectm_playlist_export.h",
+        "icon": "bx:file",
+        "iconClass": "",
+        "to": "api/playlist/projectm_playlist_export",
+        "divider": false
+      },
+      {
         "label": "types.h",
         "icon": "bx:file",
         "iconClass": "",
@@ -107,10 +114,17 @@
         "divider": false
       },
       {
-        "label": "render-opengl.h",
+        "label": "projectm_export.h",
         "icon": "bx:file",
         "iconClass": "",
-        "to": "api/projectm/render-opengl",
+        "to": "api/projectm/projectm_export",
+        "divider": false
+      },
+      {
+        "label": "render_opengl.h",
+        "icon": "bx:file",
+        "iconClass": "",
+        "to": "api/projectm/render_opengl",
         "divider": false
       },
       {

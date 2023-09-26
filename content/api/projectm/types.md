@@ -4,10 +4,10 @@ Types and enumerations used in the other API headers.  [More...](#detailed-descr
 
 |                | Name           |
 | -------------- | -------------- |
-| enum| **[projectm_channels](/projectm/api/types.md#enum-projectm-channels)** { PROJECTM_MONO = 1, PROJECTM_STEREO = 2} |
-| enum| **[projectm_pcm_channel](/projectm/api/types.md#enum-projectm-pcm-channel)** { PROJECTM_CHANNEL_L = 0, PROJECTM_CHANNEL_0 = 0, PROJECTM_CHANNEL_R = 1, PROJECTM_CHANNEL_1 = 1} |
-| enum| **[projectm_touch_type](/projectm/api/types.md#enum-projectm-touch-type)** { PROJECTM_TOUCH_TYPE_RANDOM, PROJECTM_TOUCH_TYPE_CIRCLE, PROJECTM_TOUCH_TYPE_RADIAL_BLOB, PROJECTM_TOUCH_TYPE_BLOB2, PROJECTM_TOUCH_TYPE_BLOB3, PROJECTM_TOUCH_TYPE_DERIVATIVE_LINE, PROJECTM_TOUCH_TYPE_BLOB5, PROJECTM_TOUCH_TYPE_LINE, PROJECTM_TOUCH_TYPE_DOUBLE_LINE} |
-| typedef struct projectm * | **[projectm_handle](/projectm/api/types.md#typedef-projectm-handle)** <br>Opaque projectM instance type.  |
+| enum| **[projectm_channels](http://localhost:3000/projects/projectm/api/types#enum-projectm-channels)** { PROJECTM_MONO = 1, PROJECTM_STEREO = 2} |
+| enum| **[projectm_pcm_channel](http://localhost:3000/projects/projectm/api/types#enum-projectm-pcm-channel)** { PROJECTM_CHANNEL_L = 0, PROJECTM_CHANNEL_0 = 0, PROJECTM_CHANNEL_R = 1, PROJECTM_CHANNEL_1 = 1} |
+| enum| **[projectm_touch_type](http://localhost:3000/projects/projectm/api/types#enum-projectm-touch-type)** { PROJECTM_TOUCH_TYPE_RANDOM, PROJECTM_TOUCH_TYPE_CIRCLE, PROJECTM_TOUCH_TYPE_RADIAL_BLOB, PROJECTM_TOUCH_TYPE_BLOB2, PROJECTM_TOUCH_TYPE_BLOB3, PROJECTM_TOUCH_TYPE_DERIVATIVE_LINE, PROJECTM_TOUCH_TYPE_BLOB5, PROJECTM_TOUCH_TYPE_LINE, PROJECTM_TOUCH_TYPE_DOUBLE_LINE} |
+| typedef struct projectm * | **[projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle)** <br>Opaque projectM instance type.  |
 
 ## Detailed Description
 
@@ -96,7 +96,7 @@ A pointer to the opaque projectM instance.
 
 #include "projectM-4/projectM_export.h"
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -134,7 +134,7 @@ typedef enum
     PROJECTM_TOUCH_TYPE_DOUBLE_LINE      
 } projectm_touch_type;
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 } // extern "C"
 #endif
 ```
@@ -142,4 +142,4 @@ typedef enum
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:44:38 +0000
+Updated on 2023-09-26 at 15:44:26 +0000

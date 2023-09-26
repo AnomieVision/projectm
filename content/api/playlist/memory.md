@@ -4,8 +4,8 @@ Memory allocation/deallocation helpers.  [More...](#detailed-description)
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_free_string](/projectm/api/memory.md#function-projectm-playlist-free-string)**(char * string)<br>Frees a char pointer returned by any of the playlist API functions.  |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_free_string_array](/projectm/api/memory.md#function-projectm-playlist-free-string-array)**(char ** array)<br>Frees a string array returned by any of the playlist API functions.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_free_string](http://localhost:3000/projects/projectm/api/memory#function-projectm-playlist-free-string)**(char * string)<br>Frees a char pointer returned by any of the playlist API functions.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_free_string_array](http://localhost:3000/projects/projectm/api/memory#function-projectm-playlist-free-string-array)**(char ** array)<br>Frees a string array returned by any of the playlist API functions.  |
 
 ## Detailed Description
 
@@ -71,7 +71,7 @@ Please only use this function with pointers returned by the playlist library, an
 
 #include "projectM-4/playlist_types.h"
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -79,7 +79,7 @@ PROJECTM_PLAYLIST_EXPORT void projectm_playlist_free_string(char* string);
 
 PROJECTM_PLAYLIST_EXPORT void projectm_playlist_free_string_array(char** array);
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 } // extern "C"
 #endif
 ```
@@ -87,4 +87,4 @@ PROJECTM_PLAYLIST_EXPORT void projectm_playlist_free_string_array(char** array);
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:44:38 +0000
+Updated on 2023-09-26 at 15:44:26 +0000

@@ -4,10 +4,10 @@ Functions to pass in audio data to libprojectM.  [More...](#detailed-description
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT unsigned int | **[projectm_pcm_get_max_samples](/projectm/api/audio.md#function-projectm-pcm-get-max-samples)**()<br>Returns the maximum number of audio samples that can be stored.  |
-| PROJECTM_EXPORT void | **[projectm_pcm_add_float](/projectm/api/audio.md#function-projectm-pcm-add-float)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, const float * samples, unsigned int count, [projectm_channels](/projectm/api/types.md#enum-projectm-channels) channels)<br>Adds 32-bit floating-point audio samples.  |
-| PROJECTM_EXPORT void | **[projectm_pcm_add_int16](/projectm/api/audio.md#function-projectm-pcm-add-int16)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, const int16_t * samples, unsigned int count, [projectm_channels](/projectm/api/types.md#enum-projectm-channels) channels)<br>Adds 16-bit integer audio samples.  |
-| PROJECTM_EXPORT void | **[projectm_pcm_add_uint8](/projectm/api/audio.md#function-projectm-pcm-add-uint8)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, const uint8_t * samples, unsigned int count, [projectm_channels](/projectm/api/types.md#enum-projectm-channels) channels)<br>Adds 8-bit unsigned integer audio samples.  |
+| PROJECTM_EXPORT unsigned int | **[projectm_pcm_get_max_samples](http://localhost:3000/projects/projectm/api/audio#function-projectm-pcm-get-max-samples)**()<br>Returns the maximum number of audio samples that can be stored.  |
+| PROJECTM_EXPORT void | **[projectm_pcm_add_float](http://localhost:3000/projects/projectm/api/audio#function-projectm-pcm-add-float)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, const float * samples, unsigned int count, [projectm_channels](http://localhost:3000/projects/projectm/api/types#enum-projectm-channels) channels)<br>Adds 32-bit floating-point audio samples.  |
+| PROJECTM_EXPORT void | **[projectm_pcm_add_int16](http://localhost:3000/projects/projectm/api/audio#function-projectm-pcm-add-int16)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, const int16_t * samples, unsigned int count, [projectm_channels](http://localhost:3000/projects/projectm/api/types#enum-projectm-channels) channels)<br>Adds 16-bit integer audio samples.  |
+| PROJECTM_EXPORT void | **[projectm_pcm_add_uint8](http://localhost:3000/projects/projectm/api/audio#function-projectm-pcm-add-uint8)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, const uint8_t * samples, unsigned int count, [projectm_channels](http://localhost:3000/projects/projectm/api/types#enum-projectm-channels) channels)<br>Adds 8-bit unsigned integer audio samples.  |
 
 ## Detailed Description
 
@@ -128,7 +128,7 @@ If stereo, the channel order in samples is LRLRLR.
 
 #include "projectM-4/types.h"
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -143,7 +143,7 @@ PROJECTM_EXPORT void projectm_pcm_add_int16(projectm_handle instance, const int1
 PROJECTM_EXPORT void projectm_pcm_add_uint8(projectm_handle instance, const uint8_t* samples,
                                             unsigned int count, projectm_channels channels);
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 } // extern "C"
 #endif
 ```
@@ -151,4 +151,4 @@ PROJECTM_EXPORT void projectm_pcm_add_uint8(projectm_handle instance, const uint
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:44:38 +0000
+Updated on 2023-09-26 at 15:44:26 +0000

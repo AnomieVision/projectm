@@ -4,9 +4,9 @@ Core functions to instantiate, destroy and connect a projectM playlist.  [More..
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_PLAYLIST_EXPORT [projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) | **[projectm_playlist_create](/projectm/api/core.md#function-projectm-playlist-create)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) projectm_instance)<br>Creates a playlist manager for the given projectM instance.  |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_destroy](/projectm/api/core.md#function-projectm-playlist-destroy)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance)<br>Destroys a previously created playlist manager.  |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_connect](/projectm/api/core.md#function-projectm-playlist-connect)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, [projectm_handle](/projectm/api/types.md#typedef-projectm-handle) projectm_instance)<br>Connects the playlist manager to a projectM instance.  |
+| PROJECTM_PLAYLIST_EXPORT [projectm_playlist_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-playlist-handle) | **[projectm_playlist_create](http://localhost:3000/projects/projectm/api/core#function-projectm-playlist-create)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) projectm_instance)<br>Creates a playlist manager for the given projectM instance.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_destroy](http://localhost:3000/projects/projectm/api/core#function-projectm-playlist-destroy)**([projectm_playlist_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-playlist-handle) instance)<br>Destroys a previously created playlist manager.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_connect](http://localhost:3000/projects/projectm/api/core#function-projectm-playlist-connect)**([projectm_playlist_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-playlist-handle) instance, [projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) projectm_instance)<br>Connects the playlist manager to a projectM instance.  |
 
 ## Detailed Description
 
@@ -45,7 +45,7 @@ Creates a playlist manager for the given projectM instance.
 
 Only one active playlist manager is supported per projectM instance. If multiple playlists use the same projectM instance, only the last created playlist manager will receive preset change callbacks from the projectM instance.
 
-To switch to another playlist, use the [projectm_playlist_connect()](/projectm/api/core.md#function-projectm-playlist-connect) method.
+To switch to another playlist, use the [projectm_playlist_connect()](http://localhost:3000/projects/projectm/api/core#function-projectm-playlist-connect) method.
 
 
 ### function projectm_playlist_destroy
@@ -85,7 +85,7 @@ Connects the playlist manager to a projectM instance.
 
 Sets or removes the preset switch callbacks and stores the projectM instance handle for use with manual preset switches via the playlist API.
 
-When switching between multiple playlist managers, first call this method on the last used playlist manager with a null pointer for the projectM instance, then call this method with the actual projectM instance on the playlist manager that should be activated. It is also safe to call [projectm_playlist_connect()](/projectm/api/core.md#function-projectm-playlist-connect) with a null projectM handle on all playlist manager instances before activating a single one with a valid, non-null projectM handle.
+When switching between multiple playlist managers, first call this method on the last used playlist manager with a null pointer for the projectM instance, then call this method with the actual projectM instance on the playlist manager that should be activated. It is also safe to call [projectm_playlist_connect()](http://localhost:3000/projects/projectm/api/core#function-projectm-playlist-connect) with a null projectM handle on all playlist manager instances before activating a single one with a valid, non-null projectM handle.
 
 
 
@@ -99,7 +99,7 @@ When switching between multiple playlist managers, first call this method on the
 #include "projectM-4/types.h"
 #include "projectM-4/playlist_types.h"
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -109,7 +109,7 @@ PROJECTM_PLAYLIST_EXPORT void projectm_playlist_destroy(projectm_playlist_handle
 
 PROJECTM_PLAYLIST_EXPORT void projectm_playlist_connect(projectm_playlist_handle instance, projectm_handle projectm_instance);
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 } // extern "C"
 #endif
 ```
@@ -117,4 +117,4 @@ PROJECTM_PLAYLIST_EXPORT void projectm_playlist_connect(projectm_playlist_handle
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:44:38 +0000
+Updated on 2023-09-26 at 15:44:26 +0000

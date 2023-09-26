@@ -4,10 +4,10 @@ Touch-related functions to add random waveforms.  [More...](#detailed-descriptio
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT void | **[projectm_touch](/projectm/api/touch.md#function-projectm-touch)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, float x, float y, int pressure, [projectm_touch_type](/projectm/api/types.md#enum-projectm-touch-type) touch_type)<br>Starts a touch event or moves an existing waveform.  |
-| PROJECTM_EXPORT void | **[projectm_touch_drag](/projectm/api/touch.md#function-projectm-touch-drag)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, float x, float y, int pressure)<br>Centers any waveforms under the coordinates to simulate dragging.  |
-| PROJECTM_EXPORT void | **[projectm_touch_destroy](/projectm/api/touch.md#function-projectm-touch-destroy)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, float x, float y)<br>Removes any additional touch waveforms under the given coordinates.  |
-| PROJECTM_EXPORT void | **[projectm_touch_destroy_all](/projectm/api/touch.md#function-projectm-touch-destroy-all)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Removes all touch waveforms from the screen.  |
+| PROJECTM_EXPORT void | **[projectm_touch](http://localhost:3000/projects/projectm/api/touch#function-projectm-touch)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, float x, float y, int pressure, [projectm_touch_type](http://localhost:3000/projects/projectm/api/types#enum-projectm-touch-type) touch_type)<br>Starts a touch event or moves an existing waveform.  |
+| PROJECTM_EXPORT void | **[projectm_touch_drag](http://localhost:3000/projects/projectm/api/touch#function-projectm-touch-drag)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, float x, float y, int pressure)<br>Centers any waveforms under the coordinates to simulate dragging.  |
+| PROJECTM_EXPORT void | **[projectm_touch_destroy](http://localhost:3000/projects/projectm/api/touch#function-projectm-touch-destroy)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, float x, float y)<br>Removes any additional touch waveforms under the given coordinates.  |
+| PROJECTM_EXPORT void | **[projectm_touch_destroy_all](http://localhost:3000/projects/projectm/api/touch#function-projectm-touch-destroy-all)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Removes all touch waveforms from the screen.  |
 
 ## Detailed Description
 
@@ -121,7 +121,7 @@ Preset-defined waveforms will still be displayed.
 
 #include "projectM-4/types.h"
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -134,7 +134,7 @@ PROJECTM_EXPORT void projectm_touch_destroy(projectm_handle instance, float x, f
 
 PROJECTM_EXPORT void projectm_touch_destroy_all(projectm_handle instance);
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 } // extern "C"
 #endif
 ```
@@ -142,4 +142,4 @@ PROJECTM_EXPORT void projectm_touch_destroy_all(projectm_handle instance);
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:44:38 +0000
+Updated on 2023-09-26 at 15:44:26 +0000

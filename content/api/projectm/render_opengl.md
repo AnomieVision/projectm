@@ -4,7 +4,7 @@ Functions to configure and render projectM visuals using OpenGL.  [More...](#det
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT void | **[projectm_opengl_render_frame](/projectm/api/render-opengl.md#function-projectm-opengl-render-frame)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Renders a single frame.  |
+| PROJECTM_EXPORT void | **[projectm_opengl_render_frame](http://localhost:3000/projects/projectm/api/render__opengl#function-projectm-opengl-render-frame)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Renders a single frame.  |
 
 ## Detailed Description
 
@@ -51,13 +51,13 @@ Renders a single frame.
 
 #include "projectM-4/types.h"
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
 PROJECTM_EXPORT void projectm_opengl_render_frame(projectm_handle instance);
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 } // extern "C"
 #endif
 ```
@@ -65,4 +65,4 @@ PROJECTM_EXPORT void projectm_opengl_render_frame(projectm_handle instance);
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:44:38 +0000
+Updated on 2023-09-26 at 15:44:26 +0000

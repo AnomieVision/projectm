@@ -4,9 +4,9 @@ Types and enumerations used in the playlist API headers.  [More...](#detailed-de
 
 |                | Name           |
 | -------------- | -------------- |
-| enum| **[projectm_playlist_sort_predicate](/projectm/api/types.md#enum-projectm-playlist-sort-predicate)** { SORT_PREDICATE_FULL_PATH, SORT_PREDICATE_FILENAME_ONLY} |
-| enum| **[projectm_playlist_sort_order](/projectm/api/types.md#enum-projectm-playlist-sort-order)** { SORT_ORDER_ASCENDING, SORT_ORDER_DESCENDING} |
-| typedef struct projectm_playlist * | **[projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle)** <br>Opaque projectM playlist instance type.  |
+| enum| **[projectm_playlist_sort_predicate](http://localhost:3000/projects/projectm/api/types#enum-projectm-playlist-sort-predicate)** { SORT_PREDICATE_FULL_PATH, SORT_PREDICATE_FILENAME_ONLY} |
+| enum| **[projectm_playlist_sort_order](http://localhost:3000/projects/projectm/api/types#enum-projectm-playlist-sort-order)** { SORT_ORDER_ASCENDING, SORT_ORDER_DESCENDING} |
+| typedef struct projectm_playlist * | **[projectm_playlist_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-playlist-handle)** <br>Opaque projectM playlist instance type.  |
 
 ## Detailed Description
 
@@ -73,7 +73,7 @@ A pointer to the opaque projectM playlist instance.
 
 #include "projectM-4/projectM_playlist_export.h"
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -93,7 +93,7 @@ typedef enum
     SORT_ORDER_DESCENDING 
 } projectm_playlist_sort_order;
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 } // extern "C"
 #endif
 ```
@@ -101,4 +101,4 @@ typedef enum
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:44:38 +0000
+Updated on 2023-09-26 at 15:44:26 +0000

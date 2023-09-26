@@ -4,31 +4,31 @@ Functions to set and retrieve all sorts of projectM parameters and setting.  [Mo
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_EXPORT void | **[projectm_set_texture_search_paths](/projectm/api/parameters.md#function-projectm-set-texture-search-paths)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, const char ** texture_search_paths, size_t count)<br>Sets the texture search paths.  |
-| PROJECTM_EXPORT void | **[projectm_set_beat_sensitivity](/projectm/api/parameters.md#function-projectm-set-beat-sensitivity)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, float sensitivity)<br>Sets the beat sensitivity.  |
-| PROJECTM_EXPORT float | **[projectm_get_beat_sensitivity](/projectm/api/parameters.md#function-projectm-get-beat-sensitivity)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Returns the beat sensitivity.  |
-| PROJECTM_EXPORT void | **[projectm_set_hard_cut_duration](/projectm/api/parameters.md#function-projectm-set-hard-cut-duration)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, double seconds)<br>Sets the minimum display time before a hard cut can happen.  |
-| PROJECTM_EXPORT double | **[projectm_get_hard_cut_duration](/projectm/api/parameters.md#function-projectm-get-hard-cut-duration)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Returns the minimum display time before a hard cut can happen.  |
-| PROJECTM_EXPORT void | **[projectm_set_hard_cut_enabled](/projectm/api/parameters.md#function-projectm-set-hard-cut-enabled)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, bool enabled)<br>Enables or disables hard cuts.  |
-| PROJECTM_EXPORT bool | **[projectm_get_hard_cut_enabled](/projectm/api/parameters.md#function-projectm-get-hard-cut-enabled)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Returns whether hard cuts are enabled or not.  |
-| PROJECTM_EXPORT void | **[projectm_set_hard_cut_sensitivity](/projectm/api/parameters.md#function-projectm-set-hard-cut-sensitivity)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, float sensitivity)<br>Sets the hard cut volume sensitivity.  |
-| PROJECTM_EXPORT float | **[projectm_get_hard_cut_sensitivity](/projectm/api/parameters.md#function-projectm-get-hard-cut-sensitivity)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Returns the current hard cut sensitivity.  |
-| PROJECTM_EXPORT void | **[projectm_set_soft_cut_duration](/projectm/api/parameters.md#function-projectm-set-soft-cut-duration)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, double seconds)<br>Sets the time in seconds for a soft transition between two presets.  |
-| PROJECTM_EXPORT double | **[projectm_get_soft_cut_duration](/projectm/api/parameters.md#function-projectm-get-soft-cut-duration)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Returns the time in seconds for a soft transition between two presets.  |
-| PROJECTM_EXPORT void | **[projectm_set_preset_duration](/projectm/api/parameters.md#function-projectm-set-preset-duration)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, double seconds)<br>Sets the preset display duration before switching to the next using a soft cut.  |
-| PROJECTM_EXPORT double | **[projectm_get_preset_duration](/projectm/api/parameters.md#function-projectm-get-preset-duration)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Returns the preset display duration before switching to the next using a soft cut.  |
-| PROJECTM_EXPORT void | **[projectm_set_mesh_size](/projectm/api/parameters.md#function-projectm-set-mesh-size)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, size_t width, size_t height)<br>Sets the per-pixel equation mesh size in units.  |
-| PROJECTM_EXPORT void | **[projectm_get_mesh_size](/projectm/api/parameters.md#function-projectm-get-mesh-size)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, size_t * width, size_t * height)<br>Returns the per-pixel equation mesh size in units.  |
-| PROJECTM_EXPORT void | **[projectm_set_fps](/projectm/api/parameters.md#function-projectm-set-fps)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, int32_t fps)<br>Sets the current/average frames per second.  |
-| PROJECTM_EXPORT int32_t | **[projectm_get_fps](/projectm/api/parameters.md#function-projectm-get-fps)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Returns the current/average frames per second.  |
-| PROJECTM_EXPORT void | **[projectm_set_aspect_correction](/projectm/api/parameters.md#function-projectm-set-aspect-correction)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, bool enabled)<br>Enabled or disables aspect ratio correction in presets that support it.  |
-| PROJECTM_EXPORT bool | **[projectm_get_aspect_correction](/projectm/api/parameters.md#function-projectm-get-aspect-correction)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Returns whether aspect ratio correction is enabled or not.  |
-| PROJECTM_EXPORT void | **[projectm_set_easter_egg](/projectm/api/parameters.md#function-projectm-set-easter-egg)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, float value)<br>Sets the "easter egg" value.  |
-| PROJECTM_EXPORT float | **[projectm_get_easter_egg](/projectm/api/parameters.md#function-projectm-get-easter-egg)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Returns the current "easter egg" value.  |
-| PROJECTM_EXPORT void | **[projectm_set_preset_locked](/projectm/api/parameters.md#function-projectm-set-preset-locked)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, bool lock)<br>Locks or unlocks the current preset.  |
-| PROJECTM_EXPORT bool | **[projectm_get_preset_locked](/projectm/api/parameters.md#function-projectm-get-preset-locked)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance)<br>Returns whether the current preset is locked or not.  |
-| PROJECTM_EXPORT void | **[projectm_set_window_size](/projectm/api/parameters.md#function-projectm-set-window-size)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, size_t width, size_t height)<br>Sets the current viewport size in pixels.  |
-| PROJECTM_EXPORT void | **[projectm_get_window_size](/projectm/api/parameters.md#function-projectm-get-window-size)**([projectm_handle](/projectm/api/types.md#typedef-projectm-handle) instance, size_t * width, size_t * height)<br>Returns the current viewport size in pixels.  |
+| PROJECTM_EXPORT void | **[projectm_set_texture_search_paths](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-texture-search-paths)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, const char ** texture_search_paths, size_t count)<br>Sets the texture search paths.  |
+| PROJECTM_EXPORT void | **[projectm_set_beat_sensitivity](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-beat-sensitivity)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, float sensitivity)<br>Sets the beat sensitivity.  |
+| PROJECTM_EXPORT float | **[projectm_get_beat_sensitivity](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-beat-sensitivity)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Returns the beat sensitivity.  |
+| PROJECTM_EXPORT void | **[projectm_set_hard_cut_duration](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-hard-cut-duration)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, double seconds)<br>Sets the minimum display time before a hard cut can happen.  |
+| PROJECTM_EXPORT double | **[projectm_get_hard_cut_duration](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-hard-cut-duration)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Returns the minimum display time before a hard cut can happen.  |
+| PROJECTM_EXPORT void | **[projectm_set_hard_cut_enabled](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-hard-cut-enabled)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, bool enabled)<br>Enables or disables hard cuts.  |
+| PROJECTM_EXPORT bool | **[projectm_get_hard_cut_enabled](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-hard-cut-enabled)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Returns whether hard cuts are enabled or not.  |
+| PROJECTM_EXPORT void | **[projectm_set_hard_cut_sensitivity](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-hard-cut-sensitivity)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, float sensitivity)<br>Sets the hard cut volume sensitivity.  |
+| PROJECTM_EXPORT float | **[projectm_get_hard_cut_sensitivity](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-hard-cut-sensitivity)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Returns the current hard cut sensitivity.  |
+| PROJECTM_EXPORT void | **[projectm_set_soft_cut_duration](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-soft-cut-duration)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, double seconds)<br>Sets the time in seconds for a soft transition between two presets.  |
+| PROJECTM_EXPORT double | **[projectm_get_soft_cut_duration](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-soft-cut-duration)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Returns the time in seconds for a soft transition between two presets.  |
+| PROJECTM_EXPORT void | **[projectm_set_preset_duration](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-preset-duration)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, double seconds)<br>Sets the preset display duration before switching to the next using a soft cut.  |
+| PROJECTM_EXPORT double | **[projectm_get_preset_duration](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-preset-duration)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Returns the preset display duration before switching to the next using a soft cut.  |
+| PROJECTM_EXPORT void | **[projectm_set_mesh_size](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-mesh-size)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, size_t width, size_t height)<br>Sets the per-pixel equation mesh size in units.  |
+| PROJECTM_EXPORT void | **[projectm_get_mesh_size](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-mesh-size)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, size_t * width, size_t * height)<br>Returns the per-pixel equation mesh size in units.  |
+| PROJECTM_EXPORT void | **[projectm_set_fps](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-fps)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, int32_t fps)<br>Sets the current/average frames per second.  |
+| PROJECTM_EXPORT int32_t | **[projectm_get_fps](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-fps)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Returns the current/average frames per second.  |
+| PROJECTM_EXPORT void | **[projectm_set_aspect_correction](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-aspect-correction)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, bool enabled)<br>Enabled or disables aspect ratio correction in presets that support it.  |
+| PROJECTM_EXPORT bool | **[projectm_get_aspect_correction](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-aspect-correction)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Returns whether aspect ratio correction is enabled or not.  |
+| PROJECTM_EXPORT void | **[projectm_set_easter_egg](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-easter-egg)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, float value)<br>Sets the "easter egg" value.  |
+| PROJECTM_EXPORT float | **[projectm_get_easter_egg](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-easter-egg)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Returns the current "easter egg" value.  |
+| PROJECTM_EXPORT void | **[projectm_set_preset_locked](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-preset-locked)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, bool lock)<br>Locks or unlocks the current preset.  |
+| PROJECTM_EXPORT bool | **[projectm_get_preset_locked](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-preset-locked)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance)<br>Returns whether the current preset is locked or not.  |
+| PROJECTM_EXPORT void | **[projectm_set_window_size](http://localhost:3000/projects/projectm/api/parameters#function-projectm-set-window-size)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, size_t width, size_t height)<br>Sets the current viewport size in pixels.  |
+| PROJECTM_EXPORT void | **[projectm_get_window_size](http://localhost:3000/projects/projectm/api/parameters#function-projectm-get-window-size)**([projectm_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-handle) instance, size_t * width, size_t * height)<br>Returns the current viewport size in pixels.  |
 
 ## Detailed Description
 
@@ -541,7 +541,7 @@ Returns the current viewport size in pixels.
 
 #include "projectM-4/types.h"
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -597,7 +597,7 @@ PROJECTM_EXPORT void projectm_set_window_size(projectm_handle instance, size_t w
 
 PROJECTM_EXPORT void projectm_get_window_size(projectm_handle instance, size_t* width, size_t* height);
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 } // extern "C"
 #endif
 ```
@@ -605,4 +605,4 @@ PROJECTM_EXPORT void projectm_get_window_size(projectm_handle instance, size_t* 
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:44:38 +0000
+Updated on 2023-09-26 at 15:44:26 +0000

@@ -4,15 +4,15 @@ Functions and prototypes for projectM playlist callbacks.  [More...](#detailed-d
 
 |                | Name           |
 | -------------- | -------------- |
-| typedef void(*)(bool is_hard_cut, unsigned int index, void *user_data) | **[projectm_playlist_preset_switched_event](/projectm/api/callbacks.md#typedef-projectm-playlist-preset-switched-event)** <br>Callback function that is executed on each preset change.  |
-| typedef void(*)(const char *preset_filename, const char *message, void *user_data) | **[projectm_playlist_preset_switch_failed_event](/projectm/api/callbacks.md#typedef-projectm-playlist-preset-switch-failed-event)** <br>Callback function that is executed if a preset change failed too often.  |
+| typedef void(*)(bool is_hard_cut, unsigned int index, void *user_data) | **[projectm_playlist_preset_switched_event](http://localhost:3000/projects/projectm/api/callbacks#typedef-projectm-playlist-preset-switched-event)** <br>Callback function that is executed on each preset change.  |
+| typedef void(*)(const char *preset_filename, const char *message, void *user_data) | **[projectm_playlist_preset_switch_failed_event](http://localhost:3000/projects/projectm/api/callbacks#typedef-projectm-playlist-preset-switch-failed-event)** <br>Callback function that is executed if a preset change failed too often.  |
 
 ## Functions
 
 |                | Name           |
 | -------------- | -------------- |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_set_preset_switched_event_callback](/projectm/api/callbacks.md#function-projectm-playlist-set-preset-switched-event-callback)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, [projectm_playlist_preset_switched_event](/projectm/api/callbacks.md#typedef-projectm-playlist-preset-switched-event) callback, void * user_data)<br>Sets a callback function that will be called when a preset changes.  |
-| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_set_preset_switch_failed_event_callback](/projectm/api/callbacks.md#function-projectm-playlist-set-preset-switch-failed-event-callback)**([projectm_playlist_handle](/projectm/api/types.md#typedef-projectm-playlist-handle) instance, [projectm_playlist_preset_switch_failed_event](/projectm/api/callbacks.md#typedef-projectm-playlist-preset-switch-failed-event) callback, void * user_data)<br>Sets a callback function that will be called when a preset change failed.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_set_preset_switched_event_callback](http://localhost:3000/projects/projectm/api/callbacks#function-projectm-playlist-set-preset-switched-event-callback)**([projectm_playlist_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-playlist-handle) instance, [projectm_playlist_preset_switched_event](http://localhost:3000/projects/projectm/api/callbacks#typedef-projectm-playlist-preset-switched-event) callback, void * user_data)<br>Sets a callback function that will be called when a preset changes.  |
+| PROJECTM_PLAYLIST_EXPORT void | **[projectm_playlist_set_preset_switch_failed_event_callback](http://localhost:3000/projects/projectm/api/callbacks#function-projectm-playlist-set-preset-switch-failed-event-callback)**([projectm_playlist_handle](http://localhost:3000/projects/projectm/api/types#typedef-projectm-playlist-handle) instance, [projectm_playlist_preset_switch_failed_event](http://localhost:3000/projects/projectm/api/callbacks#typedef-projectm-playlist-preset-switch-failed-event) callback, void * user_data)<br>Sets a callback function that will be called when a preset change failed.  |
 
 ## Detailed Description
 
@@ -119,7 +119,7 @@ Sets a callback function that will be called when a preset change failed.
 
 Only one callback can be registered per projectM instance. To remove the callback, use NULL.
 
-If the application want to receive projectM's analogous callback directly, use the [projectm_set_preset_switch_failed_event_callback()](/projectm/api/callbacks.md#function-projectm-set-preset-switch-failed-event-callback) function after calling [projectm_playlist_create()](/projectm/api/core.md#function-projectm-playlist-create) or [projectm_playlist_connect()](/projectm/api/core.md#function-projectm-playlist-connect), respectively, as these will both override the callback set in projectM.
+If the application want to receive projectM's analogous callback directly, use the [projectm_set_preset_switch_failed_event_callback()](http://localhost:3000/projects/projectm/api/callbacks#function-projectm-set-preset-switch-failed-event-callback) function after calling [projectm_playlist_create()](http://localhost:3000/projects/projectm/api/core#function-projectm-playlist-create) or [projectm_playlist_connect()](http://localhost:3000/projects/projectm/api/core#function-projectm-playlist-connect), respectively, as these will both override the callback set in projectM.
 
 
 
@@ -132,7 +132,7 @@ If the application want to receive projectM's analogous callback directly, use t
 
 #include "projectM-4/playlist_types.h"
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -151,7 +151,7 @@ PROJECTM_PLAYLIST_EXPORT void projectm_playlist_set_preset_switch_failed_event_c
                                                                                         projectm_playlist_preset_switch_failed_event callback,
                                                                                         void* user_data);
 
-#ifdef -cplusplus
+#ifdef __cplusplus
 } // extern "C"
 #endif
 ```
@@ -159,4 +159,4 @@ PROJECTM_PLAYLIST_EXPORT void projectm_playlist_set_preset_switch_failed_event_c
 
 -------------------------------
 
-Updated on 2023-09-26 at 05:44:38 +0000
+Updated on 2023-09-26 at 15:44:26 +0000
