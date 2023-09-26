@@ -1,0 +1,137 @@
+[
+  {
+    "label": "playlist",
+    "icon": "i-heroicons-chevron-right-20-solid",
+    "iconClass": "",
+    "to": "/api/playlist",
+    "divider": true,
+    "links": [
+      {
+        "label": "callbacks",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/playlist/callbacks"
+      },
+      {
+        "label": "core",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/playlist/core"
+      },
+      {
+        "label": "filter",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/playlist/filter"
+      },
+      {
+        "label": "items",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/playlist/items"
+      },
+      {
+        "label": "memory",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/playlist/memory"
+      },
+      {
+        "label": "playback",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/playlist/playback"
+      },
+      {
+        "label": "types",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/playlist/types"
+      }
+    ]
+  },
+  {
+    "label": "projectm",
+    "icon": "i-heroicons-chevron-right-20-solid",
+    "iconClass": "",
+    "to": "/api/projectm",
+    "divider": true,
+    "links": [
+      {
+        "label": "audio",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm/audio"
+      },
+      {
+        "label": "callbacks",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm/callbacks"
+      },
+      {
+        "label": "core",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm/core"
+      },
+      {
+        "label": "debug",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm/debug"
+      },
+      {
+        "label": "memory",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm/memory"
+      },
+      {
+        "label": "parameters",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm/parameters"
+      },
+      {
+        "label": "render-opengl",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm/render-opengl"
+      },
+      {
+        "label": "touch",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm/touch"
+      },
+      {
+        "label": "types",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm/types"
+      },
+      {
+        "label": "version",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm/version"
+      }
+    ]
+  },
+  {
+    "label": "",
+    "icon": "",
+    "iconClass": "",
+    "to": "",
+    "divider": true,
+    "links": [
+      {
+        "label": "projectm-eval",
+        "icon": "i-heroicons-chevron-right-20-solid",
+        "iconClass": "",
+        "to": "/api/projectm-eval"
+      }
+    ]
+  }
+]
