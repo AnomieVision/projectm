@@ -106,8 +106,6 @@ async function doSomeMagic() {
         continue;
       } else if (filename.startsWith('projectm-eval')) {
         await fs.rename(filePath, join(apiDir, `${filename}.md`));
-      } else if (filename.includes('export')) {
-        continue;
       } else if (filename.startsWith('playlist__')) {
         const subdirectory = filename.split('__')[0];
         const newFilename = filename.split('__')[1];
@@ -118,8 +116,13 @@ async function doSomeMagic() {
       } else if (filename === 'projectM') {
         await fs.rename(filePath, join(apiDir, 'projectm', 'index.md'));
       } else {
-        filename = filename.replace(/__/g, '-').replace(/_/g, '-').toLowerCase();
-        await fs.rename(filePath, join(apiDir, 'projectm', `${filename}.md`));
+        filename = filename.replace(/__/g, '_').toLowerCase();
+
+        if (filename.includes('_playlist')) {
+          await fs.rename(filePath, join(apiDir, 'playlist', `${filename}.md`));
+        } else {
+          await fs.rename(filePath, join(apiDir, 'projectm', `${filename}.md`));
+        }
       }
     }
   }
@@ -127,6 +130,16 @@ async function doSomeMagic() {
 
 // Fix urls
 async function fixUrls() {
+  const getRootUrl = () => {
+    if (process.env.NODE_ENV === 'production') {
+      return 'https://projectm-visualizer.github.io/';
+    } else {
+      return 'http://localhost:3000/';
+    }
+  }
+
+  const rootUrl = getRootUrl() + 'projects/projectm/api/';
+
   // Iterate through all files in api directory, and remove _8h and /files from all strings in side the files.
   const apiDir = join(process.cwd(), 'content', 'api');
   const files = await fs.readdir(apiDir);
@@ -138,9 +151,10 @@ async function fixUrls() {
     if (stats.isFile() && filePath.endsWith('.md')) {
       let content = await fs.readFile(filePath, 'utf-8');
       content = content.replace(/_8h/g, '');
-      content = content.replace(/Files\//g, '');
+      content = content.replace(/.md/g, '');
+      content = content.replace(/Files\//g, rootUrl);
       content = content.replace(/playlist__/g, '');
-      content = content.replace(/__/g, '-');
+      // content = content.replace(/__/g, '-');
 
       // Console.log all matches for Files/ in content
       const matches = content.match(/Files\//g);
@@ -162,9 +176,10 @@ async function fixUrls() {
         if (subdirStats.isFile() && subdirFilePath.endsWith('.md')) {
           let content = await fs.readFile(subdirFilePath, 'utf-8');
           content = content.replace(/_8h/g, '');
-          content = content.replace(/Files\//g, '');
+          content = content.replace(/.md/g, '');
+          content = content.replace(/Files\//g, rootUrl);
           content = content.replace(/playlist__/g, '');
-          content = content.replace(/__/g, '-');
+          // content = content.replace(/__/g, '-');
 
           await fs.writeFile(subdirFilePath, content, {encoding:'utf8',flag:'w'});
         }
@@ -266,7 +281,7 @@ async function main() {
   await doSomeMagic();
   await fixUrls();
   await generateSidebarMenuLinks();
-  await cleanup();
+  // await cleanup();
 
   console.log('Docs generated successfully.');
 }
