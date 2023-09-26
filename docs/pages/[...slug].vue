@@ -12,20 +12,24 @@
 
 <script setup lang="ts">
 const route = useRoute();
-const routePathWithoutPrefix = computed(() => route.path.replace(/^\//, ""));
+const routePathWithoutPrefix = computed(() => {
+  let path = route.path;
+  path = path.replace(/^\/*projectm\//, "");
+  path = path.replace(/^\//, "");
+
+  return path;
+});
+
+const { breadcrumbs } = useBreadcrumbs();
 
 const title = computed(() => {
-  const formattedTitle = routePathWithoutPrefix.value.split("/").join(" > ");
-  return formattedTitle;
+  const lastBreadcrumb = breadcrumbs.value[breadcrumbs.value.length - 1];
+  return lastBreadcrumb.name;
 });
 
 const { data } = await useAsyncData(routePathWithoutPrefix.value, () =>
   queryContent(route.path).findOne(),
 );
-
-console.log(routePathWithoutPrefix.value);
-console.log(title.value);
-console.log(data);
 
 useHead({
   title,
