@@ -144,7 +144,7 @@ async function fixUrls() {
 
       // Console.log all matches for Files/ in content
       const matches = content.match(/Files\//g);
-      
+
       if (matches) {
         console.log('matches', matches);
       }
@@ -186,21 +186,13 @@ async function generateSidebarMenuLinks() {
     if (stats.isFile() && filePath.endsWith('.md')) {
       const filename = file.split('.')[0];
       const title = filename.split('__')[1] || filename;
-      const url = `/api/${filename}`;
+      const url = `api/${filename}`;
       sidebarMenuLinks.push({
-        label: '',
-        icon: '',
+        label: title + '.h',
+        icon: 'bx:file',
         iconClass: '',
-        to: '',
+        to: url,
         divider: true,
-        links: [
-          {
-            label: title,
-            icon: 'i-heroicons-chevron-right-20-solid',
-            iconClass: '',
-            to: url
-          }
-        ]
       });
     }
 
@@ -211,9 +203,9 @@ async function generateSidebarMenuLinks() {
 
       const section = {
         label: header,
-        icon: 'i-heroicons-chevron-right-20-solid',
+        icon: 'bx:folder',
         iconClass: '',
-        to: `/api/${file}`,
+        to: `api/${file}`,
         divider: true,
         links: [] as any[]
       };
@@ -230,12 +222,13 @@ async function generateSidebarMenuLinks() {
           }
 
           const title = filename.split('__')[1] || filename;
-          const url = `/api/${file}/${filename}`;
+          const url = `api/${file}/${filename}`;
           section.links.push({
-            label: title,
-            icon: 'i-heroicons-chevron-right-20-solid',
+            label: title + '.h',
+            icon: 'bx:file',
             iconClass: '',
-            to: url
+            to: url,
+            divider: false,
           });
         }
       }
