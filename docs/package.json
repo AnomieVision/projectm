@@ -2,15 +2,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "npm run api:generate && nuxt generate && touch .output/public/.nojekyll",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
+    "clean": "ts-node --esm ./scripts/clean.ts",
     "deploy": "gh-pages --dotfiles -d .output/public",
-    "api:generate": "ts-node --esm ./scripts/generate-api.ts",
-    "prepare:docs": "ts-node --esm ./scripts/prepare-docs.ts",
-    "build:docs": "npm run api:generate && ts-node --esm ./scripts/prepare-docs.ts && touch ./public/.nojekyll"
+    "postinstall": "nuxt prepare",
+    "docs:build": "ts-node --esm ./scripts/build-docs.ts",
+    "docs:bundle": "ts-node --esm ./scripts/bundle-docs.ts",
+    "nuxt:build": "nuxt build",
+    "nuxt:dev": "nuxt dev",
+    "nuxt:generate": "nuxt generate",
+    "nuxt:preview": "nuxt preview"
   },
   "devDependencies": {
     "@nuxt/content": "^2.8.2",

@@ -19,9 +19,6 @@ export default defineNuxtConfig({
 
   // Modules
   content: {
-    experimental: {
-      clientDb: true
-    },
     // Configuring code highlighting
     // https://content.nuxtjs.org/api/configuration
     highlight: {

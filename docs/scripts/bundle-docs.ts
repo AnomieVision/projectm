@@ -29,15 +29,19 @@ async function copyDirectory(source: string, target: string) {
     }
 }
 
-// Prepare docs in ./public directory
+// Prepare docs in ./.output/public directory
 async function prepareDocs() {
-    await createDirectory("./public");
+    await createDirectory(".output/public");
 
     await copyDirectory("./content", "./.output/public/content");
     await copyDirectory("./generated", "./.output/public/generated");
     await copyDirectory("./pages", "./.output/public/pages");
 
     await fs.copyFile("./constants/config.json", "./.output/public/config.json");
+
+    fs.writeFile("./.output/public/.nojekyll", "");
+
+    console.log("Prepared docs.");
 }
 
 prepareDocs();
