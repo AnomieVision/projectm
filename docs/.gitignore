@@ -12,3 +12,5 @@ TODO.md
 artifacts
 .doxybook/generated
 .doxygen/xml
+content/api
+generated

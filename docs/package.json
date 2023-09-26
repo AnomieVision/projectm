@@ -8,7 +8,9 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "deploy": "gh-pages --dotfiles -d .output/public",
-    "api:generate": "ts-node --esm ./scripts/generate-api.ts"
+    "api:generate": "ts-node --esm ./scripts/generate-api.ts",
+    "prepare:docs": "ts-node --esm ./scripts/prepare-docs.ts",
+    "build:docs": "npm run api:generate && ts-node --esm ./scripts/prepare-docs.ts && touch ./public/.nojekyll"
   },
   "devDependencies": {
     "@nuxt/content": "^2.8.2",
