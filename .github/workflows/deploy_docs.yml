@@ -47,13 +47,14 @@ jobs:
           name: projectm-linux-shared-latest
           path: ./docs/artifacts
 
-      - name: build-and-bundle-docs
+      - name: generate
+        id: generate
         run: |
           cd ./docs
-          npm run docs:build
-          npm run docs:bundle
+          npm run generate
           
       - name: deploy-with-gh-pages
+        if: steps.generate.outcome == 'success'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
