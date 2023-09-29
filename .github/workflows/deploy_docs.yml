@@ -45,7 +45,7 @@ jobs:
           workflow: 'build_linux.yml'
           workflow_conclusion: success
           name: projectm-linux-shared-latest
-          path: ./docs/artifacts
+          path: ./docs/.pm/artifacts
 
       - name: generate
         id: generate
@@ -60,16 +60,16 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs/.output/public
 
-  trigger:
-    needs: build-static
-    name: trigger-remote-workflow
-    runs-on: ubuntu-latest
+  # trigger:
+  #   needs: build-static
+  #   name: trigger-remote-workflow
+  #   runs-on: ubuntu-latest
 
-    steps:
-      - name: dispatch
-        uses: peter-evans/repository-dispatch@v1
-        with:
-          repository: projectM-visualizer/projectM-visualizer.github.io
-          token: ${{ secrets.PAT }}
-          event-type: doit
-          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+  #   steps:
+  #     - name: dispatch
+  #       uses: peter-evans/repository-dispatch@v1
+  #       with:
+  #         repository: projectM-visualizer/projectM-visualizer.github.io
+  #         token: ${{ secrets.PAT }}
+  #         event-type: doit
+  #         client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'

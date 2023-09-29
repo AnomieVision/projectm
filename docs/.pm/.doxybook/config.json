@@ -1,0 +1,15 @@
+{
+  "baseUrl": "",
+  "indexInFolders": true,
+  "linkSuffix": ".md",
+  "linkLowercase": true,
+  "indexClassesName": "index",
+  "indexFilesName": "index",
+  "indexGroupsName": "index",
+  "indexNamespacesName": "index",
+  "indexRelatedPagesName": "index",
+  "indexExamplesName": "index",
+  "mainPageInRoot": true,
+  "mainPageName": "index",
+  "replaceUnderscoresInAnchors": false
+}

@@ -1,0 +1,17 @@
+node_modules
+*.log*
+.nuxt
+.nitro
+.cache
+.output
+.data
+.env
+dist
+package-lock.json
+
+# Private
+.private
+
+# Generated
+content/docs/api
+data
