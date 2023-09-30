@@ -69,17 +69,10 @@ const menu: MenuEntry[] = [
     ],
   },
   {
-    label: "About Us",
+    label: "Support",
     icon: "",
     iconClass: "",
-    to: "/about",
-    divider: false,
-  },
-  {
-    label: "Contact",
-    icon: "",
-    iconClass: "",
-    to: "/contact",
+    to: "https://discord.gg/7fQXN43n9W",
     divider: false,
   },
 ];

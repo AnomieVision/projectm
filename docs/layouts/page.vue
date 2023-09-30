@@ -11,7 +11,9 @@
 
       <div class="flex flex-grow self-stretch">
         <div class="flex-grow self-stretch p-4 bg-neutral rounded-lg shadow-md">
-          <slot />
+          <div class="max-w-full prose">
+            <slot />
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-full flex flex-col items-center">
+  <div class="min-h-screen max-w-screen w-full flex flex-col items-center">
     <Navbar />
 
     <div
@@ -13,7 +13,9 @@
         <Sidebar />
 
         <div class="flex-grow self-stretch p-4 bg-neutral rounded-lg shadow-md">
-          <slot />
+          <div class="max-w-[96%] prose">
+            <slot />
+          </div>
         </div>
       </div>
     </div>
@@ -25,3 +27,9 @@
 <script setup lang="ts">
 const { breadcrumbs } = useBreadcrumbs();
 </script>
+
+<style scoped>
+.prose {
+  color: var(--tw-prose-body);
+}
+</style>
