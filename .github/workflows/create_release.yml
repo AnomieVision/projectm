@@ -1,0 +1,70 @@
+name: Create Release
+
+on:
+  push:
+      branches: 
+        - "*"
+      tags:
+        - "*"
+    
+  pull_request:
+      branches: 
+        - "*"
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+          ref: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.sha || github.sha }}
+
+      - name: Set Fake Name (PRs)
+        run: echo "PT_GITHUB_REF=refs/tags/pr-tag" >> "$GITHUB_ENV"
+        if: ${{ github.event_name == 'pull_request' }}
+      
+      - name: Set Real Name (Non-PRs)
+        run: echo "PT_GITHUB_REF=$GITHUB_REF" >> "$GITHUB_ENV"
+        if: ${{ github.event_name != 'pull_request' }}
+
+      - name: Set Environment Variables
+        run: |
+          tag_or_branch="${PT_GITHUB_REF#refs/tags/}"
+          tag_or_branch="${tag_or_branch#refs/heads/}"
+          tag_or_branch="${tag_or_branch//\//_}" # Replace directory separators with _ in branch name
+                    
+          echo "PT_RELEASE_NAME=projectm-source-$tag_or_branch" >> "$GITHUB_ENV"
+          echo "PT_RELEASE_TAR=projectm-source-$tag_or_branch.tar.gz" >> "$GITHUB_ENV"
+          echo "PT_RELEASE_ZIP=projectm-source-$tag_or_branch.zip" >> "$GITHUB_ENV"
+
+      - name: Create Source Archives
+        run: |
+            # Create new folder with specified name so extracting the archive yields that
+            rm -rf "/tmp/$PT_RELEASE_NAME"
+            cp -r "$PWD" "/tmp/$PT_RELEASE_NAME"
+            mv "/tmp/$PT_RELEASE_NAME" .
+
+            # Cleanup
+            find "$PT_RELEASE_NAME" -name '.git*' -exec rm -rv {} \; || true
+
+            # Change working directory
+            cd "$PT_RELEASE_NAME"
+            
+            # Create tar archive
+            tar -czf "../$PT_RELEASE_TAR" .
+                       
+            # Create zip archive
+            zip -r "../$PT_RELEASE_ZIP" .
+            
+            echo "Created source archives with content: \n$(ls -a)"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+            name: ${{ env.PT_RELEASE_NAME }}
+            path: |
+              ${{ env.PT_RELEASE_TAR }}
+              ${{ env.PT_RELEASE_ZIP }}
