@@ -7,7 +7,7 @@ function Start-CheckDependencies {
         "Git" = "https://git-scm.com/download/win"
         "Microsoft Visual C++ 2022" = "https://visualstudio.microsoft.com/downloads"
         "Vcpkg" = "https://github.com/microsoft/vcpkg"
-        "CMak2e" = "https://cmake.org/download"
+        "CMake" = "https://cmake.org/download"
     }
 
     $InstalledApplications = Get-WmiObject -Class Win32_Product | Select-Object -Property Name

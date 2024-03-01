@@ -46,7 +46,7 @@ function Start-ConfigureBuild {
         [string]$BuildType
     )
 
-    if ($BuildType -eq "Release" -Or $BuildType -eq "release") {
+    if ($BuildType -eq "Release") {
         $Dist = "$Dist\release"
         $MSVCRuntimeLibrary = "MultiThreaded$<$<CONFIG:Release>:Release>DLL"
     } else {
@@ -64,6 +64,7 @@ function Start-ConfigureBuild {
         -S "$Source" `
         -B "$Build" `
         -DCMAKE_INSTALL_PREFIX="$Dist" `
+        -DCMAKE_BUILD_TYPE="$BuildType" `
         -DCMAKE_TOOLCHAIN_FILE="$Env:EMSDK\upstream\emscripten\cmake\Modules\Platform\Emscripten.cmake" `
         -DCMAKE_VERBOSE_MAKEFILE=YES
     } elseif ($BuildTarget -eq "X64") {
@@ -78,7 +79,7 @@ function Start-ConfigureBuild {
         -S "$Source" `
         -B "$Build" `
         -DCMAKE_INSTALL_PREFIX="$Dist" `
-        -DCMAKE_BUILD_TYPE="$BuildType" `
+        -DCMAKE_BUILD_TYPE="$BuildType" `-DCMAKE_BUILD_TYPE="$BuildType" `
         -DCMAKE_TOOLCHAIN_FILE="${Env:VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" `
         -DVCPKG_TARGET_TRIPLET=x64-windows `
         -DCMAKE_MSVC_RUNTIME_LIBRARY="$MSVCRuntimeLibrary" `
@@ -130,6 +131,10 @@ foreach ($arg in $args) {
             $BuildTarget = "Emscripten"
             break
         }
+        * {
+            Write-Host "Invalid argument: $arg"
+            exit 1
+        }
     }
 }
 
@@ -143,11 +148,11 @@ Invoke-PromptCleanBuild -Auto $Auto -Build $Build -Dist $Dist
 if ($BuildDebug -eq "true") {
     $BuildType = "Debug"
     Start-ConfigureBuild -Source $Root -Build $Build -Dist $Dist -BuildTarget $BuildTarget -BuildType $BuildType
-    Start-Build -Build $Build -BuildTarget $BuildTarget -BuildType $BuildType
+    Start-Build -Build $Build
 }
 
 if ($BuildRelease -eq "true") {
     $BuildType = "Release"
     Start-ConfigureBuild -Source $Root -Build $Build -Dist $Dist -BuildTarget $BuildTarget -BuildType $BuildType
-    Start-Build -Build $Build -BuildTarget $BuildTarget -BuildType $BuildType
+    Start-Build -Build $Build
 }
