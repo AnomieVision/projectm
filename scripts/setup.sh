@@ -29,15 +29,24 @@ install_packages() {
                 sudo pacman -S "${PACKAGE_LIST[@]}"
             fi
         ;;
-        # brew)
-        #     brew update
+        yum)
+            sudo yum -y update
+            
+            if [ $AUTO = true ]; then
+                sudo yum -y install "${PACKAGE_LIST[@]}"
+            else
+                sudo yum install "${PACKAGE_LIST[@]}"
+            fi
+        ;;
+        brew)
+            brew update
         
-        #     if [ $AUTO = true ]; then
-        #         brew install "${PACKAGE_LIST[@]}" || true
-        #     else
-        #         brew install "${PACKAGE_LIST[@]}"
-        #     fi
-        # ;;
+            if [ $AUTO = true ]; then
+                brew install "${PACKAGE_LIST[@]}" || true
+            else
+                brew install "${PACKAGE_LIST[@]}"
+            fi
+        ;;
     esac
 }
 
@@ -52,13 +61,17 @@ prompt_install_dependencies() {
         if command -v brew &>/dev/null; then
             AVAILABLE_PACKAGE_MANAGERS+=("brew")
         fi
-        elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+    elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
         if command -v apt &>/dev/null; then
             AVAILABLE_PACKAGE_MANAGERS+=("apt")
         fi
         
         if command -v pacman &>/dev/null; then
             AVAILABLE_PACKAGE_MANAGERS+=("pacman")
+        fi
+
+        if command -v yum &>/dev/null; then
+            AVAILABLE_PACKAGE_MANAGERS+=("yum")
         fi
     fi
     
@@ -89,11 +102,32 @@ prompt_install_dependencies() {
             PACKAGE_LIST=("git" "cmake" "ninja" "pkgconf" "base-devel"  "mesa")
             install_packages $AUTO "$SELECTED_PACKAGE_MANAGER" PACKAGE_LIST[@]
         ;;
-        # brew)
-        #     PACKAGE_LIST=("git" "cmake" "ninja" "pkg-config")
-        #     install_packages $AUTO "$SELECTED_PACKAGE_MANAGER" PACKAGE_LIST[@]
-        # ;;
+        yum)
+            PACKAGE_LIST=("git" "cmake" "ninja-build" "pkgconfig" "gcc-c++" "mesa-libGL-devel" "mesa-libGLU-devel" "glm-devel")
+            install_packages $AUTO "$SELECTED_PACKAGE_MANAGER" PACKAGE_LIST[@]
+        ;;
+        brew)
+            PACKAGE_LIST=("git" "cmake" "ninja" "pkg-config")
+            install_packages $AUTO "$SELECTED_PACKAGE_MANAGER" PACKAGE_LIST[@]
+        ;;
     esac
+}
+
+# Check if Xcode command-line tools are installed and properly set up
+check_xcode() {
+    # Check if Xcode command-line tools are installed
+    if ! xcode-select -p &>/dev/null; then
+        echo "Xcode command-line tools are not installed."
+        echo "Please install them by running: xcode-select --install"
+        exit 1
+    fi
+
+    # Check if Xcode license agreement is accepted
+    if ! xcodebuild -version &>/dev/null; then
+        echo "Xcode license agreement is not accepted."
+        echo "Please accept the license agreement by running: sudo xcodebuild -license accept"
+        exit 1
+    fi
 }
 
 # ------------
@@ -107,3 +141,7 @@ if [ "$1" = "--auto" ] ; then
 fi
 
 prompt_install_dependencies $AUTO
+
+if [ "$(uname)" == "Darwin" ]; then
+    check_xcode
+fi
