@@ -4,14 +4,14 @@
 # Prompt user to clean previous build files
 function Invoke-PromptCleanBuild {
     param (
-        [string]$Auto,
+        [bool]$Auto,
         [string]$Build,
         [string]$Dist
     )
 
     # Clean up previous build files, if found
     if ((Test-Path "$Build") -or (Test-Path "$Dist")) {
-        if ($AUTO -eq "false") {
+        if (-not $Auto) {
             # Ask to clean
             Write-Host
             Write-Host "Clean previous build? [Y/n]"
@@ -43,15 +43,45 @@ function Start-ConfigureBuild {
         [string]$Build,
         [string]$Dist,
         [string]$BuildTarget,
-        [string]$BuildType
+        [string]$BuildType,
+        [bool]$BuildStatic,
+        [bool]$BuildTesting,
+        [bool]$OptionPThreads
     )
 
     if ($BuildType -eq "Release") {
         $Dist = "$Dist\release"
-        $MSVCRuntimeLibrary = "MultiThreaded$<$<CONFIG:Release>:Release>DLL"
     } else {
         $Dist = "$Dist\debug"
+    }
+
+    if ($BuildStatic) {
+        $Dist = "$Dist\static"
+        $MSVCRuntimeLibrary = "MultiThreaded$<$<CONFIG:Debug>:Debug>"
+        $TargetTriplet = "x64-windows-static"
+        $SharedLibs = "OFF"
+    } else {
+        if ($BuildTarget -eq "Emscripten") {
+            $Dist = "$Dist\emscripten"
+        } else {
+            $Dist = "$Dist\shared"
+        }
+
         $MSVCRuntimeLibrary = "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL"
+        $TargetTriplet = "x64-windows"
+        $SharedLibs = "ON"
+    }
+
+    if ($BuildTesting) {
+        $TESTING = "YES"
+    } else {
+        $TESTING = "NO"
+    }
+
+    if ($OptionPThreads) {
+        $PThreads = "ON"
+    } else {
+        $PThreads = "OFF"
     }
 
     if ($BuildTarget -eq "Emscripten") {
@@ -66,7 +96,8 @@ function Start-ConfigureBuild {
         -DCMAKE_INSTALL_PREFIX="$Dist" `
         -DCMAKE_BUILD_TYPE="$BuildType" `
         -DCMAKE_TOOLCHAIN_FILE="$Env:EMSDK\upstream\emscripten\cmake\Modules\Platform\Emscripten.cmake" `
-        -DCMAKE_VERBOSE_MAKEFILE=YES
+        -DUSE_PTHREADS="$PThreads" `
+        -DCMAKE_VERBOSE_MAKEFILE=NO
     } elseif ($BuildTarget -eq "X64") {
         if (!$Env:VCPKG_ROOT) {
             Write-Host "VCPKG_ROOT environment variable not set"
@@ -79,13 +110,12 @@ function Start-ConfigureBuild {
         -S "$Source" `
         -B "$Build" `
         -DCMAKE_INSTALL_PREFIX="$Dist" `
-        -DCMAKE_BUILD_TYPE="$BuildType" `-DCMAKE_BUILD_TYPE="$BuildType" `
         -DCMAKE_TOOLCHAIN_FILE="${Env:VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" `
-        -DVCPKG_TARGET_TRIPLET=x64-windows `
+        -DVCPKG_TARGET_TRIPLET="$TargetTriplet" `
         -DCMAKE_MSVC_RUNTIME_LIBRARY="$MSVCRuntimeLibrary" `
-        -DCMAKE_VERBOSE_MAKEFILE=YES `
-        -DBUILD_SHARED_LIBS=ON `
-        -DBUILD_TESTING=YES
+        -DCMAKE_VERBOSE_MAKEFILE=NO `
+        -DBUILD_SHARED_LIBS=$SharedLibs `
+        -DBUILD_TESTING=$Testing
     } else {
         Write-Host "Invalid build target: $BuildTarget"
         exit 1
@@ -95,43 +125,64 @@ function Start-ConfigureBuild {
 # Build project
 function Start-Build {
     param (
-        [string]$Build
+        [string]$Build,
+        [string]$BuildType
     )
 
-    cmake --build "$BUILD"  --target install --parallel
+    cmake --build "$BUILD" --config "$BuildType"  --target install --parallel
 }
 
 # ------------
 # Main
 
 # Set default values
-$Auto = "false"
-$BuildDebug = "true"
-$BuildRelease = "false"
+$Auto = $false
+$BuildDebug = $true
+$BuildRelease = $false
 $BuildTarget = "X64"
+$BuildStatic = $false
+$BuildTesting = $false
+$SkipClean = $false
+$OptionPThreads = $false
 
 # Process command line arguments
 foreach ($arg in $args) {
     switch -regex ($arg) {
         "--auto" {
-            $Auto = "true"
+            $Auto = $true
             break
         }
         "--release" {
-            $BuildDebug = "false"
-            $BuildRelease = "true"
+            $BuildDebug = $false
+            $BuildRelease = $true
             break
         }
         "--both" {
-            $BuildDebug = "true"
-            $BuildRelease = "true"
+            $BuildDebug = $true
+            $BuildRelease = $true
             break
         }
         "--emscripten" {
             $BuildTarget = "Emscripten"
             break
         }
-        * {
+        "--pthreads" {
+            $OptionPThreads = $true
+            break
+        }
+        "--skip-clean" {
+            $SkipClean = $true
+            break
+        }
+        "--static" {
+            $BuildStatic = $true
+            break
+        }
+        "--testing" {
+            $BuildTesting = $true
+            break
+        }
+        default {
             Write-Host "Invalid argument: $arg"
             exit 1
         }
@@ -143,16 +194,18 @@ $Root = Get-Location
 $Build = "$Root\build"
 $Dist = "$Root\dist"
 
-Invoke-PromptCleanBuild -Auto $Auto -Build $Build -Dist $Dist
-
-if ($BuildDebug -eq "true") {
-    $BuildType = "Debug"
-    Start-ConfigureBuild -Source $Root -Build $Build -Dist $Dist -BuildTarget $BuildTarget -BuildType $BuildType
-    Start-Build -Build $Build
+if (-not $SkipClean) {
+    Invoke-PromptCleanBuild -Auto $Auto -Build $Build -Dist $Dist
 }
 
-if ($BuildRelease -eq "true") {
+if ($BuildDebug) {
+    $BuildType = "Debug"
+    Start-ConfigureBuild -Source $Root -Build $Build -Dist $Dist -BuildTarget $BuildTarget -BuildType $BuildType -BuildStatic $BuildStatic -BuildTesting $BuildTesting -OptionPThreads $OptionPThreads
+    Start-Build -Build $Build -BuildType $BuildType
+}
+
+if ($BuildRelease) {
     $BuildType = "Release"
-    Start-ConfigureBuild -Source $Root -Build $Build -Dist $Dist -BuildTarget $BuildTarget -BuildType $BuildType
-    Start-Build -Build $Build
+    Start-ConfigureBuild -Source $Root -Build $Build -Dist $Dist -BuildTarget $BuildTarget -BuildType $BuildType -BuildStatic $BuildStatic -BuildTesting $BuildTesting -OptionPThreads $OptionPThreads
+    Start-Build -Build $Build -BuildType $BuildType
 }

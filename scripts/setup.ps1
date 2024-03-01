@@ -30,14 +30,20 @@ function Start-CheckDependencies {
     }
 }
 
+# Initialize submodules
+function Start-InitializeSubmodules {
+    git submodule update --init --recursive
+}
+
 # ------------
 # Main
 
-$Auto = "false"
+$Auto = $false
 
 # Skip prompt if --auto is passed
 if ($args[0] -eq "--auto") {
-    $Auto = "true"
+    $Auto = $true
 }
 
 Start-CheckDependencies
+Start-InitializeSubmodules
