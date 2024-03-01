@@ -78,9 +78,13 @@ function Start-ConfigureBuild {
         $Testing = "NO"
     }
 
-    if ($OptionPThreads) {
-        $PThreads = "ON"
-    } else {
+    if ($BuildTarget -eq "Emscripten") {
+        if ($OptionPThreads) {
+            $PThreads = "ON"
+        } else {
+            $PThreads = "OFF"
+        }
+    else {
         $PThreads = "OFF"
     }
 
@@ -126,7 +130,6 @@ function Start-ConfigureBuild {
 function Start-Build {
     param (
         [string]$Build,
-        [string]$BuildType
     )
 
     cmake --build "$BUILD" --target install --parallel
@@ -152,11 +155,6 @@ foreach ($arg in $args) {
             $Auto = $true
             break
         }
-        "--release" {
-            $BuildDebug = $false
-            $BuildRelease = $true
-            break
-        }
         "--both" {
             $BuildDebug = $true
             $BuildRelease = $true
@@ -168,6 +166,11 @@ foreach ($arg in $args) {
         }
         "--pthreads" {
             $OptionPThreads = $true
+            break
+        }
+        "--release" {
+            $BuildDebug = $false
+            $BuildRelease = $true
             break
         }
         "--skip-clean" {
@@ -201,11 +204,11 @@ if (-not $SkipClean) {
 if ($BuildDebug) {
     $BuildType = "Debug"
     Start-ConfigureBuild -Source $Root -Build $Build -Dist $Dist -BuildTarget $BuildTarget -BuildType $BuildType -BuildStatic $BuildStatic -BuildTesting $BuildTesting -OptionPThreads $OptionPThreads
-    Start-Build -Build $Build -BuildType $BuildType
+    Start-Build -Build $Build
 }
 
 if ($BuildRelease) {
     $BuildType = "Release"
     Start-ConfigureBuild -Source $Root -Build $Build -Dist $Dist -BuildTarget $BuildTarget -BuildType $BuildType -BuildStatic $BuildStatic -BuildTesting $BuildTesting -OptionPThreads $OptionPThreads
-    Start-Build -Build $Build -BuildType $BuildType
+    Start-Build -Build $Build
 }

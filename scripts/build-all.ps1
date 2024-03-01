@@ -1,7 +1,7 @@
 # ------------
 # FUNCTIONS
 
-# Clean only build directory
+# Clean directories
 function Invoke-CleanBuild {
     param (
         [string]$Build,

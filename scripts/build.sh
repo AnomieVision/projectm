@@ -48,12 +48,33 @@ configure_build() {
     DIST="$3"
     TARGET="$4"
     TYPE="$5"
-    PTHREADS="$6"
+    STATIC="$6"
+    TESTING="$7"
+    PTHREADS="$8"
     
     if [ "$TYPE" = "Release" ] ; then
-        _DIST="$DIST/release"
+        DIST="$DIST/release"
     else
-        _DIST="$DIST/debug"
+        DIST="$DIST/debug"
+    fi
+
+    if [ "$STATIC" = true ] ; then
+        DIST="$DIST/static"
+        SHARED="OFF"
+    else
+        if [ "$TARGET" = "Emscripten" ] ; then
+            DIST="$DIST/emscripten"
+        else
+            DIST="$DIST/shared"
+        fi
+
+        SHARED="ON"
+    fi
+
+    if [ "$TESTING" = true ] ; then
+        TESTING="YES"
+    else
+        TESTING="NO"
     fi
 
     if [ "$TARGET" = "Emscripten" ] ; then
@@ -76,7 +97,7 @@ configure_build() {
         -G "Ninja" \
         -S "$SOURCE" \
         -B "$BUILD" \
-        -DCMAKE_INSTALL_PREFIX=$_DIST \
+        -DCMAKE_INSTALL_PREFIX=$DIST \
         -DCMAKE_BUILD_TYPE=$TYPE \
         -DUSE_PTHREADS=$ENABLE_PTHREADS \
         -DCMAKE_VERBOSE_MAKEFILE=YES
@@ -85,11 +106,11 @@ configure_build() {
         -G "Ninja" \
         -S "$SOURCE" \
         -B "$BUILD" \
-        -DCMAKE_INSTALL_PREFIX=$_DIST \
+        -DCMAKE_INSTALL_PREFIX=$DIST \
         -DCMAKE_BUILD_TYPE=$TYPE \
         -DCMAKE_VERBOSE_MAKEFILE=YES \
-        -DBUILD_SHARED_LIBS=YES \
-        -DBUILD_TESTING=NO
+        -DBUILD_SHARED_LIBS=$SHARED \
+        -DBUILD_TESTING=$TESTING
     fi
 }
 
@@ -107,6 +128,9 @@ AUTO=false
 BUILD_DEBUG=true
 BUILD_RELEASE=false
 BUILD_TARGET="X64"
+BUILD_STATIC=false
+BUILD_TESTING=false
+SKIP_CLEAN=false
 OPTION_PTHREADS=false
 
 # Process command line arguments
@@ -136,6 +160,18 @@ while [[ $# -gt 0 ]]; do
         BUILD_RELEASE=true
         shift
         ;;
+        -sc|--skip-clean)
+        SKIP_CLEAN=true
+        shift
+        ;;
+        -s|--static)
+        BUILD_STATIC=true
+        shift
+        ;;
+        -t|--testing)
+        BUILD_TESTING=true
+        shift
+        ;;
         *)
         echo "Invalid argument: $ARG"
         exit 1
@@ -155,14 +191,23 @@ ROOT="$(pwd)"
 BUILD="$ROOT/build"
 DIST="$ROOT/dist"
 
-prompt_clean_build "$AUTO" "$BUILD" "$DIST"
+if [ $SKIP_CLEAN = false ] ; then
+    prompt_clean_build "$AUTO" "$BUILD" "$DIST"
+fi
 
 if [ $BUILD_DEBUG = true ] ; then
-    configure_build "$ROOT" "$BUILD" "$DIST" "$BUILD_TARGET" "Debug" "$OPTION_PTHREADS"
+    BUILD="$ROOT/build"
+    DIST="$ROOT/dist"
+    BUILD_TYPE="Debug"
+
+    configure_build "$ROOT" "$BUILD" "$DIST" "$BUILD_TARGET" "$BUILD_TYPE" "$BUILD_STATIC" "$BUILD_TESTING" "$OPTION_PTHREADS"
     build "$BUILD"
 fi
 
 if [ $BUILD_RELEASE = true ] ; then
-    configure_build "$ROOT" "$BUILD" "$DIST" "$BUILD_TARGET" "Release" "$OPTION_PTHREADS"
+    BUILD="$ROOT/build"
+    DIST="$ROOT/dist"
+    BUILD_TYPE="Release"
+    configure_build "$ROOT" "$BUILD" "$DIST" "$BUILD_TARGET" "$BUILD_TYPE" "$BUILD_STATIC" "$BUILD_TESTING" "$OPTION_PTHREADS"
     build "$BUILD"
 fi
