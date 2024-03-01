@@ -48,11 +48,22 @@ configure_build() {
     DIST="$3"
     TARGET="$4"
     TYPE="$5"
+    PTHREADS="$6"
     
     if [ "$TYPE" = "Release" ] ; then
         _DIST="$DIST/release"
     else
         _DIST="$DIST/debug"
+    fi
+
+    if [ "$TARGET" = "Emscripten" ] ; then
+        if [ $PTHREADS = true ] ; then
+            ENABLE_PTHREADS=ON
+        else
+            ENABLE_PTHREADS=OFF
+        fi
+    else 
+        ENABLE_PTHREADS=OFF
     fi
     
     if [ "$TARGET" = "Emscripten" ] ; then
@@ -67,6 +78,7 @@ configure_build() {
         -B "$BUILD" \
         -DCMAKE_INSTALL_PREFIX=$_DIST \
         -DCMAKE_BUILD_TYPE=$TYPE \
+        -DUSE_PTHREADS=$ENABLE_PTHREADS \
         -DCMAKE_VERBOSE_MAKEFILE=YES
     elif [ "$TARGET" = "X64" ] ; then
         cmake \
@@ -95,6 +107,7 @@ AUTO=false
 BUILD_DEBUG=true
 BUILD_RELEASE=false
 BUILD_TARGET="X64"
+OPTION_PTHREADS=false
 
 # Process command line arguments
 while [[ $# -gt 0 ]]; do
@@ -114,6 +127,10 @@ while [[ $# -gt 0 ]]; do
         BUILD_TARGET="Emscripten"
         shift
         ;;
+        -p|--pthreads)
+        OPTION_PTHREADS=true
+        shift
+        ;;
         -r|--release)
         BUILD_DEBUG=false
         BUILD_RELEASE=true
@@ -126,6 +143,13 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
+# Checks
+if [ ! $BUILD_TARGET = "Emscripten" ] && [ $OPTION_PTHREADS = true ] ; then
+    echo "Option 'pthreads' is only available for Emscripten builds"
+    exit 1
+fi
+
+
 # Set current directory
 ROOT="$(pwd)"
 BUILD="$ROOT/build"
@@ -134,11 +158,11 @@ DIST="$ROOT/dist"
 prompt_clean_build "$AUTO" "$BUILD" "$DIST"
 
 if [ $BUILD_DEBUG = true ] ; then
-    configure_build "$ROOT" "$BUILD" "$DIST" "$BUILD_TARGET" "Debug"
+    configure_build "$ROOT" "$BUILD" "$DIST" "$BUILD_TARGET" "Debug" "$OPTION_PTHREADS"
     build "$BUILD"
 fi
 
 if [ $BUILD_RELEASE = true ] ; then
-    configure_build "$ROOT" "$BUILD" "$DIST" "$BUILD_TARGET" "Release"
+    configure_build "$ROOT" "$BUILD" "$DIST" "$BUILD_TARGET" "Release" "$OPTION_PTHREADS"
     build "$BUILD"
 fi
