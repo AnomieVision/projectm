@@ -73,9 +73,9 @@ function Start-ConfigureBuild {
     }
 
     if ($BuildTesting) {
-        $TESTING = "YES"
+        $Testing = "YES"
     } else {
-        $TESTING = "NO"
+        $Testing = "NO"
     }
 
     if ($OptionPThreads) {
@@ -114,8 +114,8 @@ function Start-ConfigureBuild {
         -DVCPKG_TARGET_TRIPLET="$TargetTriplet" `
         -DCMAKE_MSVC_RUNTIME_LIBRARY="$MSVCRuntimeLibrary" `
         -DCMAKE_VERBOSE_MAKEFILE=NO `
-        -DBUILD_SHARED_LIBS=$SharedLibs `
-        -DBUILD_TESTING=$Testing
+        -DBUILD_SHARED_LIBS="$SharedLibs" `
+        -DBUILD_TESTING="$Testing"
     } else {
         Write-Host "Invalid build target: $BuildTarget"
         exit 1
@@ -129,7 +129,7 @@ function Start-Build {
         [string]$BuildType
     )
 
-    cmake --build "$BUILD" --config "$BuildType"  --target install --parallel
+    cmake --build "$BUILD" --target install --parallel
 }
 
 # ------------
