@@ -60,6 +60,7 @@ file(TOUCH "${PROJECTM_DUMMY_SOURCE_FILE}")
 
 if(CMAKE_SYSTEM_NAME STREQUAL Emscripten)
     set(ENABLE_EMSCRIPTEN ON CACHE BOOL "Build for web with emscripten. Will also build the SDL2-based entrypoint." FORCE)
+    option(USE_PTHREADS "Enable pthreads" OFF)
 else()
     set(ENABLE_EMSCRIPTEN OFF CACHE BOOL "Build for web with emscripten. Requires emscripten toolset for building." FORCE)
 endif()
@@ -121,6 +122,11 @@ if(ENABLE_EMSCRIPTEN)
             "SHELL:-s ALLOW_MEMORY_GROWTH=1"
             "SHELL:-s NO_DISABLE_EXCEPTION_CATCHING"
             )
+
+        if(USE_PTHREADS)
+            add_compile_options("SHELL:-s USE_PTHREADS=1")
+            add_link_options("SHELL:-s USE_PTHREADS=1")
+        endif()
 
     set(USE_GLES ON)
 else()
