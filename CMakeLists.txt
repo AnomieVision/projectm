@@ -123,10 +123,10 @@ if(ENABLE_EMSCRIPTEN)
             "SHELL:-s NO_DISABLE_EXCEPTION_CATCHING"
             )
 
-        if(USE_PTHREADS)
-            add_compile_options("SHELL:-s USE_PTHREADS=1")
-            add_link_options("SHELL:-s USE_PTHREADS=1")
-        endif()
+    if(USE_PTHREADS)
+        add_compile_options("SHELL:-s USE_PTHREADS=1")
+        add_link_options("SHELL:-s USE_PTHREADS=1")
+    endif()
 
     set(USE_GLES ON)
 else()
